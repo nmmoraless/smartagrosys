@@ -1,1 +1,34 @@
-<p>terrenos works!</p>
+<div class="mb-3">
+  <label for="nombreterreno" class="form-label">Nombre Terreno</label>
+  <input type="text" class="form-control" id="nombreterreno" />
+</div>
+<div class="mb-3">
+  <label for="especificaciones" class="form-label">Especificaciones</label>
+  <textarea
+    class="form-control"
+    id="especificacionesdeterrreno"
+    rows="3"
+  ></textarea>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <label for="frecuencia" class="form-label">Frecuencia</label>
+        <select class="form-select" id="frecuencia" aria-label="Frecuencia de Riego">
+          <option selected>- Elige una frecuencia -</option>
+          <option value="1">Diaria</option>
+          <option value="2">semanal</option>
+          <option value="3">mensual</option>
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label for="semilla" class="form-label">Semilla</label>
+        <select class="form-select" id="semilla" aria-label="Semilla Recomendada">
+          <option selected>- Elegir semilla -</option>
+          <option value="1">Tipo A</option>
+          <option value="2">Tipo B</option>
+          <option value="3">Tipo C</option>
+        </select>
+    </div>
+</div>
+
