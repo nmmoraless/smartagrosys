@@ -6,6 +6,10 @@ import { PlanificacionCultivoComponent } from './planificacion-cultivo/planifica
 import { TerrenosComponent } from './terrenos/terrenos.component';
 import { PagesComponent } from './pages.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { SiembraComponent } from './siembra/siembra.component';
+import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
+import { FertilizanteComponent } from './fertilizante/fertilizante.component';
+import { PlagaComponent } from './plaga/plaga.component';
 
 
 
@@ -14,7 +18,11 @@ import { AppRoutingModule } from '../app-routing.module';
     DashboardComponent, 
     PlanificacionCultivoComponent,
     TerrenosComponent,
-    PagesComponent, 
+    PagesComponent,
+    SiembraComponent,
+    MantenimientoComponent,
+    FertilizanteComponent,
+    PlagaComponent, 
   ],
   exports: [
     DashboardComponent, 

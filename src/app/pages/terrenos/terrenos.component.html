@@ -1,34 +1,56 @@
-<div class="mb-3">
-  <label for="nombreterreno" class="form-label">Nombre Terreno</label>
-  <input type="text" class="form-control" id="nombreterreno" />
-</div>
-<div class="mb-3">
-  <label for="especificaciones" class="form-label">Especificaciones</label>
-  <textarea
-    class="form-control"
-    id="especificacionesdeterrreno"
-    rows="3"
-  ></textarea>
-</div>
-<div class="row">
+<div class="workspace-background">
+  <h2>Nuevo terreno</h2>
+  <div class="mb-3 row">
     <div class="col-md-6">
-        <label for="frecuencia" class="form-label">Frecuencia</label>
-        <select class="form-select" id="frecuencia" aria-label="Frecuencia de Riego">
-          <option selected>- Elige una frecuencia -</option>
-          <option value="1">Diaria</option>
-          <option value="2">semanal</option>
-          <option value="3">mensual</option>
-        </select>
+      <label for="nombre" class="form-label"
+          >Nombre:</label
+      >
+      <input class="form-control" type="text" id="nombre" aria-label="readonly input example">
     </div>
-
     <div class="col-md-6">
-        <label for="semilla" class="form-label">Semilla</label>
-        <select class="form-select" id="semilla" aria-label="Semilla Recomendada">
-          <option selected>- Elegir semilla -</option>
-          <option value="1">Tipo A</option>
-          <option value="2">Tipo B</option>
-          <option value="3">Tipo C</option>
+      <label class="form-label" for="tipo-terreno">Tipo terreno:</label>
+      <select class="form-select" aria-label="Default select example" id="tipo-terreno">
+          <option selected>-Seleccionar</option>
+          <option value="1">Arcilloso</option>
+          <option value="2">Seco</option>
+          <option value="3">Medio</option>
+      </select>
+  </div>
+  </div>
+  
+  <div class="mb-3 row">
+      <div class="col-md-6">
+          <label class="form-label" for="area">Área:</label>
+          <input id="area" class="form-control" type="number" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="unidad-medida">Unidad medida:</label>
+        <select class="form-select" aria-label="Default select example" id="unidad-medida">
+            <option selected>-Seleccionar</option>
+            <option value="1">Metros</option>
+            <option value="2">Hectárea</option>
+            <option value="3">Kilometro</option>
         </select>
-    </div>
-</div>
+      </div>
+  </div>
 
+  <div class="mb-3 row">
+    <div class="col-md-6">
+      <label for="latitud" class="form-label"
+          >Latitud:</label
+      >
+      <input class="form-control" type="text" id="latitud" aria-label="readonly input example">
+    </div>
+    <div class="col-md-6">
+      <label for="longitud" class="form-label"
+          >Longitud:</label
+      >
+      <input class="form-control" type="text" id="longitud" aria-label="readonly input example">
+    </div>
+  </div>
+
+  <!-- insertar mapa aquí -->
+
+  <button type="button" class="btn btn-success me-2">Crear</button>
+  <button type="button" class="btn btn-secondary">Cancelar</button>
+</div>

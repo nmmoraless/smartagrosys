@@ -1,0 +1,45 @@
+<div class="workspace-background">
+    <h2>Nueva plaga</h2>
+    <div class="mb-3 row">
+      <div class="col-md-12">
+        <label for="nombre" class="form-label"
+            >Nombre:</label
+        >
+        <input class="form-control" type="text" id="nombre" aria-label="readonly input example">
+      </div>
+      
+    </div>
+
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción:</label>
+        <textarea class="form-control" id="descripcion" rows="2"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="tratamiento" class="form-label">Tratamiento:</label>
+        <textarea class="form-control" id="tratamiento" rows="2"></textarea>
+      </div>
+    
+    <div class="mb-3 row">
+        <div class="col-md-6">
+            <label class="form-label" for="frecuenciaRevision">Frecuencia revisión:</label>
+          <select class="form-select" aria-label="Default select example" id="frecuenciaRevision">
+              <option selected>-Seleccionar</option>
+              <option value="1">Diaria</option>
+              <option value="2">Semanal</option>
+              <option value="3">Quincenal</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="frecuenciaRevision">Imagen de referencia:</label>
+            <div class="text-center">
+                <img src="../../../assets/img/image_plaga.png" width="50%" class="rounded" alt="...">
+              </div>
+        </div>
+    </div>
+
+  
+    <button type="button" class="btn btn-success me-2">Crear</button>
+    <button type="button" class="btn btn-secondary">Cancelar</button>
+  </div>
+  
