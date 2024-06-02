@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NotfoundpageComponent } from './pages/notfoundpage/notfoundpage.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { NotfoundpageComponent } from './pages/notfoundpage/notfoundpage.compone
     AppRoutingModule,
     PagesModule,
   ],
-  providers: [],
+  providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy} // Soluciona el error al actualizar la página donde se perdía la ruta (adiciona un (#) en la url).
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
