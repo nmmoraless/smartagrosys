@@ -10,24 +10,35 @@ import { SiembraComponent } from './siembra/siembra.component';
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 import { FertilizanteComponent } from './fertilizante/fertilizante.component';
 import { PlagaComponent } from './plaga/plaga.component';
+import { CosechaComponent } from './cosecha/cosecha.component';
+import { AlmacenComponent } from './almacen/almacen.component';
+import { EtapaComponent } from './etapa/etapa.component';
+import { FrecuenciaComponent } from './frecuencia/frecuencia.component';
+import { SemillaComponent } from './semilla/semilla.component';
+import { TipoTerrenoComponent } from './tipo-terreno/tipo-terreno.component';
+import { UnidadMedidaComponent } from './unidad-medida/unidad-medida.component';
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent, 
+    DashboardComponent,
     PlanificacionCultivoComponent,
     TerrenosComponent,
     PagesComponent,
     SiembraComponent,
     MantenimientoComponent,
     FertilizanteComponent,
-    PlagaComponent, 
+    PlagaComponent,
+    CosechaComponent,
+    AlmacenComponent,
+    EtapaComponent,
+    FrecuenciaComponent,
+    SemillaComponent,
+    TipoTerrenoComponent,
+    UnidadMedidaComponent,
   ],
   exports: [
-    DashboardComponent, 
-    PlanificacionCultivoComponent,
-    TerrenosComponent, 
   ],
   imports: [
     CommonModule,
