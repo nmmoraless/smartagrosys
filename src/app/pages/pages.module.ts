@@ -17,6 +17,7 @@ import { FrecuenciaComponent } from './frecuencia/frecuencia.component';
 import { SemillaComponent } from './semilla/semilla.component';
 import { TipoTerrenoComponent } from './tipo-terreno/tipo-terreno.component';
 import { UnidadMedidaComponent } from './unidad-medida/unidad-medida.component';
+import { PlanificacionesComponent } from './planificacion-cultivo/planificaciones/planificaciones.component';
 
 
 
@@ -37,6 +38,7 @@ import { UnidadMedidaComponent } from './unidad-medida/unidad-medida.component';
     SemillaComponent,
     TipoTerrenoComponent,
     UnidadMedidaComponent,
+    PlanificacionesComponent,
   ],
   exports: [
   ],

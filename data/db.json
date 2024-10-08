@@ -1,0 +1,203 @@
+{
+    "roles": [
+      {
+        "IdRol": 1,
+        "Descripcion": "Admin",
+        "FechaCreacion": "2023-01-01"
+      },
+      {
+        "IdRol": 2,
+        "Descripcion": "Usuario",
+        "FechaCreacion": "2023-01-01"
+      }
+    ],
+    "estados": [
+      {
+        "IdEstado": 1,
+        "Descripcion": "Activo",
+        "FechaCreacion": "2023-01-01"
+      },
+      {
+        "IdEstado": 2,
+        "Descripcion": "Inactivo",
+        "FechaCreacion": "2023-01-01"
+      }
+    ],
+    "usuarios": [
+      {
+        "IdUsuario": 1,
+        "Nombre": "Juan",
+        "Apellidos": "Pérez",
+        "Email": "juan.perez@example.com",
+        "Password": "password123",
+        "Telefono": "123456789",
+        "Rol_IdRol": 1,
+        "Estado_IdEstado": 1,
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "unidadesMedida": [
+      {
+        "IdUnidadMedida": 1,
+        "Sigla": "kg",
+        "Descripcion": "Kilogramo",
+        "FechaCreacion": "2023-01-01"
+      },
+      {
+        "IdUnidadMedida": 2,
+        "Sigla": "ha",
+        "Descripcion": "Hectárea",
+        "FechaCreacion": "2023-01-01"
+      }
+    ],
+    "frecuencias": [
+      {
+        "IdFrecuencia": 1,
+        "Descripcion": "Diaria",
+        "FechaCreacion": "2023-01-01"
+      },
+      {
+        "IdFrecuencia": 2,
+        "Descripcion": "Semanal",
+        "FechaCreacion": "2023-01-01"
+      }
+    ],
+    "semillas": [
+      {
+        "IdSemilla": 1,
+        "Descripcion": "Maíz",
+        "Especificaciones": "Rendimiento alto",
+        "RendimientoSiembra": 1000,
+        "RendimientoCosecha": 5000,
+        "IdUnidadMedida": 1,
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "tiposTerreno": [
+      {
+        "IdTipoTerreno": 1,
+        "IdSemilla": 1,
+        "IdFrecuenciaRiego": 1,
+        "Descripcion": "Terreno fértil",
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "terrenos": [
+      {
+        "IdTerreno": 1,
+        "Nombre": "Terreno 1",
+        "IdTipoTerreno": 1,
+        "Area": 1000,
+        "IdUnidadMedida": 2,
+        "Altura": 50,
+        "Latitud": "12.345678",
+        "Longitud": "-98.765432",
+        "IdUsuario": 1,
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "etapas": [
+      {
+        "IdEtapa": 1,
+        "Descripcion": "Preparación",
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "planificacionesCultivo": [
+      {
+        "IdPlanificacionCultivo": 1,
+        "Descripcion": "Planificación de maíz tipo A",
+        "FechaInicio": "2024-01-01",
+        "FechaFin": "2024-06-30",
+        "IdEtapa": 1,
+        "IdUsuario": 1,
+        "FechaCreacion": "2023-10-01"
+      },
+      {
+        "IdPlanificacionCultivo": 2,
+        "Descripcion": "Planificación de maíz amarillo",
+        "FechaInicio": "2024-01-01",
+        "FechaFin": "2024-06-30",
+        "IdEtapa": 1,
+        "IdUsuario": 1,
+        "FechaCreacion": "2023-10-01"
+      },
+      {
+        "IdPlanificacionCultivo": 3,
+        "Descripcion": "Planificación de maíz peto",
+        "FechaInicio": "2024-01-01",
+        "FechaFin": "2024-06-30",
+        "IdEtapa": 1,
+        "IdUsuario": 1,
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "siembras": [
+      {
+        "IdSiembra": 1,
+        "IdPlanificacionCultivo": 1,
+        "IdTerreno": 1,
+        "IdSemilla": 1,
+        "CantidadSemillaSiembra": 100,
+        "CantidadCosechaEstimada": 500,
+        "IdUnidadMedida": 1,
+        "FechaSiembra": "2024-01-01",
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "fertizantes": [
+      {
+        "IdFertizante": 1,
+        "IdFrecuencia": 1,
+        "Nombre": "Fertilizante A",
+        "Descripcion": "Fertilizante para maíz.",
+        "ModoUso": "Aplicar cada 15 días.",
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "controlPlagas": [
+      {
+        "IdControlPlagas": 1,
+        "IdFrecuencia": 1,
+        "Nombre": "Plaga A",
+        "Descripcion": "Descripción de la Plaga A.",
+        "Tratamiento": "Tratamiento recomendado.",
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "mantenimientos": [
+      {
+        "IdMantenimiento": 1,
+        "IdSiembra": 1,
+        "IdFrecuenciaRiego": 1,
+        "IdFertizante": 1,
+        "IdControlPlagas": 1,
+        "FechaMantenimiento": "2024-02-15",
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "almacenes": [
+      {
+        "IdAlmacen": 1,
+        "Nombre": "Almacen 1",
+        "Ubicacion": "Ubicación A",
+        "Capadidad": 1000,
+        "IdUnidadMedida": 1,
+        "FechaCreacion": "2023-10-01"
+      }
+    ],
+    "cosechas": [
+      {
+        "IdCosecha": 1,
+        "IdSiembra": 1,
+        "FechaCosecha": "2024-06-30",
+        "CantidadCosecha": 300,
+        "CtdBuenEstado": 250,
+        "CtdMalEstado": 50,
+        "IdUnidadMedida": 1,
+        "IdAlmacen": 1,
+        "FechaCreacion": "2023-10-01"
+      }
+    ]
+  }
+  

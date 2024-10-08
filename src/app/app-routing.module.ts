@@ -18,6 +18,7 @@ import { FrecuenciaComponent } from './pages/frecuencia/frecuencia.component';
 import { SemillaComponent } from './pages/semilla/semilla.component';
 import { TipoTerrenoComponent } from './pages/tipo-terreno/tipo-terreno.component';
 import { UnidadMedidaComponent } from './pages/unidad-medida/unidad-medida.component';
+import { PlanificacionesComponent } from './pages/planificacion-cultivo/planificaciones/planificaciones.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     children: [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'planificacion', component: PlanificacionCultivoComponent},
+      {path: 'planificaciones', component: PlanificacionesComponent},
       {path: 'terrenos', component: TerrenosComponent},
       {path: 'siembra', component: SiembraComponent},
       {path: 'mantenimiento', component: MantenimientoComponent},
