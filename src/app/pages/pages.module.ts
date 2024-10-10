@@ -18,6 +18,18 @@ import { SemillaComponent } from './semilla/semilla.component';
 import { TipoTerrenoComponent } from './tipo-terreno/tipo-terreno.component';
 import { UnidadMedidaComponent } from './unidad-medida/unidad-medida.component';
 import { PlanificacionesComponent } from './planificacion-cultivo/planificaciones/planificaciones.component';
+import { AlmacenesComponent } from './almacen/almacenes/almacenes.component';
+import { CosechasComponent } from './cosecha/cosechas/cosechas.component';
+import { EtapasComponent } from './etapa/etapas/etapas.component';
+import { SemillasComponent } from './semilla/semillas/semillas.component';
+import { FertilizantesComponent } from './fertilizante/fertilizantes/fertilizantes.component';
+import { FrecuenciasComponent } from './frecuencia/frecuencias/frecuencias.component';
+import { MantenimientosComponent } from './mantenimiento/mantenimientos/mantenimientos.component';
+import { PlagasComponent } from './plaga/plagas/plagas.component';
+import { SiembrasComponent } from './siembra/siembras/siembras.component';
+import { ListaTerrenosComponent } from './terrenos/lista-terrenos/lista-terrenos.component';
+import { TiposTerrenoComponent } from './tipo-terreno/tipos-terreno/tipos-terreno.component';
+import { UnidadesMedidaComponent } from './unidad-medida/unidades-medida/unidades-medida.component';
 
 
 
@@ -39,6 +51,18 @@ import { PlanificacionesComponent } from './planificacion-cultivo/planificacione
     TipoTerrenoComponent,
     UnidadMedidaComponent,
     PlanificacionesComponent,
+    AlmacenesComponent,
+    CosechasComponent,
+    EtapasComponent,
+    SemillasComponent,
+    FertilizantesComponent,
+    FrecuenciasComponent,
+    MantenimientosComponent,
+    PlagasComponent,
+    SiembrasComponent,
+    ListaTerrenosComponent,
+    TiposTerrenoComponent,
+    UnidadesMedidaComponent,
   ],
   exports: [
   ],
