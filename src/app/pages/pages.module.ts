@@ -30,6 +30,7 @@ import { SiembrasComponent } from './siembra/siembras/siembras.component';
 import { ListaTerrenosComponent } from './terrenos/lista-terrenos/lista-terrenos.component';
 import { TiposTerrenoComponent } from './tipo-terreno/tipos-terreno/tipos-terreno.component';
 import { UnidadesMedidaComponent } from './unidad-medida/unidades-medida/unidades-medida.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -68,6 +69,7 @@ import { UnidadesMedidaComponent } from './unidad-medida/unidades-medida/unidade
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     SharedModule
   ]

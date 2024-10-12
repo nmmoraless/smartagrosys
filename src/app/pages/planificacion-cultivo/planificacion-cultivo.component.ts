@@ -10,21 +10,44 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 })
 export class PlanificacionCultivoComponent {
 
-  //revisar y adecuar a smart agro
   public formPlanificacion: FormGroup = this.fb.group({
-    titulo: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(95), Validators.minLength(1) ]],
+    idPlanificacionCultivo: ['', []],
+    nombre: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(95), Validators.minLength(1) ]],
     descripcion: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(345), Validators.minLength(1) ], []],
-    email: ['', [ Validators.required, Validators.maxLength(48), this.emailEsValido ], []],
-    direccion: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(55), Validators.minLength(1) ], []],
-    departamentosId: ['', [ Validators.required, Validators.min(1) ], []],
-    municipiosId: ['', [ Validators.required, Validators.min(1) ], []],
-    telefono: ['', [ Validators.required, this.telefonoEsValido, Validators.maxLength(10), Validators.minLength(10) ], []],
-    whatsapp: ['', [ Validators.required, this.telefonoEsValido, Validators.maxLength(10), Validators.minLength(10) ], []],
-    planesId: ['', [ Validators.required, Validators.required, Validators.min(1) ], []],
+    fechaInicio: ['', [ Validators.required ], []],
+    fechaFin: ['', [ Validators.required ], []],
+    idEtapa: ['', [ Validators.required ], []],
+    idUsuario: ['', [], []],
+    fechaCreacion: ['', [], []],
   });
   validacionesService: any;
 
-  constructor( private fb: FormBuilder ) { }
+  constructor( private fb: FormBuilder, private _planificacion: PlanificacionService ) { }
+
+  get planificacionActual(): PlanificacionInterface {
+    const planificacion = this.formPlanificacion.value;
+    return planificacion;
+  }
+
+  public guardar(): void {
+
+    if ( this.formPlanificacion.invalid ) return;
+
+    if (this.planificacionActual.IdPlanificacionCultivo) {
+      this._planificacion.actualizarPlanificacion( this.planificacionActual ).subscribe( planificacion => {
+        //Actualizar
+      })
+    } else {
+      this._planificacion.agregarPlanificacion( this.planificacionActual ).subscribe( planificacion => {
+        console.log(planificacion);        
+      })
+    }
+    console.log({
+      formIsValid: this.formPlanificacion.valid,
+      value: this.formPlanificacion.value
+    });
+    
+  }
 
   //Obetener errores de validación
   public obtenerErrorDeCampo ( campo: string ): string {

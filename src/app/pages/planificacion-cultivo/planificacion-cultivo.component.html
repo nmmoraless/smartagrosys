@@ -1,10 +1,10 @@
-<div class="workspace-background">
+<div class="workspace-background" [formGroup]="formPlanificacion">
     <div class="mb-3">
         <h2>Planificación de Cultivo</h2>
         <label for="descripcion" class="form-label"
             >Nombre:</label
         >
-        <input type="text" name="nombre" class="form-control">
+        <input type="text" name="nombre" class="form-control" formControlName="nombre">
 
         <label for="descripcion" class="form-label"
             >Descripción:</label
@@ -13,24 +13,25 @@
             class="form-control"
             id="descripcion"
             rows="3"
+            formControlName="descripcion"
         ></textarea>
     </div>
     
     <div class="mb-3 row">
         <div class="col-md-6">
             <label class="form-label" for="startDate">Fecha inicio:</label>
-            <input id="startDate" class="form-control" type="date" />
+            <input id="startDate" class="form-control" type="date" formControlName="fechaInicio" />
         </div>
         <div class="col-md-6">
             <label class="form-label" for="endDate">Fecha fin:</label>
-            <input id="endDate" class="form-control" type="date" />
+            <input id="endDate" class="form-control" type="date" formControlName="fechaFin"/>
         </div>
     </div>
 
     <div class="mb-3 row">
         <div class="col-md-6">
             <label class="form-label" for="etapas">Etapa:</label>
-            <select class="mb-3 form-select" aria-label="Default select example" id="etapas">
+            <select class="mb-3 form-select" aria-label="Default select example" id="etapas" formControlName="idEtapa">
                 <option selected>-Seleccionar</option>
                 <option value="1">Cultivo</option>
                 <option value="2">Cosecha</option>
@@ -39,7 +40,11 @@
         </div>
     </div>
 
-    <button type="button" class="btn btn-success me-2">Crear</button>
+    <button type="button" class="btn btn-success me-2" (click)="guardar()">Crear</button>
     <a href="#/planificaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
+
+    <pre>
+        {{planificacionActual | json}}
+    </pre>
     
 </div>
