@@ -1,5 +1,7 @@
 export interface FrecuenciaInterface {
-    IdFrecuencia: String;
+    id: number; //id automático de json-server
+//IdFrecuencia: number; //Comentamos temporalmente
+    IdFrecuencia: string;
     Descripcion: string;
     FechaCreacion: Date;
 }

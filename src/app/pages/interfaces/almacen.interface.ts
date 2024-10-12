@@ -1,8 +1,8 @@
 export interface AlmacenInterface {
 IdAlmacen: string;
-Nombre: String;
-Ubicacion: String;
-Cantidad: number;
+Nombre: string;
+Ubicacion: string;
+Capacidad: number;
 IdUnidadMedida: number;
 FechaCreacion: Date;
 }
