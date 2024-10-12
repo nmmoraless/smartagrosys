@@ -1,11 +1,13 @@
 export interface UsuarioInterface {
+    id: number; //id automático de json-server
+    //IdUsuario: number; //Comentamos temporalmente
     IdUsuario: number;
     Nombre: string;
     Apellidos: string;
-    Email: String;
+    Email: string;
     Password: string;
     Telefono: number;
-    IdRol: String;
+    IdRol: string;
     IdEstado: String;
     FechaCreacion: Date;
 }
