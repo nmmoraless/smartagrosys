@@ -1,35 +1,31 @@
 {
   "roles": [
     {
-      "IdRol": 1,
+      "id": "65a8",
       "Descripcion": "Admin",
-      "FechaCreacion": "2023-01-01",
-      "id": "65a8"
+      "FechaCreacion": "2023-01-01"
     },
     {
-      "IdRol": 2,
+      "id": "84d4",
       "Descripcion": "Usuario",
-      "FechaCreacion": "2023-01-01",
-      "id": "84d4"
+      "FechaCreacion": "2023-01-01"
     }
   ],
   "estados": [
     {
-      "IdEstado": 1,
+      "id": "2c99",
       "Descripcion": "Activo",
-      "FechaCreacion": "2023-01-01",
-      "id": "2c99"
+      "FechaCreacion": "2023-01-01"
     },
     {
-      "IdEstado": 2,
+      "id": "c762",
       "Descripcion": "Inactivo",
-      "FechaCreacion": "2023-01-01",
-      "id": "c762"
+      "FechaCreacion": "2023-01-01"
     }
   ],
   "usuarios": [
     {
-      "IdUsuario": 1,
+      "id": "3986",
       "Nombre": "Juan",
       "Apellidos": "Pérez",
       "Email": "juan.perez@example.com",
@@ -37,65 +33,59 @@
       "Telefono": "123456789",
       "Rol_IdRol": 1,
       "Estado_IdEstado": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "3986"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "unidadesMedida": [
     {
+      "id": "0193",
       "IdUnidadMedida": 1,
       "Sigla": "kg",
       "Descripcion": "Kilogramo",
-      "FechaCreacion": "2023-01-01",
-      "id": "0193"
+      "FechaCreacion": "2023-01-01"
     },
     {
-      "IdUnidadMedida": 2,
+      "id": "9197",
       "Sigla": "ha",
       "Descripcion": "Hectárea",
-      "FechaCreacion": "2023-01-01",
-      "id": "9197"
+      "FechaCreacion": "2023-01-01"
     }
   ],
   "frecuencias": [
     {
-      "IdFrecuencia": 1,
+      "id": "5c6a",
       "Descripcion": "Diaria",
-      "FechaCreacion": "2023-01-01",
-      "id": "5c6a"
+      "FechaCreacion": "2023-01-01"
     },
     {
-      "IdFrecuencia": 2,
+      "id": "6fb9",
       "Descripcion": "Semanal",
-      "FechaCreacion": "2023-01-01",
-      "id": "6fb9"
+      "FechaCreacion": "2023-01-01"
     }
   ],
   "semillas": [
     {
-      "IdSemilla": 1,
+      "id": "5b05",
       "Descripcion": "Maíz",
       "Especificaciones": "Rendimiento alto",
       "RendimientoSiembra": 1000,
       "RendimientoCosecha": 5000,
       "IdUnidadMedida": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "5b05"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "tiposTerreno": [
     {
-      "IdTipoTerreno": 1,
+      "id": "d31c",
       "IdSemilla": 1,
       "IdFrecuenciaRiego": 1,
       "Descripcion": "Terreno fértil",
-      "FechaCreacion": "2023-10-01",
-      "id": "d31c"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "terrenos": [
     {
-      "IdTerreno": 1,
+      "id": "94dc",
       "Nombre": "Terreno 1",
       "IdTipoTerreno": 1,
       "Area": 1000,
@@ -104,64 +94,61 @@
       "Latitud": "12.345678",
       "Longitud": "-98.765432",
       "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "94dc"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "etapas": [
     {
-      "IdEtapa": 1,
+      "id": "78ea",
       "Descripcion": "Preparación",
-      "FechaCreacion": "2023-10-01",
-      "id": "78ea"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "planificacionesCultivo": [
     {
-      "IdPlanificacionCultivo": 1,
+      "id": "0594",
+      "Nombre": "hola",
       "Descripcion": "Planificación de maíz tipo A",
       "FechaInicio": "2024-01-01",
       "FechaFin": "2024-06-30",
       "IdEtapa": 1,
       "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "0594"
+      "FechaCreacion": "2023-10-01"
     },
     {
-      "IdPlanificacionCultivo": 2,
+      "id": "aa54",
+      "Nombre": "hola",
       "Descripcion": "Planificación de maíz amarillo",
       "FechaInicio": "2024-01-01",
       "FechaFin": "2024-06-30",
       "IdEtapa": 1,
       "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "aa54"
+      "FechaCreacion": "2023-10-01"
     },
     {
-      "IdPlanificacionCultivo": 3,
+      "id": "260d",
+      "Nombre": "hola",
       "Descripcion": "Planificación de maíz peto",
       "FechaInicio": "2024-01-01",
       "FechaFin": "2024-06-30",
       "IdEtapa": 1,
       "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "260d"
+      "FechaCreacion": "2023-10-01"
     },
     {
       "id": "45e6",
-      "idPlanificacionCultivo": "",
-      "nombre": "hola",
-      "descripcion": "hola",
-      "fechaInicio": "2024-10-10",
-      "fechaFin": "2025-01-15",
-      "idEtapa": "1",
-      "idUsuario": "",
-      "fechaCreacion": ""
+      "Nombre": "hola",
+      "Descripcion": "hola",
+      "FechaInicio": "2024-10-10",
+      "FechaFin": "2025-01-15",
+      "IdEtapa": "1",
+      "IdUsuario": "1",
+      "FechaCreacion": "2023-10-13"
     }
   ],
   "siembras": [
     {
-      "IdSiembra": 1,
+      "id": "0b81",
       "IdPlanificacionCultivo": 1,
       "IdTerreno": 1,
       "IdSemilla": 1,
@@ -169,58 +156,53 @@
       "CantidadCosechaEstimada": 500,
       "IdUnidadMedida": 1,
       "FechaSiembra": "2024-01-01",
-      "FechaCreacion": "2023-10-01",
-      "id": "0b81"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "fertizantes": [
     {
-      "IdFertizante": 1,
+      "id": "6fa6",
       "IdFrecuencia": 1,
       "Nombre": "Fertilizante A",
       "Descripcion": "Fertilizante para maíz.",
       "ModoUso": "Aplicar cada 15 días.",
-      "FechaCreacion": "2023-10-01",
-      "id": "6fa6"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "controlPlagas": [
     {
-      "IdControlPlagas": 1,
+      "id": "1719",
       "IdFrecuencia": 1,
       "Nombre": "Plaga A",
       "Descripcion": "Descripción de la Plaga A.",
       "Tratamiento": "Tratamiento recomendado.",
-      "FechaCreacion": "2023-10-01",
-      "id": "1719"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "mantenimientos": [
     {
-      "IdMantenimiento": 1,
+      "id": "7e2f",
       "IdSiembra": 1,
       "IdFrecuenciaRiego": 1,
       "IdFertizante": 1,
       "IdControlPlagas": 1,
       "FechaMantenimiento": "2024-02-15",
-      "FechaCreacion": "2023-10-01",
-      "id": "7e2f"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "almacenes": [
     {
-      "IdAlmacen": 1,
+      "id": "90ed",
       "Nombre": "Almacen 1",
       "Ubicacion": "Ubicación A",
       "Capadidad": 1000,
       "IdUnidadMedida": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "90ed"
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "cosechas": [
     {
-      "IdCosecha": 1,
+      "id": "9c6b",
       "IdSiembra": 1,
       "FechaCosecha": "2024-06-30",
       "CantidadCosecha": 300,
@@ -228,8 +210,7 @@
       "CtdMalEstado": 50,
       "IdUnidadMedida": 1,
       "IdAlmacen": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "9c6b"
+      "FechaCreacion": "2023-10-01"
     }
   ]
 }

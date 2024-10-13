@@ -17,8 +17,8 @@ export class PlanificacionService {
     return this.http.get<PlanificacionInterface[]>( this.baseUrl + `/planificacionesCultivo`);
   }
 
-  getPlanificacion(idPlanificacion: number): Observable<PlanificacionInterface> {
-    return this.http.get<PlanificacionInterface>( this.baseUrl + `/planificacionesCultivo?IdPlanificacion=${idPlanificacion}`);
+  getPlanificacion(idPlanificacion: number): Observable<PlanificacionInterface[]> {
+    return this.http.get<PlanificacionInterface[]>( this.baseUrl + `/planificacionesCultivo?id=${idPlanificacion}`);
   }
 
   agregarPlanificacion( planificacion: PlanificacionInterface ): Observable<PlanificacionInterface> {

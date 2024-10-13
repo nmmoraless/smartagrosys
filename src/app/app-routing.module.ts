@@ -27,6 +27,7 @@ const routes: Routes = [
     children: [
       {path: 'dashboard', component: DashboardComponent},
       {path: 'planificacion', component: PlanificacionCultivoComponent},
+      {path: 'planificacion/editar/:id', component: PlanificacionCultivoComponent},
       {path: 'planificaciones', component: PlanificacionesComponent},
       {path: 'terrenos', component: TerrenosComponent},
       {path: 'siembra', component: SiembraComponent},

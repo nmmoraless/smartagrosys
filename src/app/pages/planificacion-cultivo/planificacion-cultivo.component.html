@@ -4,7 +4,7 @@
         <label for="descripcion" class="form-label"
             >Nombre:</label
         >
-        <input type="text" name="nombre" class="form-control" formControlName="nombre">
+        <input type="text" name="nombre" class="form-control" formControlName="Nombre">
 
         <label for="descripcion" class="form-label"
             >Descripción:</label
@@ -13,25 +13,25 @@
             class="form-control"
             id="descripcion"
             rows="3"
-            formControlName="descripcion"
+            formControlName="Descripcion"
         ></textarea>
     </div>
-    
+
     <div class="mb-3 row">
         <div class="col-md-6">
             <label class="form-label" for="startDate">Fecha inicio:</label>
-            <input id="startDate" class="form-control" type="date" formControlName="fechaInicio" />
+            <input id="startDate" class="form-control" type="date" formControlName="FechaInicio" />
         </div>
         <div class="col-md-6">
             <label class="form-label" for="endDate">Fecha fin:</label>
-            <input id="endDate" class="form-control" type="date" formControlName="fechaFin"/>
+            <input id="endDate" class="form-control" type="date" formControlName="FechaFin"/>
         </div>
     </div>
 
     <div class="mb-3 row">
         <div class="col-md-6">
             <label class="form-label" for="etapas">Etapa:</label>
-            <select class="mb-3 form-select" aria-label="Default select example" id="etapas" formControlName="idEtapa">
+            <select class="mb-3 form-select" aria-label="Default select example" id="etapas" formControlName="IdEtapa">
                 <option selected>-Seleccionar</option>
                 <option value="1">Cultivo</option>
                 <option value="2">Cosecha</option>
@@ -43,8 +43,8 @@
     <button type="button" class="btn btn-success me-2" (click)="guardar()">Crear</button>
     <a href="#/planificaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
 
-    <pre>
+    <!--<pre>
         {{planificacionActual | json}}
-    </pre>
-    
+    </pre>-->
+
 </div>

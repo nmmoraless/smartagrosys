@@ -1,28 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlanificacionInterface } from '../interfaces/planificacion.interface';
 import { PlanificacionService } from '../services/planificacion.service';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-planificacion-cultivo',
   templateUrl: './planificacion-cultivo.component.html',
   styleUrl: './planificacion-cultivo.component.css'
 })
-export class PlanificacionCultivoComponent {
+export class PlanificacionCultivoComponent implements OnInit {
+
+  public planificacionCultivo!: PlanificacionInterface;
 
   public formPlanificacion: FormGroup = this.fb.group({
-    idPlanificacionCultivo: ['', []],
-    nombre: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(95), Validators.minLength(1) ]],
-    descripcion: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(345), Validators.minLength(1) ], []],
-    fechaInicio: ['', [ Validators.required ], []],
-    fechaFin: ['', [ Validators.required ], []],
-    idEtapa: ['', [ Validators.required ], []],
-    idUsuario: ['', [], []],
-    fechaCreacion: ['', [], []],
+    id: ['', []],
+    Nombre: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(95), Validators.minLength(1) ]],
+    Descripcion: ['', [ Validators.required, this.caracteresPermitidos, Validators.maxLength(345), Validators.minLength(1) ], []],
+    FechaInicio: ['', [ Validators.required ], []],
+    FechaFin: ['', [ Validators.required ], []],
+    IdEtapa: ['', [ Validators.required ], []],
+    IdUsuario: ['', [], []],
+    FechaCreacion: ['', [], []],
   });
   validacionesService: any;
 
-  constructor( private fb: FormBuilder, private _planificacion: PlanificacionService ) { }
+  constructor( private fb: FormBuilder, private _planificacion: PlanificacionService, private activedRoute: ActivatedRoute, private router: Router ) { }
+
+  ngOnInit(): void {
+
+    if ( this.router.url.includes('editar')) {
+      this.activedRoute.params.pipe(
+        switchMap(({id}) => this._planificacion.getPlanificacion( id ))
+      ).subscribe ( (planificacion: PlanificacionInterface[]) => {
+        debugger
+        this.planificacionCultivo = planificacion[0];
+        this.formPlanificacion.setValue(this.planificacionCultivo);
+      })
+    }
+
+  }
 
   get planificacionActual(): PlanificacionInterface {
     const planificacion = this.formPlanificacion.value;
@@ -33,20 +51,16 @@ export class PlanificacionCultivoComponent {
 
     if ( this.formPlanificacion.invalid ) return;
 
-    if (this.planificacionActual.IdPlanificacionCultivo) {
+    if (this.planificacionActual.id) {
       this._planificacion.actualizarPlanificacion( this.planificacionActual ).subscribe( planificacion => {
         //Actualizar
       })
     } else {
       this._planificacion.agregarPlanificacion( this.planificacionActual ).subscribe( planificacion => {
-        console.log(planificacion);        
+        console.log(planificacion);
       })
     }
-    console.log({
-      formIsValid: this.formPlanificacion.valid,
-      value: this.formPlanificacion.value
-    });
-    
+
   }
 
   //Obetener errores de validación

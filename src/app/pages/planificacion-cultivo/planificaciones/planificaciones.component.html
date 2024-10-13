@@ -5,18 +5,24 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
       <th scope="col">Fecha inicio</th>
       <th scope="col">Fecha fin</th>
       <th scope="col">Etapa</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let planificacion of listaPlanificaciones; let i = index">
       <th scope="row">{{i+1}}</th>
+      <td>{{planificacion.Nombre}}</td>
       <td>{{planificacion.Descripcion}}</td>
       <td>{{planificacion.FechaInicio}}</td>
       <td>{{planificacion.FechaFin}}</td>
       <td>{{planificacion.IdEtapa}}</td>
+      <td><button class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
