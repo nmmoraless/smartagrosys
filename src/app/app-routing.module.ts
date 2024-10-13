@@ -19,6 +19,7 @@ import { SemillaComponent } from './pages/semilla/semilla.component';
 import { TipoTerrenoComponent } from './pages/tipo-terreno/tipo-terreno.component';
 import { UnidadMedidaComponent } from './pages/unidad-medida/unidad-medida.component';
 import { PlanificacionesComponent } from './pages/planificacion-cultivo/planificaciones/planificaciones.component';
+import { ListaTerrenosComponent } from './pages/terrenos/lista-terrenos/lista-terrenos.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,9 @@ const routes: Routes = [
       {path: 'planificacion', component: PlanificacionCultivoComponent},
       {path: 'planificacion/editar/:id', component: PlanificacionCultivoComponent},
       {path: 'planificaciones', component: PlanificacionesComponent},
-      {path: 'terrenos', component: TerrenosComponent},
+      {path: 'terreno/agregar', component: TerrenosComponent},
+      {path: 'terreno/editar/:id', component: TerrenosComponent},
+      {path: 'terrenos', component: ListaTerrenosComponent},
       {path: 'siembra', component: SiembraComponent},
       {path: 'mantenimiento', component: MantenimientoComponent},
       {path: 'fertilizante', component: FertilizanteComponent},

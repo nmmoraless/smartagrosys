@@ -13,7 +13,7 @@ export class ValidacionesService {
     primary: 'alert alert-primary',
     secondary: 'alert alert-secondary',
     success: 'alert alert-success',
-    danger: 'alert alert-danger',
+    danger: 'text-danger',
     warning: 'alert alert-warning',
     info: 'alert alert-info',
     light: 'alert alert-light',

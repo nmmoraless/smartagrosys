@@ -4,6 +4,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ColorthemeComponent } from './colortheme/colortheme.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 
@@ -12,13 +13,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     BreadcrumbsComponent, 
     ColorthemeComponent,
     HeaderComponent, 
-    SidebarComponent,
+    SidebarComponent, 
+    AlertasComponent,
   ],
   exports: [
     BreadcrumbsComponent, 
     ColorthemeComponent,
     HeaderComponent, 
     SidebarComponent,
+    AlertasComponent,
   ],
   imports: [
     CommonModule

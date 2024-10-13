@@ -26,10 +26,10 @@ export class PlanificacionService {
   }
 
   actualizarPlanificacion( planificacion: PlanificacionInterface ): Observable<PlanificacionInterface> {
-    return this.http.put<PlanificacionInterface>( this.baseUrl + `/planificacionesCultivo`, planificacion)
+    return this.http.put<PlanificacionInterface>( this.baseUrl + `/planificacionesCultivo/${planificacion.id}`, planificacion)
   }
 
   borrarPlanificacion(idPlanificacion: number): Observable<PlanificacionInterface> {
-    return this.http.delete<PlanificacionInterface>( this.baseUrl + `/planificacionesCultivo?IdPlanificacion=${idPlanificacion}`);
+    return this.http.delete<PlanificacionInterface>( this.baseUrl + `/planificacionesCultivo/${idPlanificacion}`);
   }
 }

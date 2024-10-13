@@ -1,9 +1,11 @@
 export interface TerrenoInterface {
   id: number; //id automático de json-server
   //IdTerreno: number; //Comentamos temporalmente
+  Nombre: string;
   IdTipoTerreno: number;
   Area: number;
-  UnidadMedida: number;
+  IdUnidadMedida: number;
+  Altura: number;
   Latitud: string;
   Longintud: string;
   FechaCreacion: Date;

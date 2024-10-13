@@ -87,9 +87,21 @@
     {
       "id": "94dc",
       "Nombre": "Terreno 1",
-      "IdTipoTerreno": 1,
+      "IdTipoTerreno": 2,
       "Area": 1000,
       "IdUnidadMedida": 2,
+      "Altura": 50,
+      "Latitud": "12.345678",
+      "Longitud": "-98.765432",
+      "IdUsuario": 1,
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "94dc",
+      "Nombre": "Terreno 1",
+      "IdTipoTerreno": 3,
+      "Area": 1000,
+      "IdUnidadMedida": 3,
       "Altura": 50,
       "Latitud": "12.345678",
       "Longitud": "-98.765432",
@@ -99,51 +111,36 @@
   ],
   "etapas": [
     {
-      "id": "78ea",
-      "Descripcion": "Preparación",
+      "id": "1",
+      "Descripcion": "Preparación del terreno",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "2",
+      "Descripcion": "Siembra",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "3",
+      "Descripcion": "Cosecha",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "4",
+      "Descripcion": "Postcosecha",
       "FechaCreacion": "2023-10-01"
     }
   ],
   "planificacionesCultivo": [
     {
-      "id": "0594",
-      "Nombre": "hola",
-      "Descripcion": "Planificación de maíz tipo A",
-      "FechaInicio": "2024-01-01",
-      "FechaFin": "2024-06-30",
-      "IdEtapa": 1,
-      "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01"
-    },
-    {
-      "id": "aa54",
-      "Nombre": "hola",
-      "Descripcion": "Planificación de maíz amarillo",
-      "FechaInicio": "2024-01-01",
-      "FechaFin": "2024-06-30",
-      "IdEtapa": 1,
-      "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01"
-    },
-    {
-      "id": "260d",
-      "Nombre": "hola",
-      "Descripcion": "Planificación de maíz peto",
-      "FechaInicio": "2024-01-01",
-      "FechaFin": "2024-06-30",
-      "IdEtapa": 1,
-      "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01"
-    },
-    {
-      "id": "45e6",
-      "Nombre": "hola",
-      "Descripcion": "hola",
-      "FechaInicio": "2024-10-10",
-      "FechaFin": "2025-01-15",
-      "IdEtapa": "1",
-      "IdUsuario": "1",
-      "FechaCreacion": "2023-10-13"
+      "Nombre": "Cultivo Mi finquita",
+      "Descripcion": "Estamos modificando",
+      "FechaInicio": "2024-02-10",
+      "FechaFin": "",
+      "IdEtapa": "2",
+      "IdUsuario": "",
+      "FechaCreacion": "",
+      "id": "8d0a"
     }
   ],
   "siembras": [

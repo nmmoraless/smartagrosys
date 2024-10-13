@@ -1,26 +1,24 @@
 <div class="workspace-background" [formGroup]="formPlanificacion">
     <div class="mb-3">
-        <h2>Planificación de Cultivo</h2>
-        <label for="descripcion" class="form-label"
-            >Nombre:</label
-        >
-        <input type="text" name="nombre" class="form-control" formControlName="Nombre">
+        <h2>{{esEdicion ? 'Editar' : 'Crear'}} Planificación de Cultivo</h2>
+        <label for="descripcion" class="form-label">Nombre:</label>
+        <input type="text" name="nombre" class="form-control" formControlName="Nombre" required>
+        <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
 
-        <label for="descripcion" class="form-label"
-            >Descripción:</label
-        >
+        <label for="descripcion" class="form-label">Descripción:</label>
         <textarea
             class="form-control"
             id="descripcion"
             rows="3"
-            formControlName="Descripcion"
-        ></textarea>
+            formControlName="Descripcion"></textarea>
+        <app-alertas *ngIf="campoInValido('Descripcion')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Descripcion')"></app-alertas>
     </div>
 
     <div class="mb-3 row">
         <div class="col-md-6">
             <label class="form-label" for="startDate">Fecha inicio:</label>
-            <input id="startDate" class="form-control" type="date" formControlName="FechaInicio" />
+            <input id="startDate" class="form-control" type="date" formControlName="FechaInicio" required/>
+            <app-alertas *ngIf="campoInValido('FechaInicio')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('FechaInicio')"></app-alertas>
         </div>
         <div class="col-md-6">
             <label class="form-label" for="endDate">Fecha fin:</label>
@@ -31,16 +29,14 @@
     <div class="mb-3 row">
         <div class="col-md-6">
             <label class="form-label" for="etapas">Etapa:</label>
-            <select class="mb-3 form-select" aria-label="Default select example" id="etapas" formControlName="IdEtapa">
-                <option selected>-Seleccionar</option>
-                <option value="1">Cultivo</option>
-                <option value="2">Cosecha</option>
-                <option value="3">Siembra</option>
+            <select class="mb-3 form-select" aria-label="Default select example" id="etapas" formControlName="IdEtapa" required>
+                <option *ngFor="let etapa of etapasCultivo; let i = index" [value]="etapa.id">{{etapa.Descripcion}}</option>
             </select>
+            <app-alertas *ngIf="campoInValido('IdEtapa')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdEtapa')"></app-alertas>
         </div>
     </div>
 
-    <button type="button" class="btn btn-success me-2" (click)="guardar()">Crear</button>
+    <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
     <a href="#/planificaciones"><button type="button" class="btn btn-secondary">Regresar</button></a>
 
     <!--<pre>
