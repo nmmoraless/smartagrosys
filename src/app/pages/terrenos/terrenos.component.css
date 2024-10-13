@@ -1,0 +1,9 @@
+@import url("https://unpkg.com/leaflet@1.9.3/dist/leaflet.css");
+
+#mapLocation { height: 450px; }
+
+input[type="file"] {
+    background-color: #303135ce;
+    color: #fff;
+    border: 1px solid #303135ce;
+  }

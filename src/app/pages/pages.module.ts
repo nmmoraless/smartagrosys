@@ -31,6 +31,12 @@ import { ListaTerrenosComponent } from './terrenos/lista-terrenos/lista-terrenos
 import { TiposTerrenoComponent } from './tipo-terreno/tipos-terreno/tipos-terreno.component';
 import { UnidadesMedidaComponent } from './unidad-medida/unidades-medida/unidades-medida.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { RolComponent } from './rol/rol.component';
+import { EstadoComponent } from './estado/estado.component';
+import { EstadosComponent } from './estado/estados/estados.component';
+import { RolesComponent } from './rol/roles/roles.component';
+import { UsuariosComponent } from './usuario/usuarios/usuarios.component';
 
 
 
@@ -64,6 +70,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListaTerrenosComponent,
     TiposTerrenoComponent,
     UnidadesMedidaComponent,
+    UsuarioComponent,
+    RolComponent,
+    EstadoComponent,
+    EstadosComponent,
+    RolesComponent,
+    UsuariosComponent,
   ],
   exports: [
   ],

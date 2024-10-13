@@ -78,11 +78,6 @@
         <h6
             class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
             <span>Configuraciones</span>
-            <a class="link-secondary" href="#" aria-label="Add a new report">
-                <svg class="bi">
-                    <use xlink:href="#plus-circle" />
-                </svg>
-            </a>
         </h6>
         <ul class="nav flex-column mb-auto">
             <li class="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
@@ -137,13 +132,34 @@
 
         <hr class="my-3" />
 
+        <h6
+            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
+            <span>Seguridad</span>
+        </h6>
+
         <ul class="nav flex-column mb-auto">
             <li class="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
-                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                <a class="nav-link d-flex align-items-center gap-2" href="#/usuarios">
                     <svg class="bi">
                         <use xlink:href="#gear-wide-connected" />
                     </svg>
-                    Settings
+                    Usuarios
+                </a>
+            </li>
+            <li class="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
+                <a class="nav-link d-flex align-items-center gap-2" href="#/roles">
+                    <svg class="bi">
+                        <use xlink:href="#gear-wide-connected" />
+                    </svg>
+                    Roles
+                </a>
+            </li>
+            <li class="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
+                <a class="nav-link d-flex align-items-center gap-2" href="#/estados">
+                    <svg class="bi">
+                        <use xlink:href="#gear-wide-connected" />
+                    </svg>
+                    Estados
                 </a>
             </li>
             <li class="nav-item" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
@@ -151,7 +167,7 @@
                     <svg class="bi">
                         <use xlink:href="#door-closed" />
                     </svg>
-                    Sign out
+                    Cerrar sesión
                 </a>
             </li>
         </ul>

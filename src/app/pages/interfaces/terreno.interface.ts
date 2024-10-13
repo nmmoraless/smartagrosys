@@ -7,6 +7,6 @@ export interface TerrenoInterface {
   IdUnidadMedida: number;
   Altura: number;
   Latitud: string;
-  Longintud: string;
+  Longitud: string;
   FechaCreacion: Date;
 }

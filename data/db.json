@@ -38,16 +38,28 @@
   ],
   "unidadesMedida": [
     {
-      "id": "0193",
+      "id": "1",
       "IdUnidadMedida": 1,
-      "Sigla": "kg",
-      "Descripcion": "Kilogramo",
+      "Sigla": "Km",
+      "Descripcion": "Kilometro",
       "FechaCreacion": "2023-01-01"
     },
     {
-      "id": "9197",
+      "id": "2",
       "Sigla": "ha",
       "Descripcion": "Hectárea",
+      "FechaCreacion": "2023-01-01"
+    },
+    {
+      "id": "3",
+      "Sigla": "Kg",
+      "Descripcion": "Kilogrmo",
+      "FechaCreacion": "2023-01-01"
+    },
+    {
+      "id": "4",
+      "Sigla": "Mts",
+      "Descripcion": "Metros",
       "FechaCreacion": "2023-01-01"
     }
   ],
@@ -76,37 +88,51 @@
   ],
   "tiposTerreno": [
     {
-      "id": "d31c",
+      "id": "1",
       "IdSemilla": 1,
       "IdFrecuenciaRiego": 1,
-      "Descripcion": "Terreno fértil",
+      "Descripcion": "Arcilloso",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "2",
+      "IdSemilla": 1,
+      "IdFrecuenciaRiego": 1,
+      "Descripcion": "Seco",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "3",
+      "IdSemilla": 1,
+      "IdFrecuenciaRiego": 1,
+      "Descripcion": "Pedregoso",
       "FechaCreacion": "2023-10-01"
     }
   ],
   "terrenos": [
     {
-      "id": "94dc",
       "Nombre": "Terreno 1",
       "IdTipoTerreno": 2,
-      "Area": 1000,
+      "Area": 10,
       "IdUnidadMedida": 2,
-      "Altura": 50,
-      "Latitud": "12.345678",
-      "Longitud": "-98.765432",
+      "Altura": 800,
+      "Longitud": -71.87770769230816,
+      "Latitud": 6.946875430788496,
       "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01"
+      "FechaCreacion": "2023-10-01",
+      "id": "94dc"
     },
     {
-      "id": "94dc",
-      "Nombre": "Terreno 1",
-      "IdTipoTerreno": 3,
-      "Area": 1000,
-      "IdUnidadMedida": 3,
-      "Altura": 50,
-      "Latitud": "12.345678",
-      "Longitud": "-98.765432",
-      "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01"
+      "Nombre": "Mi terreno",
+      "IdTipoTerreno": "1",
+      "Area": 12,
+      "IdUnidadMedida": "2",
+      "Altura": 2800,
+      "Longitud": -72.87019815009579,
+      "Latitud": 7.11009119235844,
+      "IdUsuario": "",
+      "FechaCreacion": "",
+      "id": "9ed6"
     }
   ],
   "etapas": [

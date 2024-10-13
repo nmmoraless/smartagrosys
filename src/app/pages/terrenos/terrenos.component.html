@@ -1,56 +1,60 @@
-<div class="workspace-background">
-  <h2>Nuevo terreno</h2>
+<div class="workspace-background" [formGroup]="formTerrenos">
+  <h2>{{esEdicion ? 'Editar' : 'Crear'}} terreno</h2>
   <div class="mb-3 row">
     <div class="col-md-6">
-      <label for="nombre" class="form-label"
-          >Nombre:</label
-      >
-      <input class="form-control" type="text" id="nombre" aria-label="readonly input example">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input class="form-control" type="text" id="nombre" aria-label="readonly input example" formControlName="Nombre" required>
+      <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
     </div>
     <div class="col-md-6">
       <label class="form-label" for="tipo-terreno">Tipo terreno:</label>
-      <select class="form-select" aria-label="Default select example" id="tipo-terreno">
-          <option selected>-Seleccionar</option>
-          <option value="1">Arcilloso</option>
-          <option value="2">Seco</option>
-          <option value="3">Medio</option>
+      <select class="form-select" aria-label="Default select example" id="tipo-terreno" formControlName="IdTipoTerreno" required>
+        <option *ngFor="let tipo of tiposTerreno; let i = index" [value]="tipo.id">{{tipo.Descripcion}}</option>
       </select>
+      <app-alertas *ngIf="campoInValido('IdTipoTerreno')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdTipoTerreno')"></app-alertas>
   </div>
   </div>
   
   <div class="mb-3 row">
-      <div class="col-md-6">
-          <label class="form-label" for="area">Área:</label>
-          <input id="area" class="form-control" type="number" />
+      <div class="col-md-4">
+        <label class="form-label" for="area">Área:</label>
+        <input id="area" class="form-control" type="number" formControlName="Area" required/>
+        <app-alertas *ngIf="campoInValido('Area')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Area')"></app-alertas>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <label class="form-label" for="unidad-medida">Unidad medida:</label>
-        <select class="form-select" aria-label="Default select example" id="unidad-medida">
-            <option selected>-Seleccionar</option>
-            <option value="1">Metros</option>
-            <option value="2">Hectárea</option>
-            <option value="3">Kilometro</option>
+        <select class="form-select" aria-label="Default select example" id="unidad-medida" formControlName="IdUnidadMedida" required>
+          <option *ngFor="let unidad of unidadesMedida; let i = index" [value]="unidad.id">{{unidad.Descripcion}}</option>
         </select>
+        <app-alertas *ngIf="campoInValido('IdUnidadMedida')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdUnidadMedida')"></app-alertas>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label" for="area">Altura *msnm:</label>
+        <input id="area" class="form-control" type="number" formControlName="Altura" required/>
+        <app-alertas *ngIf="campoInValido('Altura')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Altura')"></app-alertas>
       </div>
   </div>
 
   <div class="mb-3 row">
     <div class="col-md-6">
-      <label for="latitud" class="form-label"
-          >Latitud:</label
-      >
-      <input class="form-control" type="text" id="latitud" aria-label="readonly input example">
+      <label for="latitud" class="form-label">Latitud:</label>
+      <input class="form-control" type="text" id="latitud" aria-label="readonly input example" formControlName="Latitud" required>
+      <app-alertas *ngIf="campoInValido('Latitud')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Latitud')"></app-alertas>
     </div>
     <div class="col-md-6">
-      <label for="longitud" class="form-label"
-          >Longitud:</label
-      >
-      <input class="form-control" type="text" id="longitud" aria-label="readonly input example">
+      <label for="longitud" class="form-label">Longitud:</label>
+      <input class="form-control" type="text" id="longitud" aria-label="readonly input example" formControlName="Longitud" required>
+      <app-alertas *ngIf="campoInValido('Longitud')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Longitud')"></app-alertas>
     </div>
   </div>
 
   <!-- insertar mapa aquí -->
+  <h4 class="my-4">Ubicación de tu empresa:</h4>
+  <div *ngIf="mostrarMapa" id="mapLocation"></div>
 
-  <button type="button" class="btn btn-success me-2">Crear</button>
-  <button type="button" class="btn btn-secondary">Cancelar</button>
+  <div class="mt-4">
+    <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
+    <a href="#/terrenos"><button type="button" class="btn btn-secondary">Regresar</button></a>
+  </div>
+
 </div>

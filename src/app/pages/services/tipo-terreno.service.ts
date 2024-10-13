@@ -13,24 +13,24 @@ export class TipoTerrenoService {
 
   constructor(private http: HttpClient) { }
 
-  getTipoTerrenos(): Observable<TipoTerrenoInterface[]> {
-    return this.http.get<TipoTerrenoInterface[]>( this.baseUrl + `/TiposTerreno`);
+  getTiposTerrenos(): Observable<TipoTerrenoInterface[]> {
+    return this.http.get<TipoTerrenoInterface[]>( this.baseUrl + `/tiposTerreno`);
   }
 
   getTipoTerreno(idTipoTerreno: number): Observable<TipoTerrenoInterface[]> {
-    return this.http.get<TipoTerrenoInterface[]>( this.baseUrl + `/TiposTerreno?id=${idTipoTerreno}`);
+    return this.http.get<TipoTerrenoInterface[]>( this.baseUrl + `/tiposTerreno?id=${idTipoTerreno}`);
   }
 
   agregarTipoTerreno( TipoTerreno: TipoTerrenoInterface ): Observable<TipoTerrenoInterface> {
-    return this.http.post<TipoTerrenoInterface>( this.baseUrl + `/TiposTerreno`, TipoTerreno)
+    return this.http.post<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno`, TipoTerreno)
   }
 
   actualizarTipoTerreno( TipoTerreno: TipoTerrenoInterface ): Observable<TipoTerrenoInterface> {
-    return this.http.put<TipoTerrenoInterface>( this.baseUrl + `/TiposTerreno`, TipoTerreno)
+    return this.http.put<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno`, TipoTerreno)
   }
 
   borrarTipoTerreno(idTipoTerreno: number): Observable<TipoTerrenoInterface> {
-    return this.http.delete<TipoTerrenoInterface>( this.baseUrl + `/TiposTerreno?id=${idTipoTerreno}`);
+    return this.http.delete<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno?id=${idTipoTerreno}`);
   }
   
 }

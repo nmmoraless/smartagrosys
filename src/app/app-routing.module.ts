@@ -31,6 +31,12 @@ import { FrecuenciasComponent } from './pages/frecuencia/frecuencias/frecuencias
 import { SemillasComponent } from './pages/semilla/semillas/semillas.component';
 import { TiposTerrenoComponent } from './pages/tipo-terreno/tipos-terreno/tipos-terreno.component';
 import { UnidadesMedidaComponent } from './pages/unidad-medida/unidades-medida/unidades-medida.component';
+import { UsuariosComponent } from './pages/usuario/usuarios/usuarios.component';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { RolesComponent } from './pages/rol/roles/roles.component';
+import { RolComponent } from './pages/rol/rol.component';
+import { EstadosComponent } from './pages/estado/estados/estados.component';
+import { EstadoComponent } from './pages/estado/estado.component';
 
 const routes: Routes = [
   {
@@ -77,6 +83,15 @@ const routes: Routes = [
       {path: 'unidades-medida', component: UnidadesMedidaComponent},
       {path: 'unidad-medida/agregar', component: UnidadMedidaComponent},
       {path: 'unidad-medida/editar/:id', component: UnidadMedidaComponent},
+      {path: 'usuarios', component: UsuariosComponent},
+      {path: 'usuario/agregar', component: UsuarioComponent},
+      {path: 'usuario/editar/:ud', component: UsuarioComponent},
+      {path: 'roles', component: RolesComponent},
+      {path: 'rol/agregar', component: RolComponent},
+      {path: 'rol/editar/:ud', component: RolComponent},
+      {path: 'estados', component: EstadosComponent},
+      {path: 'estado/agregar', component: EstadoComponent},
+      {path: 'estado/editar/:ud', component: EstadoComponent},
       {path: '',redirectTo:'/dashboard', pathMatch: 'full'},
     ]
   },

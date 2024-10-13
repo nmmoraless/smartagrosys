@@ -45,13 +45,16 @@ export class ListaTerrenosComponent {
     let unidadMedida: string = '';
     switch (id.toString()) {
       case '1':
-        unidadMedida = 'Hectárea';
-        break;
-      case '2':
         unidadMedida = 'Kilometro';
         break;
+      case '2':
+        unidadMedida = 'Hectárea';
+        break;
       case '3':
-        unidadMedida = 'Metro';
+        unidadMedida = 'Kilogramo';
+        break;
+      case '4':
+        unidadMedida = 'Metros';
         break;
       default:
         unidadMedida = '';
