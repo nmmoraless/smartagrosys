@@ -2,6 +2,11 @@ import { Component, NgZone } from '@angular/core';
 import { TerrenoInterface } from '../../interfaces/terreno.interface';
 import { Router } from '@angular/router';
 import { TerrenoService } from '../../services/terreno.service';
+import { UnidadMedidaService } from '../../services/unidad-medida.service';
+import { TipoTerrenoService } from '../../services/tipo-terreno.service';
+import { forkJoin } from 'rxjs';
+import { UnidadMedidaInterface } from '../../interfaces/unidad-medida.interface';
+import { TipoTerrenoInterface } from '../../interfaces/tipo-terreno.interface';
 
 @Component({
   selector: 'app-lista-terrenos',
@@ -11,14 +16,21 @@ import { TerrenoService } from '../../services/terreno.service';
 export class ListaTerrenosComponent {
 
   public listaTerrenos: TerrenoInterface[] = [];
+  public unidadesMedida: UnidadMedidaInterface[] = [];
+  public tiposTerrenos: TipoTerrenoInterface[] = [];
 
-  constructor( private _terrenoService: TerrenoService, private router: Router, private ngZone: NgZone) { }
+  constructor( private _terrenoService: TerrenoService, private _unidadesMedida: UnidadMedidaService, private _tiposTerreno: TipoTerrenoService, private router: Router, private ngZone: NgZone) { }
 
   ngOnInit(): void {
 
-    this._terrenoService.getTerrenos().subscribe( data => {debugger
-      this.listaTerrenos = data;
-    })
+    const unidadesMedida = this._unidadesMedida.getUnidadesMedidas();
+    const tiposTerreno = this._tiposTerreno.getTiposTerrenos();
+    const terrenos = this._terrenoService.getTerrenos();
+    forkJoin([unidadesMedida, terrenos, tiposTerreno]).subscribe(([unidadesMedida, terrenos, tiposTerreno]) => {
+      this.unidadesMedida = unidadesMedida;
+      this.listaTerrenos = terrenos;
+      this.tiposTerrenos = tiposTerreno;        
+    });
     
   }
 
@@ -41,43 +53,16 @@ export class ListaTerrenosComponent {
 
   }
 
-  public definirUnidadMedada(id: number): string {debugger
-    let unidadMedida: string = '';
-    switch (id.toString()) {
-      case '1':
-        unidadMedida = 'Kilometro';
-        break;
-      case '2':
-        unidadMedida = 'Hectárea';
-        break;
-      case '3':
-        unidadMedida = 'Kilogramo';
-        break;
-      case '4':
-        unidadMedida = 'Metros';
-        break;
-      default:
-        unidadMedida = '';
+  public definirLabel(id: number, objeto: string): string {
+    let label: string = '';
+    if (objeto == 'unidadesMedida') {
+      let auxUnidadmedida = this.unidadesMedida.filter(medida => medida.id = id);
+      label = auxUnidadmedida[0].Sigla;
+    } else if (objeto == 'tiposTerreno'){
+      let auxTerreno = this.tiposTerrenos.filter(tipoTerreno => tipoTerreno.id = id);
+      label = auxTerreno[0].Descripcion;
     }
-    return unidadMedida;
-  }
-
-  public definirTipoTerreno(id: number): string {debugger
-    let tipoTerreno: string = '';
-    switch (id.toString()) {
-      case '1':
-        tipoTerreno = 'Arcilloso';
-        break;
-      case '2':
-        tipoTerreno = 'Seco';
-        break;
-      case '3':
-        tipoTerreno = 'Pedregoso';
-        break;
-      default:
-        tipoTerreno = '';
-    }
-    return tipoTerreno;
+    return label;
   }
 
 }

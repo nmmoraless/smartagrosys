@@ -21,12 +21,12 @@ export class SiembraService {
     return this.http.get<SiembraInterface[]>( this.baseUrl + `/siembras?id=${idSiembra}`);
   }
 
-  agregarSiembra( Siembra: SiembraInterface ): Observable<SiembraInterface> {
-    return this.http.post<SiembraInterface>( this.baseUrl + `/siembras`, Siembra)
+  agregarSiembra( siembra: SiembraInterface ): Observable<SiembraInterface> {
+    return this.http.post<SiembraInterface>( this.baseUrl + `/siembras`, siembra)
   }
 
-  actualizarSiembra( Siembra: SiembraInterface ): Observable<SiembraInterface> {
-    return this.http.put<SiembraInterface>( this.baseUrl + `/siembras`, Siembra)
+  actualizarSiembra( siembra: SiembraInterface ): Observable<SiembraInterface> {
+    return this.http.put<SiembraInterface>( this.baseUrl + `/siembras/${siembra.id}`, siembra)
   }
 
   borrarSiembra(idSiembra: number): Observable<SiembraInterface> {

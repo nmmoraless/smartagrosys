@@ -180,6 +180,18 @@
       "IdUnidadMedida": 1,
       "FechaSiembra": "2024-01-01",
       "FechaCreacion": "2023-10-01"
+    },
+    {
+      "IdPlanificacionCultivo": "8d0a",
+      "IdTerreno": "94dc",
+      "IdSemilla": "5b05",
+      "CantidadSemillaSiembra": 505,
+      "CantidadCosechaEstimada": 35200,
+      "IdUnidadMedida": "3",
+      "FechaSiembra": "2024-10-14",
+      "IdUsuario": "",
+      "FechaCreacion": "",
+      "id": "9d84"
     }
   ],
   "fertizantes": [

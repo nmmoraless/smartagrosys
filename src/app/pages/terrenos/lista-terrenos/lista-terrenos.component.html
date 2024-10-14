@@ -17,9 +17,9 @@
     <tr *ngFor="let terreno of listaTerrenos; let i = index">
       <th scope="row">{{i+1}}</th>
       <td>{{terreno.Nombre}}</td>
-      <td>{{definirTipoTerreno(terreno.IdTipoTerreno)}}</td>
+      <td>{{definirLabel(terreno.IdTipoTerreno, 'tiposTerreno')}}</td>
       <td>{{terreno.Area}}</td>
-      <td>{{definirUnidadMedada(terreno.IdUnidadMedida)}}</td>
+      <td>{{definirLabel(terreno.IdUnidadMedida, 'unidadesMedida')}}</td>
       <td>{{terreno.Altura}}</td>
       <td><button class="btn btn-outline-primary" (click)="actualizarTerreno(terreno.id)"><i class="bi bi-pencil-square"></i></button></td>
       <td><button class="btn btn-outline-danger" (click)="eliminarTerreno(terreno.id)"><i class="bi bi-trash-fill"></i></button></td>

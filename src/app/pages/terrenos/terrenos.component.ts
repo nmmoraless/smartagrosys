@@ -18,7 +18,7 @@ import { TipoTerrenoService } from '../services/tipo-terreno.service';
 })
 export class TerrenosComponent implements OnInit {
 
-  public mostrarMapa: boolean = true;
+  public mostrarMapa: boolean = false;
   public terreno!: TerrenoInterface;
   public unidadesMedida: UnidadMedidaInterface[] = [];
   public tiposTerreno: TipoTerrenoInterface[] = [];
@@ -76,6 +76,7 @@ export class TerrenosComponent implements OnInit {
           this.formTerrenos.reset(this.terreno);
         }
       });
+      this.mostrarMapa = true;
     } else {
       const unidadesMedida = this._unidadesMedida.getUnidadesMedidas();
       const tiposTerreno = this._tiposTerreno.getTiposTerrenos();
@@ -83,8 +84,8 @@ export class TerrenosComponent implements OnInit {
         this.unidadesMedida = unidadesMedida;
         this.tiposTerreno = tiposTerreno;         
       });
+      this.mostrarMapa = true;
     }
-
     this.colorAlertas = this._validaciones.colorAlertas;
     
   }
@@ -200,7 +201,7 @@ export class TerrenosComponent implements OnInit {
         
       }, 100);
       
-    }, 2500);//Revisar tiempo de espera
+    }, 200);
 
   }
 

@@ -1,56 +1,57 @@
-<div class="workspace-background">
+<div class="workspace-background" [formGroup]="formSiembra">
   <h2>Nueva siembra</h2>
   <div class="mb-3 row">
     <div class="col-md-6">
+      <label class="form-label" for="terreno">Planificación:</label>
+      <select class="form-select" aria-label="Default select example" id="terreno" formControlName="IdPlanificacionCultivo" required>
+        <option *ngFor="let planificacion of listaPlanificaciones; let i = index" [value]="planificacion.id">{{planificacion.Nombre}}</option>
+      </select>
+      <app-alertas *ngIf="campoInValido('IdPlanificacionCultivo')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdPlanificacionCultivo')"></app-alertas>
+    </div>
+    <div class="col-md-6">
       <label class="form-label" for="terreno">Terreno:</label>
-      <select
-        class="form-select"
-        aria-label="Default select example"
-        id="terreno"
-      >
-        <option selected>-Seleccionar terreno</option>
-        <option value="1">El juncal</option>
-        <option value="2">La reserva</option>
-        <option value="3">Terreno 1</option>
+      <select class="form-select" aria-label="Default select example" id="terreno" formControlName="IdTerreno" required>
+        <option *ngFor="let terreno of listaTerrenos; let i = index" [value]="terreno.id">{{terreno.Nombre}}</option>
       </select>
-    </div>
-    <div class="col-md-6">
-      <label class="form-label" for="semilla-siembra"
-        >Ctd. Semilla siembra:</label
-      >
-      <input id="semilla-siembra" class="form-control" type="number" />
+      <app-alertas *ngIf="campoInValido('IdTerreno')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdTerreno')"></app-alertas>
     </div>
   </div>
 
   <div class="mb-3 row">
     <div class="col-md-6">
-      <label class="form-label" for="unidad-medida">Unidad medida:</label>
-      <select
-        class="form-select"
-        aria-label="Default select example"
-        id="unidad-medida"
-      >
-        <option selected>-Seleccionar</option>
-        <option value="1">Metros</option>
-        <option value="2">Hectárea</option>
-        <option value="3">Kilometro</option>
+      <label class="form-label" for="semilla">Tipo semilla:</label>
+      <select class="form-select" aria-label="Default select example" id="semilla" formControlName="IdSemilla" required>
+        <option *ngFor="let semilla of listaSemillas; let i = index" [value]="semilla.id">{{semilla.Descripcion}}</option>
       </select>
+      <app-alertas *ngIf="campoInValido('IdSemilla')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdSemilla')"></app-alertas>
     </div>
-    <div class="col-md-6">
-      <label class="form-label" for="semilla-cosecha"
-        >Ctd. Semilla cosecha:</label
-      >
-      <input id="semilla-cosecha" class="form-control" type="number" />
-    </div>
-  </div>
-
-  <div class="mb-3 row">
     <div class="col-md-6">
       <label class="form-label" for="startDate">Fecha siembra:</label>
-      <input id="fechaSiembra" class="form-control" type="date" />
+      <input id="fechaSiembra" class="form-control" type="date" formControlName="FechaSiembra"/>
+      <app-alertas *ngIf="campoInValido('FechaSiembra')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('FechaSiembra')"></app-alertas>
     </div>
   </div>
 
-  <button type="button" class="btn btn-success me-2">Crear</button>
-  <button type="button" class="btn btn-secondary">Cancelar</button>
+  <div class="mb-3 row">
+    <div class="col-md-4">
+      <label class="form-label" for="semilla-siembra">Ctd. Semilla siembra:</label>
+      <input id="semilla-siembra" class="form-control" type="number" formControlName="CantidadSemillaSiembra"/>
+      <app-alertas *ngIf="campoInValido('CantidadSemillaSiembra')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('CantidadSemillaSiembra')"></app-alertas>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="semilla-cosecha">Ctd. Cosecha estimada:</label>
+      <input id="semilla-cosecha" class="form-control" type="number" formControlName="CantidadCosechaEstimada"/>
+      <app-alertas *ngIf="campoInValido('CantidadCosechaEstimada')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('CantidadCosechaEstimada')"></app-alertas>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="unidad-medida">Unidad medida:</label>
+      <select class="form-select" aria-label="Default select example" id="unidad-medida" formControlName="IdUnidadMedida" required>
+        <option *ngFor="let medida of listaUnidesMedida; let i = index" [value]="medida.id">{{medida.Sigla}}</option>
+      </select>
+      <app-alertas *ngIf="campoInValido('IdUnidadMedida')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdUnidadMedida')"></app-alertas>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
+    <a href="#/siembras"><button type="button" class="btn btn-secondary">Regresar</button></a>
 </div>
