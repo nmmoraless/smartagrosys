@@ -1,1 +1,32 @@
-<p>mantenimientos works!</p>
+<h2>Lista de mantenimientos</h2>
+
+<table class="table table-hover mt-4">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Planificación cultivo</th>
+      <th scope="col">Terreno</th>
+      <th scope="col">Frecuencia riego</th>
+      <th scope="col">Fertilizante</th>
+      <th scope="col">Plaga</th>
+      <th scope="col">Fecha mantenimiento</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let mantenimiento of listaMantenimientos; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{definirLabel(mantenimiento.IdSiembra, 'planificacion')}}</td>
+      <td>{{definirLabel(mantenimiento.IdSiembra, 'terreno')}}</td>
+      <td>{{definirLabel(mantenimiento.IdFrecuenciaRiego, 'frecuencia')}}</td>
+      <td>{{definirLabel(mantenimiento.IdFertilizante, 'fertilizante')}}</td>
+      <td>{{definirLabel(mantenimiento.IdSiembra, 'plaga')}}</td>
+      <td>{{mantenimiento.FechaMantenimiento}}</td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarMantenimiento(mantenimiento.id)"><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarMantenimiento(mantenimiento.id)"><i class="bi bi-trash-fill"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+
+<a href="#/mantenimiento/agregar"><button type="button" class="btn btn-success">Crear</button></a>

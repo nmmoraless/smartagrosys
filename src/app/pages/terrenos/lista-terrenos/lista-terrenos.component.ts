@@ -29,9 +29,9 @@ export class ListaTerrenosComponent {
     forkJoin([unidadesMedida, terrenos, tiposTerreno]).subscribe(([unidadesMedida, terrenos, tiposTerreno]) => {
       this.unidadesMedida = unidadesMedida;
       this.listaTerrenos = terrenos;
-      this.tiposTerrenos = tiposTerreno;        
+      this.tiposTerrenos = tiposTerreno;
     });
-    
+
   }
 
   public actualizarTerreno(id: number){
@@ -41,7 +41,7 @@ export class ListaTerrenosComponent {
   public eliminarTerreno(id: number){
     this._terrenoService.borrarTerreno(id).subscribe ( terreno => {
       //Recarga de componente actual
-    setTimeout(() => {      
+    setTimeout(() => {
       this.ngZone.run(() => {
         const currentUrl = this.router.url;
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
@@ -56,10 +56,10 @@ export class ListaTerrenosComponent {
   public definirLabel(id: number, objeto: string): string {
     let label: string = '';
     if (objeto == 'unidadesMedida') {
-      let auxUnidadmedida = this.unidadesMedida.filter(medida => medida.id = id);
+      let auxUnidadmedida = this.unidadesMedida.filter(medida => medida.id == id);
       label = auxUnidadmedida[0].Sigla;
     } else if (objeto == 'tiposTerreno'){
-      let auxTerreno = this.tiposTerrenos.filter(tipoTerreno => tipoTerreno.id = id);
+      let auxTerreno = this.tiposTerrenos.filter(tipoTerreno => tipoTerreno.id == id);
       label = auxTerreno[0].Descripcion;
     }
     return label;

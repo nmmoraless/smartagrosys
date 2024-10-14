@@ -194,7 +194,7 @@
       "id": "9d84"
     }
   ],
-  "fertizantes": [
+  "fertilizantes": [
     {
       "id": "6fa6",
       "IdFrecuencia": 1,
@@ -204,7 +204,7 @@
       "FechaCreacion": "2023-10-01"
     }
   ],
-  "controlPlagas": [
+  "plagas": [
     {
       "id": "1719",
       "IdFrecuencia": 1,
