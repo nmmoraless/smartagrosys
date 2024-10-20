@@ -33,7 +33,6 @@ export class ListaTerrenosComponent {
     });
 
   }
-
   public actualizarTerreno(id: number){
     this.router.navigateByUrl( '/terreno/editar/' + id );
   }
