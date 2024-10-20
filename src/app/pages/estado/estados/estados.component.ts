@@ -21,7 +21,7 @@ export class EstadosComponent {
     })
   }
 
-  public actualizarEstados(id: number){ debugger
+  public actualizarEstados(id: number){ 
     this.router.navigateByUrl( '/estado/editar/' + id );
   }
 

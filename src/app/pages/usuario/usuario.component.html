@@ -1,1 +1,46 @@
-<p>usuario works!</p>
+<!--<div class="workspace-background" [formGroup]="formUsuario">
+    <h2>{{esEdicion ? 'Editar' : 'Crear'}} Usuario</h2>
+    <div class="mb-3 row">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input class="form-control" type="text" id="nombre" aria-label="readonly input example" formControlName="Nombre" required>
+        <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="Apellido">Apellido:</label>
+        <select class="form-select" aria-label="Default select example" id="Apellido" formControlName="IdApellido" required>
+          <option *ngFor="let Apellido of Apellidos; let i = index" [value]="tipo.id">{{tipo.Descripcion}}</option>
+        </select>
+        <app-alertas *ngIf="campoInValido('IdApellido')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdUsuario')"></app-alertas>
+    </div>
+    </div>
+    
+    <div class="mb-3 row">
+        <div class="col-md-4">
+          <label class="form-label" for="Email">Email:</label>
+          <input id="Email" class="form-control" type="number" formControlName="Email" required/>
+          <app-alertas *ngIf="campoInValido('Email')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Area')"></app-alertas>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label" for="password">Password:</label>
+          <select class="form-select" aria-label="Default select example" id="password" formControlName="IdUnidadMedida" required>
+            <option *ngFor="let password of passwords; let i = index" [value]="password.id">{{unidad.Descripcion}}</option>
+          </select>
+          <app-alertas *ngIf="campoInValido('IdPassword')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdUnidadMedida')"></app-alertas>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label" for="telefono">Telefono:</label>
+            <select class="form-select" aria-label="Default select example" id="telefono" formControlName="IdUnidadMedida" required>
+              <option *ngFor="let telefono of telefonos; let i = index" [value]="telefono.id">{{unidad.Descripcion}}</option>
+            </select>
+            <app-alertas *ngIf="campoInValido('IdTelefono')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdUnidadMedida')"></app-alertas>
+          </div>
+  
+
+    <div class="mt-4">
+      <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
+      <a href="#/Usuario"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    </div>
+  
+  </div>-->
+  
