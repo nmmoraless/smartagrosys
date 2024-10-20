@@ -171,58 +171,74 @@
   ],
   "siembras": [
     {
-      "id": "0b81",
-      "IdPlanificacionCultivo": 1,
-      "IdTerreno": 1,
-      "IdSemilla": 1,
+      "IdPlanificacionCultivo": "f78d",
+      "IdTerreno": "94dc",
+      "IdSemilla": "5b05",
       "CantidadSemillaSiembra": 100,
       "CantidadCosechaEstimada": 500,
       "IdUnidadMedida": 1,
       "FechaSiembra": "2024-01-01",
-      "FechaCreacion": "2023-10-01"
-    },
-    {
-      "IdPlanificacionCultivo": "8d0a",
-      "IdTerreno": "94dc",
-      "IdSemilla": "5b05",
-      "CantidadSemillaSiembra": 505,
-      "CantidadCosechaEstimada": 35200,
-      "IdUnidadMedida": "3",
-      "FechaSiembra": "2024-10-14",
-      "IdUsuario": "",
-      "FechaCreacion": "",
-      "id": "9d84"
+      "IdUsuario": null,
+      "FechaCreacion": "2023-10-01",
+      "id": "0b81"
     }
   ],
   "fertilizantes": [
     {
-      "id": "6fa6",
-      "IdFrecuencia": 1,
       "Nombre": "Fertilizante A",
       "Descripcion": "Fertilizante para maíz.",
       "ModoUso": "Aplicar cada 15 días.",
-      "FechaCreacion": "2023-10-01"
+      "IdFrecuencia": "6fb9",
+      "FechaCreacion": "2023-10-01",
+      "id": "6fa6"
+    },
+    {
+      "id": "7d77",
+      "Nombre": "Manzate",
+      "Descripcion": "El mejor fertilizante",
+      "ModoUso": "aplicar de 2 a 3 veces por semana",
+      "IdFrecuencia": "6fb9",
+      "FechaCreacion": ""
     }
   ],
   "plagas": [
     {
       "id": "1719",
-      "IdFrecuencia": 1,
+      "IdFrecuencia": "6fb9",
       "Nombre": "Plaga A",
       "Descripcion": "Descripción de la Plaga A.",
       "Tratamiento": "Tratamiento recomendado.",
+      "UrlImagen": "https://cdn.pixabay.com/photo/2015/10/20/22/18/plague-998574_960_720.jpg",
       "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "3ae6",
+      "Nombre": "Roya",
+      "Descripcion": "Se come las plantas",
+      "Tratamiento": "Veneno",
+      "UrlImagen": "https://cdn.pixabay.com/photo/2014/04/14/18/41/daisy-324093_960_720.jpg",
+      "IdFrecuencia": "6fb9",
+      "FechaCreacion": ""
     }
   ],
   "mantenimientos": [
     {
-      "id": "7e2f",
-      "IdSiembra": 1,
-      "IdFrecuenciaRiego": 1,
-      "IdFertizante": 1,
-      "IdControlPlagas": 1,
+      "IdFrecuenciaRiego": "5c6a",
+      "IdSiembra": "0b81",
+      "IdFertilizante": "6fa6",
+      "IdControlPlagas": "1719",
       "FechaMantenimiento": "2024-02-15",
-      "FechaCreacion": "2023-10-01"
+      "FechaCreacion": "2023-10-01",
+      "id": "7e2f"
+    },
+    {
+      "id": "358d",
+      "IdSiembra": "0b81",
+      "IdFrecuenciaRiego": "6fb9",
+      "IdFertilizante": "6fa6",
+      "IdControlPlagas": "1719",
+      "FechaMantenimiento": "2024-10-15",
+      "FechaCreacion": ""
     }
   ],
   "almacenes": [

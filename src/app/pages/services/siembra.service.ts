@@ -30,6 +30,6 @@ export class SiembraService {
   }
 
   borrarSiembra(idSiembra: number): Observable<SiembraInterface> {
-    return this.http.delete<SiembraInterface>( this.baseUrl + `/siembras?id=${idSiembra}`);
+    return this.http.delete<SiembraInterface>( this.baseUrl + `/siembras/${idSiembra}`);
   }
 }
