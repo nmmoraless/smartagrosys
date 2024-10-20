@@ -1,39 +1,49 @@
-<div class="workspace-background">
-    <h2>Nuevo fertilizante</h2>
-    <div class="mb-3 row">
-      <div class="col-md-12">
-        <label for="nombre" class="form-label"
-            >Nombre:</label
-        >
-        <input class="form-control" type="text" id="nombre" aria-label="readonly input example">
-      </div>
-      
+<div class="workspace-background" [formGroup]="formFertilizante">
+  <h2>Nuevo fertilizante</h2>
+  <div class="mb-3 row">
+    <div class="col-md-12">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="nombre"
+        aria-label="readonly input example"
+        formControlName="Nombre"
+      />
+      <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
     </div>
-
-    <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripción:</label>
-        <textarea class="form-control" id="descripcion" rows="2"></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="modoUso" class="form-label">Modo de uso:</label>
-        <textarea class="form-control" id="modoUso" rows="2"></textarea>
-      </div>
-    
-    <div class="mb-3 row">
-        <div class="col-md-6">
-            <label class="form-label" for="frecuenciaAplicacion">Frecuencia aplicación:</label>
-          <select class="form-select" aria-label="Default select example" id="frecuenciaAplicacion">
-              <option selected>-Seleccionar</option>
-              <option value="1">Diaria</option>
-              <option value="2">Semanal</option>
-              <option value="3">Quincenal</option>
-          </select>
-        </div>
-    </div>
-
-  
-    <button type="button" class="btn btn-success me-2">Crear</button>
-    <button type="button" class="btn btn-secondary">Cancelar</button>
   </div>
-  
+
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <textarea class="form-control" id="descripcion" rows="2" formControlName="Descripcion"></textarea>
+    <app-alertas *ngIf="campoInValido('Descripcion')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Descripcion')"></app-alertas>
+  </div>
+
+  <div class="mb-3">
+    <label for="modoUso" class="form-label">Modo de uso:</label>
+    <textarea class="form-control" id="modoUso" rows="2" formControlName="ModoUso"></textarea>
+    <app-alertas *ngIf="campoInValido('ModoUso')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('ModoUso')"></app-alertas>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-md-6">
+      <label class="form-label" for="frecuenciaAplicacion"
+        >Frecuencia aplicación:</label
+      >
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        id="frecuenciaAplicacion"
+        formControlName="IdFrecuencia">
+        <option *ngFor="let frecuencia of listaFrecuencias; let i = index" [value]="frecuencia.id">{{frecuencia.Descripcion}}</option>
+      </select>
+      <app-alertas *ngIf="campoInValido('IdFrecuencia')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdFrecuencia')"></app-alertas>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
+    <a href="#/fertilizantes"><button type="button" class="btn btn-secondary">Regresar</button></a>
+  </div>
+</div>

@@ -1,45 +1,82 @@
-<div class="workspace-background">
-    <h2>Nueva plaga</h2>
-    <div class="mb-3 row">
-      <div class="col-md-12">
-        <label for="nombre" class="form-label"
-            >Nombre:</label
-        >
-        <input class="form-control" type="text" id="nombre" aria-label="readonly input example">
-      </div>
-      
+<div class="workspace-background" [formGroup]="formPlaga">
+  <h2>Nueva plaga</h2>
+  <div class="mb-3 row">
+    <div class="col-md-12">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <input
+        class="form-control"
+        type="text"
+        id="nombre"
+        aria-label="readonly input example"
+        formControlName="Nombre"
+      />
+      <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
     </div>
-
-    <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripción:</label>
-        <textarea class="form-control" id="descripcion" rows="2"></textarea>
-      </div>
-
-      <div class="mb-3">
-        <label for="tratamiento" class="form-label">Tratamiento:</label>
-        <textarea class="form-control" id="tratamiento" rows="2"></textarea>
-      </div>
-    
-    <div class="mb-3 row">
-        <div class="col-md-6">
-            <label class="form-label" for="frecuenciaRevision">Frecuencia revisión:</label>
-          <select class="form-select" aria-label="Default select example" id="frecuenciaRevision">
-              <option selected>-Seleccionar</option>
-              <option value="1">Diaria</option>
-              <option value="2">Semanal</option>
-              <option value="3">Quincenal</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-            <label class="form-label" for="frecuenciaRevision">Imagen de referencia:</label>
-            <div class="text-center">
-                <img src="../../../assets/img/image_plaga.png" width="50%" class="rounded" alt="...">
-              </div>
-        </div>
-    </div>
-
-  
-    <button type="button" class="btn btn-success me-2">Crear</button>
-    <button type="button" class="btn btn-secondary">Cancelar</button>
   </div>
-  
+
+  <div class="mb-3">
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <textarea class="form-control" id="descripcion" rows="2" formControlName="Descripcion"></textarea>
+    <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
+  </div>
+
+  <div class="mb-3">
+    <label for="tratamiento" class="form-label">Tratamiento:</label>
+    <textarea class="form-control" id="tratamiento" rows="2" formControlName="Tratamiento"></textarea>
+    <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
+  </div>
+
+  <div class="mb-3 row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <label class="form-label" for="frecuenciaRevision"
+            >Frecuencia revisión:</label
+          >
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="frecuenciaAplicacion"
+            formControlName="IdFrecuencia">
+            <option *ngFor="let frecuencia of listaFrecuencias; let i = index" [value]="frecuencia.id">{{frecuencia.Descripcion}}</option>
+          </select>
+          <app-alertas *ngIf="campoInValido('IdFrecuencia')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdFrecuencia')"></app-alertas>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <label class="form-label" for="urlImagen"
+            >Url imagen:</label
+          >
+          <input
+            class="form-control"
+            type="text"
+            id="urlImagen"
+            aria-label="readonly input example"
+            formControlName="UrlImagen"
+          />
+          <app-alertas *ngIf="campoInValido('UrlImagen')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('UrlImagen')"></app-alertas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label" for="frecuenciaRevision"
+        >Imagen de referencia:</label
+      >
+      <div class="text-center">
+        <img
+          [src]="validaImagen()"
+          width="50%"
+          class="rounded"
+          alt="..."
+        />
+      </div>
+      <!-- <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas> -->
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
+    <a href="#/plagas"><button type="button" class="btn btn-secondary">Regresar</button></a>
+  </div>
+</div>

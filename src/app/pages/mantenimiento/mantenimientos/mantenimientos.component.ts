@@ -73,12 +73,12 @@ export class MantenimientosComponent {
 
   }
 
-  public definirLabel(id: number, objeto: string): string {debugger
+  public definirLabel(id: number, objeto: string): string {
     let label: string = '';
     if (objeto == 'fertilizante') {
       let auxFertilizante = this.listaFertilizantes.filter(fertilizante => fertilizante.id == id);
       label = auxFertilizante[0].Nombre;
-    } else if (objeto == 'frecuencias'){
+    } else if (objeto == 'frecuencia'){
       let auxFrecuencia = this.listaFrecuencias.filter(frecuencia => frecuencia.id == id);
       label = auxFrecuencia[0].Descripcion;
     } else if(objeto == 'plaga'){

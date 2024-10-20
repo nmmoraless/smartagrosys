@@ -1,7 +1,6 @@
 export interface MantenimientoInterface {
   id: number; //id automático de json-server
-  //IdSemilla: number; //Comentamos temporalmente
-  IdMantenimiento: number;
+  //IdMantenimiento: number;
   IdSiembra: number;
   IdFrecuenciaRiego: number;
   IdFertilizante: number;

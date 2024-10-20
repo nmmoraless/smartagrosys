@@ -26,10 +26,10 @@ export class FertilizanteService {
   }
 
   actualizarFertilizante( Fertilizante: FertilizanteInterface ): Observable<FertilizanteInterface> {
-    return this.http.put<FertilizanteInterface>( this.baseUrl + `/fertilizantes`, Fertilizante)
+    return this.http.put<FertilizanteInterface>( this.baseUrl + `/fertilizantes/${Fertilizante.id}`, Fertilizante)
   }
 
   borrarFertilizante(idFertilizante: number): Observable<FertilizanteInterface> {
-    return this.http.delete<FertilizanteInterface>( this.baseUrl + `/fertilizantes?id=${idFertilizante}`);
+    return this.http.delete<FertilizanteInterface>( this.baseUrl + `/fertilizantes/${idFertilizante}`);
   }
 }
