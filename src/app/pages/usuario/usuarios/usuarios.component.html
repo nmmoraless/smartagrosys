@@ -17,6 +17,12 @@
   <tbody>
     <tr *ngFor="let usuario of listaUsuarios; let i = index">
       <th scope="row">{{i+1}}</th>
+      <td>{{usuario.Nombre}}</td>
+      <td>{{usuario.Apellidos}}</td>
+      <td>{{usuario.Email}}</td>
+      <td>{{usuario.Telefono}}</td>
+      <td>{{usuario.Rol_IdRol}}</td>
+      <td>{{usuario.Estado_IdEstado}}</td>
       <td><button class="btn btn-outline-primary" (click)="actualizarUsuario(usuario.id)"><i class="bi bi-pencil-square"></i></button></td>
       <td><button class="btn btn-outline-danger" (click)="eliminarUsuario(usuario.id)"><i class="bi bi-trash-fill"></i></button></td>
     </tr>
