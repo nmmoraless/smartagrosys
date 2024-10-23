@@ -246,7 +246,7 @@
       "id": "90ed",
       "Nombre": "Almacen 1",
       "Ubicacion": "Ubicación A",
-      "Capadidad": 1000,
+      "Capacidad": 1000,
       "IdUnidadMedida": 1,
       "FechaCreacion": "2023-10-01"
     }
