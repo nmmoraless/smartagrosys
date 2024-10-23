@@ -80,7 +80,7 @@
       "id": "5b05",
       "Descripcion": "Maíz",
       "Especificaciones": "Rendimiento alto",
-      "RendimientoSiembra": 1000,
+      "RendimientoSemilla": 1000,
       "RendimientoCosecha": 5000,
       "IdUnidadMedida": 1,
       "FechaCreacion": "2023-10-01"

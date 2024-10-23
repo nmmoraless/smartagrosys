@@ -4,8 +4,8 @@ export interface CosechaInterface {
   IdSiembra: string;
   FechaCosecha: Date;
   CantidadCosecha: number;
-  CantBuenEstado: number;
-  CantMalEstado: number;
+  CtdBuenEstado: number;
+  CtdMalEstado: number;
   IdUnidadMedida: number;
   IdAlmacen: string;
   FechaCreacion: Date;
