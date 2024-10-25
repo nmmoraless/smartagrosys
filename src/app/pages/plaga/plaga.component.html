@@ -17,13 +17,13 @@
   <div class="mb-3">
     <label for="descripcion" class="form-label">Descripción:</label>
     <textarea class="form-control" id="descripcion" rows="2" formControlName="Descripcion"></textarea>
-    <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
+    <app-alertas *ngIf="campoInValido('Descripcion')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Descripcion')"></app-alertas>
   </div>
 
   <div class="mb-3">
     <label for="tratamiento" class="form-label">Tratamiento:</label>
     <textarea class="form-control" id="tratamiento" rows="2" formControlName="Tratamiento"></textarea>
-    <app-alertas *ngIf="campoInValido('Nombre')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Nombre')"></app-alertas>
+    <app-alertas *ngIf="campoInValido('Tratamiento')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('Tratamiento')"></app-alertas>
   </div>
 
   <div class="mb-3 row">

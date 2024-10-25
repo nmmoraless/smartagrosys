@@ -1,1 +1,53 @@
-<p>cosecha works!</p>
+<div class="workspace-background" [formGroup]="formCosecha">
+    <h2>Nueva cosecha</h2>
+    <div class="mb-3 row">
+        <div class="col-md-6">
+            <label class="form-label" for="fechaCosecha">Fecha cosecha:</label>
+            <input id="fechaCosecha" class="form-control" type="date" formControlName="FechaCosecha" required/>
+            <app-alertas *ngIf="campoInValido('FechaCosecha')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('FechaCosecha')"></app-alertas>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="cantidadCosecha">Cantidad cosecha:</label>
+            <input id="cantidadCosecha" class="form-control" type="number" formControlName="CantidadCosecha" required/>
+            <app-alertas *ngIf="campoInValido('CantidadCosecha')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('CantidadCosecha')"></app-alertas>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label" for="ctdBuenEstado">En buen estado:</label>
+            <input id="ctdBuenEstado" class="form-control" type="number" formControlName="CtdBuenEstado" required/>
+            <app-alertas *ngIf="campoInValido('CtdBuenEstado')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('CtdBuenEstado')"></app-alertas>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="ctdMalEstado">En mal estado:</label>
+            <input id="ctdMalEstado" class="form-control" type="number" formControlName="CtdMalEstado" required/>
+            <app-alertas *ngIf="campoInValido('CtdMalEstado')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('CtdMalEstado')"></app-alertas>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label class="form-label" for="unidad-medida">Unidad medida:</label>
+            <select class="form-select" aria-label="Default select example" id="unidad-medida" formControlName="IdUnidadMedida" required>
+              <option *ngFor="let unidad of unidadesMedida; let i = index" [value]="unidad.id">{{unidad.Descripcion}}</option>
+            </select>
+            <app-alertas *ngIf="campoInValido('IdUnidadMedida')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdUnidadMedida')"></app-alertas>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="idAlmacen">Almacen:</label>
+            <select class="form-select" aria-label="Default select example" id="almacen" formControlName="IdAlmacen" required>
+              <option *ngFor="let almacen of almacenes; let i = index" [value]="almacen.id">{{almacen.Nombre}}</option>
+            </select>
+            <app-alertas *ngIf="campoInValido('IdAlmacen')" [color]="colorAlertas.danger" [mensaje]="obtenerErrorDeCampo('IdAlmacen')"></app-alertas>
+        </div>
+    </div>
+  
+    
+  
+    <div class="mt-4">
+      <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
+      <a href="#/cosechas"><button type="button" class="btn btn-secondary">Regresar</button></a>
+    </div>
+  </div>
+  

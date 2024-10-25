@@ -23,8 +23,8 @@
       <td>{{cosecha.CantidadCosecha}}</td>
       <td>{{cosecha.CtdBuenEstado}}</td>
       <td>{{cosecha.CtdMalEstado}}</td>
-      <td>{{cosecha.IdUnidadMedida}}</td>
-      <td>{{cosecha.IdAlmacen}}</td>
+      <td>{{definirLabel(cosecha.IdUnidadMedida, 'unidadMedida')}}</td>
+      <td>{{definirLabel(cosecha.IdAlmacen, 'almacen')}}</td>
       <td><button class="btn btn-outline-primary" (click)="actualizarCosecha(cosecha.id)"><i class="bi bi-pencil-square"></i></button></td>
       <td><button class="btn btn-outline-danger" (click)="eliminarCosecha(cosecha.id)"><i class="bi bi-trash-fill"></i></button></td>
     </tr>

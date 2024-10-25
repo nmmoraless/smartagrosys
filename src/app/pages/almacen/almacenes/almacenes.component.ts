@@ -2,6 +2,9 @@ import { Component, NgZone } from '@angular/core';
 import { AlmacenInterface } from '../../interfaces/almacen.interface';
 import { AlmacenService } from '../../services/almacen.service';
 import { Router } from '@angular/router';
+import { UnidadMedidaService } from '../../services/unidad-medida.service';
+import { forkJoin } from 'rxjs';
+import { UnidadMedidaInterface } from '../../interfaces/unidad-medida.interface';
 
 @Component({
   selector: 'app-almacenes',
@@ -10,14 +13,19 @@ import { Router } from '@angular/router';
 })
 export class AlmacenesComponent {
   public listaAlmacenes: AlmacenInterface[] = [];
+  public listaUnidadesMedida: UnidadMedidaInterface[] = [];
 
-  constructor( private _almacenservice: AlmacenService, private router: Router, private ngZone: NgZone) { }
+  constructor( private _almacenservice: AlmacenService, private _unidadesMedida: UnidadMedidaService, private router: Router, private ngZone: NgZone) { }
 
   ngOnInit(): void {
+    
+    const almacenes = this._almacenservice.getAlmacenes();
+    const unidadesMedida = this._unidadesMedida.getUnidadesMedidas();
+    forkJoin([unidadesMedida, almacenes]).subscribe(([unidadesMedida, almacenes]) => {
+      this.listaUnidadesMedida = unidadesMedida;
+      this.listaAlmacenes = almacenes;        
+    });
 
-    this._almacenservice.getAlmacenes().subscribe(almacenes => {
-      this.listaAlmacenes = almacenes;
-    })
   }
 
   public actualizarAlmacen(id: number){ 
@@ -37,6 +45,15 @@ export class AlmacenesComponent {
     }, 500);
     })
 
+  }
+
+  public definirLabel(id: number | string, objeto: string): string {
+    let label: string = '';
+    if (objeto == 'unidadMedida') {
+      let auxMedida = this.listaUnidadesMedida.filter(medida => medida.id == id);
+      label = auxMedida[0].Sigla;
+    } 
+    return label;
   }
 
 }

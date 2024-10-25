@@ -9,6 +9,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { NotfoundpageComponent } from './pages/notfoundpage/notfoundpage.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     PagesModule,
+    SharedModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy} // Soluciona el error al actualizar la página donde se perdía la ruta (adiciona un (#) en la url).

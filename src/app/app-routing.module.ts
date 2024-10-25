@@ -39,6 +39,7 @@ import { EstadosComponent } from './pages/estado/estados/estados.component';
 import { EstadoComponent } from './pages/estado/estado.component';
 
 const routes: Routes = [
+  { path: '',component: LoginComponent },
   {
     path: '',
     component: PagesComponent,
@@ -95,9 +96,8 @@ const routes: Routes = [
       {path: '',redirectTo:'/dashboard', pathMatch: 'full'},
     ]
   },
-  {path: 'login',component: LoginComponent},
-  {path: 'register',component: RegisterComponent},
-  {path: '**', component: NotfoundpageComponent},
+  { path: 'register',component: RegisterComponent },
+  { path: '**', component: NotfoundpageComponent },
 ];
 
 @NgModule({

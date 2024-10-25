@@ -4,9 +4,9 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Descripción</th>
       <th scope="col">IdSemilla</th>
       <th scope="col">IdFrecuenciaRiego</th>
-      <th scope="col">Descripción</th>
       <th scope="col">Editar</th>
       <th scope="col">Eliminar</th>
     </tr>
@@ -14,9 +14,9 @@
   <tbody>
     <tr *ngFor="let tipoTerreno of listaTiposTerreno; let i = index">
       <th scope="row">{{i+1}}</th>
-      <td>{{tipoTerreno.IdSemilla}}</td>
-      <td>{{tipoTerreno.IdFrecuenciaRiego}}</td>
       <td>{{tipoTerreno.Descripcion}}</td>
+      <td>{{definirLabel(tipoTerreno.IdSemilla, 'semilla')}}</td>
+      <td>{{definirLabel(tipoTerreno.IdFrecuenciaRiego, 'frecuencia')}}</td>
       <td><button class="btn btn-outline-primary" (click)="actualizarTipoTerreno(tipoTerreno.id)"><i class="bi bi-pencil-square"></i></button></td>
       <td><button class="btn btn-outline-danger" (click)="eliminarTipoTerreno(tipoTerreno.id)"><i class="bi bi-trash-fill"></i></button></td>
     </tr>

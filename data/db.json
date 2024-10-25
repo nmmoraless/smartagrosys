@@ -7,7 +7,7 @@
     },
     {
       "id": "84d4",
-      "Descripcion": "Usuario",
+      "Descripcion": "Agricultor",
       "FechaCreacion": "2023-01-01"
     }
   ],
@@ -26,13 +26,35 @@
   "usuarios": [
     {
       "id": "3986",
-      "Nombre": "Juan",
-      "Apellidos": "Pérez",
-      "Email": "juan.perez@example.com",
-      "Password": "password123",
+      "Nombre": "Paola",
+      "Apellidos": "Jaramillo",
+      "Email": "paojami26@hotmail.com",
+      "Password": "123456",
       "Telefono": "123456789",
-      "Rol_IdRol": 1,
-      "Estado_IdEstado": 1,
+      "Rol_IdRol": "65a8",
+      "Estado_IdEstado": "2c99",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "3986",
+      "Nombre": "Nestor",
+      "Apellidos": "Morales",
+      "Email": "morales7mauro@gmail.com",
+      "Password": "654321",
+      "Telefono": "123456789",
+      "Rol_IdRol": "65a8",
+      "Estado_IdEstado": "2c99",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "3986",
+      "Nombre": "Agricultor",
+      "Apellidos": "",
+      "Email": "agricultor@gmail.com",
+      "Password": "000000",
+      "Telefono": "123456789",
+      "Rol_IdRol": "84d4",
+      "Estado_IdEstado": "c762",
       "FechaCreacion": "2023-10-01"
     }
   ],
@@ -82,29 +104,29 @@
       "Especificaciones": "Rendimiento alto",
       "RendimientoSemilla": 1000,
       "RendimientoCosecha": 5000,
-      "IdUnidadMedida": 1,
+      "IdUnidadMedida": "3",
       "FechaCreacion": "2023-10-01"
     }
   ],
   "tiposTerreno": [
     {
       "id": "1",
-      "IdSemilla": 1,
-      "IdFrecuenciaRiego": 1,
+      "IdSemilla": "5b05",
+      "IdFrecuenciaRiego": "5c6a",
       "Descripcion": "Arcilloso",
       "FechaCreacion": "2023-10-01"
     },
     {
       "id": "2",
-      "IdSemilla": 1,
-      "IdFrecuenciaRiego": 1,
+      "IdSemilla": "5b05",
+      "IdFrecuenciaRiego": "5c6a",
       "Descripcion": "Seco",
       "FechaCreacion": "2023-10-01"
     },
     {
       "id": "3",
-      "IdSemilla": 1,
-      "IdFrecuenciaRiego": 1,
+      "IdSemilla": "5b05",
+      "IdFrecuenciaRiego": "5c6a",
       "Descripcion": "Pedregoso",
       "FechaCreacion": "2023-10-01"
     }
@@ -254,14 +276,25 @@
   "cosechas": [
     {
       "id": "9c6b",
-      "IdSiembra": 1,
+      "IdSiembra": "0b81",
       "FechaCosecha": "2024-06-30",
       "CantidadCosecha": 300,
       "CtdBuenEstado": 250,
       "CtdMalEstado": 50,
-      "IdUnidadMedida": 1,
-      "IdAlmacen": 1,
+      "IdUnidadMedida": "3",
+      "IdAlmacen": "90ed",
       "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "5f0f",
+      "IdSiembra": "0b81",
+      "FechaCosecha": "2024-10-24",
+      "CantidadCosecha": 3434,
+      "CtdBuenEstado": 3430,
+      "CtdMalEstado": 4,
+      "IdUnidadMedida": "3",
+      "IdAlmacen": "90ed",
+      "FechaCreacion": ""
     }
   ]
 }
