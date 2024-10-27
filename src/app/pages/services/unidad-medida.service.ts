@@ -17,7 +17,7 @@ export class UnidadMedidaService {
     return this.http.get<UnidadMedidaInterface[]>( this.baseUrl + `/unidadesMedida`);
   }
 
-  getUnidadesMedida(idUnidadesMedida: number): Observable<UnidadMedidaInterface[]> {
+  getUnidadesMedida(idUnidadesMedida: string): Observable<UnidadMedidaInterface[]> {
     return this.http.get<UnidadMedidaInterface[]>( this.baseUrl + `/unidadesMedida?id=${idUnidadesMedida}`);
   }
 
@@ -29,7 +29,7 @@ export class UnidadMedidaService {
     return this.http.put<UnidadMedidaInterface>( this.baseUrl + `/unidadesMedida`, UnidadesMedida)
   }
 
-  borrarUnidadesMedida(idUnidadesMedida: number): Observable<UnidadMedidaInterface> {
+  borrarUnidadesMedida(idUnidadesMedida: string): Observable<UnidadMedidaInterface> {
     return this.http.delete<UnidadMedidaInterface>( this.baseUrl + `/unidadesMedida?id=${idUnidadesMedida}`);
   }
 }

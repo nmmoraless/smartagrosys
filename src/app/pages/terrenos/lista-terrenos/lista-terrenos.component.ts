@@ -33,11 +33,11 @@ export class ListaTerrenosComponent {
     });
 
   }
-  public actualizarTerreno(id: number){
+  public actualizarTerreno(id: string){
     this.router.navigateByUrl( '/terreno/editar/' + id );
   }
 
-  public eliminarTerreno(id: number){
+  public eliminarTerreno(id: string){
     this._terrenoService.borrarTerreno(id).subscribe ( terreno => {
       //Recarga de componente actual
     setTimeout(() => {
@@ -52,7 +52,7 @@ export class ListaTerrenosComponent {
 
   }
 
-  public definirLabel(id: number, objeto: string): string {
+  public definirLabel(id: string, objeto: string): string {
     let label: string = '';
     if (objeto == 'unidadesMedida') {
       let auxUnidadmedida = this.unidadesMedida.filter(medida => medida.id == id);

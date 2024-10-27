@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Planificación</th>
       <th scope="col">Terreno</th>
       <th scope="col">Ctd. semilla sembrada</th>
       <th scope="col">Ctd. semilla cosecha</th>
@@ -16,6 +17,7 @@
   <tbody>
     <tr *ngFor="let siembra of listaSiembraes; let i = index">
       <th scope="row">{{i+1}}</th>
+      <td>{{definirLabel(siembra.IdPlanificacionCultivo, 'planificaciones')}}</td>
       <td>{{definirLabel(siembra.IdTerreno, 'terrenos')}}</td>
       <td>{{siembra.CantidadSemillaSiembra}}</td>
       <td>{{siembra.CantidadCosechaEstimada}}</td>

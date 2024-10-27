@@ -17,7 +17,7 @@ export class TipoTerrenoService {
     return this.http.get<TipoTerrenoInterface[]>( this.baseUrl + `/tiposTerreno`);
   }
 
-  getTipoTerreno(idTipoTerreno: number): Observable<TipoTerrenoInterface[]> {
+  getTipoTerreno(idTipoTerreno: string): Observable<TipoTerrenoInterface[]> {
     return this.http.get<TipoTerrenoInterface[]>( this.baseUrl + `/tiposTerreno?id=${idTipoTerreno}`);
   }
 
@@ -29,7 +29,7 @@ export class TipoTerrenoService {
     return this.http.put<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno`, TipoTerreno)
   }
 
-  borrarTipoTerreno(idTipoTerreno: number): Observable<TipoTerrenoInterface> {
+  borrarTipoTerreno(idTipoTerreno: string): Observable<TipoTerrenoInterface> {
     return this.http.delete<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno?id=${idTipoTerreno}`);
   }
   

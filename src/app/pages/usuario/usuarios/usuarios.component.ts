@@ -33,11 +33,11 @@ export class UsuariosComponent {
   
     }
     
-    public actualizarUsuario(id: number){
+    public actualizarUsuario(id: string){
       this.router.navigateByUrl( '/usuario/editar/' + id );
     }
   
-    public eliminarUsuario(id: number){
+    public eliminarUsuario(id: string){
       this._usuario.borrarUsuario(id).subscribe ( usuario => {
         //Recarga de componente actual
       setTimeout(() => {
@@ -50,7 +50,7 @@ export class UsuariosComponent {
       }, 500);
       })
     }
-    public definirLabel(id: number, objeto: string): string {
+    public definirLabel(id: string, objeto: string): string {
       let label: string = '';
     
       if (objeto == 'usuarios') {

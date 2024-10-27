@@ -29,11 +29,11 @@ export class SemillasComponent {
 
   }
 
-  public actualizarSemilla(id: number){ 
+  public actualizarSemilla(id: string){ 
     this.router.navigateByUrl( '/semilla/editar/' + id );
   }
 
-  public eliminarSemilla(id: number){
+  public eliminarSemilla(id: string){
     this._semillaservice.borrarSemilla(id).subscribe ( semilla => {
       //Recarga de componente actual
     setTimeout(() => {      

@@ -20,11 +20,11 @@ public listaEtapas: EtapaInterface[] = [];
     })
   }
 
-  public actualizarEtapa(id: number){ 
+  public actualizarEtapa(id: string){ 
     this.router.navigateByUrl( '/etapa/editar/' + id );
   }
 
-  public eliminarEtapa(id: number){
+  public eliminarEtapa(id: string){
     this._etapasservice.borrarEtapa(id).subscribe ( etapa => {
       //Recarga de componente actual
     setTimeout(() => {      

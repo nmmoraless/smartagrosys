@@ -17,7 +17,7 @@ export class SiembraService {
     return this.http.get<SiembraInterface[]>( this.baseUrl + `/siembras`);
   }
 
-  getSiembra(idSiembra: number): Observable<SiembraInterface[]> {
+  getSiembra(idSiembra: string): Observable<SiembraInterface[]> {
     return this.http.get<SiembraInterface[]>( this.baseUrl + `/siembras?id=${idSiembra}`);
   }
 
@@ -29,7 +29,7 @@ export class SiembraService {
     return this.http.put<SiembraInterface>( this.baseUrl + `/siembras/${siembra.id}`, siembra)
   }
 
-  borrarSiembra(idSiembra: number): Observable<SiembraInterface> {
+  borrarSiembra(idSiembra: string): Observable<SiembraInterface> {
     return this.http.delete<SiembraInterface>( this.baseUrl + `/siembras/${idSiembra}`);
   }
 }

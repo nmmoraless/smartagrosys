@@ -17,7 +17,7 @@ export class FertilizanteService {
     return this.http.get<FertilizanteInterface[]>( this.baseUrl + `/fertilizantes`);
   }
 
-  getFertilizante(idFertilizante: number): Observable<FertilizanteInterface[]> {
+  getFertilizante(idFertilizante: string): Observable<FertilizanteInterface[]> {
     return this.http.get<FertilizanteInterface[]>( this.baseUrl + `/fertilizantes?id=${idFertilizante}`);
   }
 
@@ -29,7 +29,7 @@ export class FertilizanteService {
     return this.http.put<FertilizanteInterface>( this.baseUrl + `/fertilizantes/${Fertilizante.id}`, Fertilizante)
   }
 
-  borrarFertilizante(idFertilizante: number): Observable<FertilizanteInterface> {
+  borrarFertilizante(idFertilizante: string): Observable<FertilizanteInterface> {
     return this.http.delete<FertilizanteInterface>( this.baseUrl + `/fertilizantes/${idFertilizante}`);
   }
 }

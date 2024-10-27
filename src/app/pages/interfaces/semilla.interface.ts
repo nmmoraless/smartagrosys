@@ -1,7 +1,7 @@
 export interface SemillaInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdSemilla: number; //Comentamos temporalmente
-  IdSemilla: number;
+  IdSemilla: string;
   Descripcion: string;
   Especificaciones: string;
   RendimientoSemilla: number;

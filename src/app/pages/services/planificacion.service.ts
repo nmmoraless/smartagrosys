@@ -17,7 +17,7 @@ export class PlanificacionService {
     return this.http.get<PlanificacionInterface[]>( this.baseUrl + `/planificacionesCultivo`);
   }
 
-  getPlanificacion(idPlanificacion: number): Observable<PlanificacionInterface[]> {
+  getPlanificacion(idPlanificacion: string): Observable<PlanificacionInterface[]> {
     return this.http.get<PlanificacionInterface[]>( this.baseUrl + `/planificacionesCultivo?id=${idPlanificacion}`);
   }
 
@@ -29,7 +29,7 @@ export class PlanificacionService {
     return this.http.put<PlanificacionInterface>( this.baseUrl + `/planificacionesCultivo/${planificacion.id}`, planificacion)
   }
 
-  borrarPlanificacion(idPlanificacion: number): Observable<PlanificacionInterface> {
+  borrarPlanificacion(idPlanificacion: string): Observable<PlanificacionInterface> {
     return this.http.delete<PlanificacionInterface>( this.baseUrl + `/planificacionesCultivo/${idPlanificacion}`);
   }
 }

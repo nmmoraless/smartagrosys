@@ -36,13 +36,13 @@ export class CosechaComponent {
 
   constructor( private fb: FormBuilder, private _cosecha: CosechaService, private _unidadesMedida: UnidadMedidaService, private _almacen: AlmacenService,  private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) {
     this.cosecha = {
-      id: 0,
+      id: '',
       IdSiembra: '',
       FechaCosecha: new Date(),
       CantidadCosecha: 0,
       CtdBuenEstado: 0,
       CtdMalEstado: 0,
-      IdUnidadMedida: 0,
+      IdUnidadMedida: '',
       IdAlmacen: '',
       FechaCreacion: new Date()
     }
@@ -93,7 +93,7 @@ export class CosechaComponent {
       this.formCosecha.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
       return;
     } else {
-      if (this.cosecha.id != 0) {
+      if (this.cosecha.id != '') {
         //Actualizar
         let id = this.cosecha.id;
         this.cosecha = this.cosechaActual;

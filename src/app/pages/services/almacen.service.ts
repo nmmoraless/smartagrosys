@@ -18,7 +18,7 @@ export class AlmacenService {
     return this.http.get<AlmacenInterface[]>( this.baseUrl + `/almacenes`);
   }
 
-  getAlmacen(idAlmacen: number): Observable<AlmacenInterface[]> {
+  getAlmacen(idAlmacen: string): Observable<AlmacenInterface[]> {
     return this.http.get<AlmacenInterface[]>( this.baseUrl + `/almacenes?id=${idAlmacen}`);
   }
 
@@ -30,7 +30,7 @@ export class AlmacenService {
     return this.http.put<AlmacenInterface>( this.baseUrl + `/almacenes`, Almacen)
   }
 
-  borrarAlmacen(idAlmacen: number): Observable<AlmacenInterface> {
+  borrarAlmacen(idAlmacen: string): Observable<AlmacenInterface> {
     return this.http.delete<AlmacenInterface>( this.baseUrl + `/almacenes?id=${idAlmacen}`);
   }
 }

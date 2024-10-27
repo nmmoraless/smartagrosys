@@ -18,7 +18,7 @@ export class UsuarioService {
     return this.http.get<UsuarioInterface[]>( this.baseUrl + `/usuarios`);
   }
 
-  getUsuario(idUsuario: number): Observable<UsuarioInterface[]> {
+  getUsuario(idUsuario: string): Observable<UsuarioInterface[]> {
     return this.http.get<UsuarioInterface[]>( this.baseUrl + `/usuarios?id=${idUsuario}`);
   }
 
@@ -31,7 +31,7 @@ export class UsuarioService {
 
   }
 
-  borrarUsuario(idUsuario: number): Observable<UsuarioInterface> {
+  borrarUsuario(idUsuario: string): Observable<UsuarioInterface> {
     return this.http.delete<UsuarioInterface>( this.baseUrl + `/usuarios/${idUsuario}`);
   }
 }

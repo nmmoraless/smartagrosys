@@ -1,10 +1,10 @@
 export interface MantenimientoInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdMantenimiento: number;
-  IdSiembra: number;
-  IdFrecuenciaRiego: number;
-  IdFertilizante: number;
-  IdControlPlagas: number;
+  IdSiembra: string;
+  IdFrecuenciaRiego: string;
+  IdFertilizante: string;
+  IdControlPlagas: string;
   FechaMantenimiento: Date;
   FechaCreacion: Date;
 }

@@ -54,11 +54,11 @@ export class MantenimientosComponent {
     });
   }
 
-  public actualizarMantenimiento(id: number){
+  public actualizarMantenimiento(id: string){
     this.router.navigateByUrl( '/mantenimiento/editar/' + id );
   }
 
-  public eliminarMantenimiento(id: number){
+  public eliminarMantenimiento(id: string){
     this._mantenimiento.borrarMantenimiento(id).subscribe ( mantenimiento => {
       //Recarga de componente actual
     setTimeout(() => {
@@ -73,7 +73,7 @@ export class MantenimientosComponent {
 
   }
 
-  public definirLabel(id: number, objeto: string): string {
+  public definirLabel(id: string, objeto: string): string {
     let label: string = '';
     if (objeto == 'fertilizante') {
       let auxFertilizante = this.listaFertilizantes.filter(fertilizante => fertilizante.id == id);

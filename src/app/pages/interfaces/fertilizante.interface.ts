@@ -1,7 +1,7 @@
 export interface FertilizanteInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdFertilizante: number; //Comentamos temporalmente
-  IdFrecuencia: number;
+  IdFrecuencia: string;
   Nombre: string;
   Descripcion: string;
   ModoUso: string;

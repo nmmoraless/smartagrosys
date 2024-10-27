@@ -1,7 +1,7 @@
 export interface PlagaInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdPlaga: number; //Comentamos temporalmente
-  IdFrecuencia: number;
+  IdFrecuencia: string;
   Nombre: string;
   Descripcion: string;
   UrlImagen: string;

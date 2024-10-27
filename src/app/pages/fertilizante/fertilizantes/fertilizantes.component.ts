@@ -29,11 +29,11 @@ export class FertilizantesComponent {
 
   }
 
-  public actualizarFrecuencia(id: number){
+  public actualizarFrecuencia(id: string){
     this.router.navigateByUrl( '/fertilizante/editar/' + id );
   }
 
-  public eliminarFrecuencia(id: number){
+  public eliminarFrecuencia(id: string){
     this._fertilizante.borrarFertilizante(id).subscribe ( fertilizante => {
       //Recarga de componente actual
     setTimeout(() => {
@@ -48,7 +48,7 @@ export class FertilizantesComponent {
 
   }
 
-  public definirLabel(id: number, objeto: string): string {
+  public definirLabel(id: string, objeto: string): string {
     let label: string = '';
     if (objeto == 'frecuencias') {
       let auxFrecuencia = this.listaFrecuencias.filter(frecuencia => frecuencia.id == id);

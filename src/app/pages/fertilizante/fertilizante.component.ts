@@ -31,11 +31,11 @@ export class FertilizanteComponent {
 
   constructor( private fb: FormBuilder, private _fertilizante: FertilizanteService, private _frecuencia: FrecuenciaService, private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) {
     this.fertilizante = {
-      id: 0,
+      id: '',
       Nombre: '',
       Descripcion: '',
       ModoUso: '',
-      IdFrecuencia: 0,
+      IdFrecuencia: '',
       FechaCreacion: new Date()
     }
    }
@@ -81,7 +81,7 @@ export class FertilizanteComponent {
       this.formFertilizante.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
       return;
     } else {
-      if (this.fertilizante.id != 0) {
+      if (this.fertilizante.id != '') {
         //Actualizar
         let id = this.fertilizante.id;
         this.fertilizante = this.fertilizanteActual;

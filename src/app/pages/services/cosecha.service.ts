@@ -17,7 +17,7 @@ export class CosechaService {
     return this.http.get<CosechaInterface[]>( this.baseUrl + `/cosechas`);
   }
 
-  getCosecha(idCosecha: number): Observable<CosechaInterface[]> {
+  getCosecha(idCosecha: string): Observable<CosechaInterface[]> {
     return this.http.get<CosechaInterface[]>( this.baseUrl + `/cosechas?id=${idCosecha}`);
   }
 
@@ -29,7 +29,7 @@ export class CosechaService {
     return this.http.put<CosechaInterface>( this.baseUrl + `/cosechas`, Cosecha)
   }
 
-  borrarCosecha(idCosecha: number): Observable<CosechaInterface> {
+  borrarCosecha(idCosecha: string): Observable<CosechaInterface> {
     return this.http.delete<CosechaInterface>( this.baseUrl + `/cosechas?id=${idCosecha}`);
   }
 }

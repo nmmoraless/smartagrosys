@@ -34,11 +34,11 @@ export class SiembrasComponent {
     
   }
 
-  public actualizarSiembra(id: number){
+  public actualizarSiembra(id: string){
     this.router.navigateByUrl( '/siembra/editar/' + id );
   }
 
-  public eliminarSiembra(id: number){
+  public eliminarSiembra(id: string){
     this._siembraService.borrarSiembra(id).subscribe ( Siembra => {
       //Recarga de componente actual
     setTimeout(() => {      
@@ -53,7 +53,7 @@ export class SiembrasComponent {
 
   }
 
-  public definirLabel(id: number, objeto: string): string {
+  public definirLabel(id: string, objeto: string): string {
     let label: string = '';
     if (objeto == 'unidadesMedida') {
       let auxUnidadmedida = this.unidadesMedida.filter(medida => medida.id = id);

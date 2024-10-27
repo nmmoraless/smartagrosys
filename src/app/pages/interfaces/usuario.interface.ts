@@ -1,5 +1,5 @@
 export interface UsuarioInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdUsuario: number; //Comentamos temporalmente
   Nombre: string;
   Apellidos: string;

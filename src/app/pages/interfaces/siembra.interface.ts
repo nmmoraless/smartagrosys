@@ -1,11 +1,11 @@
 export interface SiembraInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdSiembra: number; //Comentamos temporalmente
   IdPlanificacionCultivo: string;
-  IdTerreno: number;
+  IdTerreno: string;
   CantidadSemillaSiembra: number;
   CantidadCosechaEstimada: number;
-  IdUnidadMedida: number;
+  IdUnidadMedida: string;
   FechaSiembra: Date;
   FechaCreacion: Date;
 }

@@ -35,11 +35,11 @@ export class CosechasComponent {
     })
   }
 
-  public actualizarCosecha(id: number){ 
+  public actualizarCosecha(id: string){ 
     this.router.navigateByUrl( '/cosecha/editar/' + id );
   }
 
-  public eliminarCosecha(id: number){
+  public eliminarCosecha(id: string){
     this._cosechaservice.borrarCosecha(id).subscribe ( cosecha => {
       //Recarga de componente actual
     setTimeout(() => {      

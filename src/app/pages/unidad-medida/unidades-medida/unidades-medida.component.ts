@@ -24,11 +24,11 @@ export class UnidadesMedidaComponent {
     });
   }
 
-  public actualizarUnidadesMedida(id: number) {
+  public actualizarUnidadesMedida(id: string) {
     this.router.navigateByUrl('/unidad-medida/editar/' + id);
   }
 
-  public eliminarUnidadesMedida(id: number) {
+  public eliminarUnidadesMedida(id: string) {
     this._UnidadMeidaService.borrarUnidadesMedida(id).subscribe((medida) => {
       //Recarga de componente actual
       setTimeout(() => {

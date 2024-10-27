@@ -29,11 +29,11 @@ export class PlagasComponent {
 
   }
 
-  public actualizarPlaga(id: number){
+  public actualizarPlaga(id: string){
     this.router.navigateByUrl( '/plaga/editar/' + id );
   }
 
-  public eliminarPlaga(id: number){
+  public eliminarPlaga(id: string){
     this._plaga.borrarPlaga(id).subscribe ( plaga => {
       //Recarga de componente actual
     setTimeout(() => {
@@ -48,7 +48,7 @@ export class PlagasComponent {
 
   }
 
-  public definirLabel(id: number, objeto: string): string {
+  public definirLabel(id: string, objeto: string): string {
     let label: string = '';
     if (objeto == 'frecuencias') {
       let auxFrecuencia = this.listaFrecuencias.filter(frecuencia => frecuencia.id == id);

@@ -28,11 +28,11 @@ export class AlmacenesComponent {
 
   }
 
-  public actualizarAlmacen(id: number){ 
+  public actualizarAlmacen(id: string){ 
     this.router.navigateByUrl( '/almacen/editar/' + id );
   }
 
-  public eliminarAlmacen(id: number){
+  public eliminarAlmacen(id: string){
     this._almacenservice.borrarAlmacen(id).subscribe ( almacen => {
       //Recarga de componente actual
     setTimeout(() => {      

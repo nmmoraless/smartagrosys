@@ -17,7 +17,7 @@ export class MantenimientoService {
     return this.http.get<MantenimientoInterface[]>( this.baseUrl + `/mantenimientos`);
   }
 
-  getMantenimiento(idMantenimiento: number): Observable<MantenimientoInterface[]> {
+  getMantenimiento(idMantenimiento: string): Observable<MantenimientoInterface[]> {
     return this.http.get<MantenimientoInterface[]>( this.baseUrl + `/mantenimientos?id=${idMantenimiento}`);
   }
 
@@ -29,7 +29,7 @@ export class MantenimientoService {
     return this.http.put<MantenimientoInterface>( this.baseUrl + `/mantenimientos/${mantenimiento.id}`, mantenimiento)
   }
 
-  borrarMantenimiento(idMantenimiento: number): Observable<MantenimientoInterface> {
+  borrarMantenimiento(idMantenimiento: string): Observable<MantenimientoInterface> {
     return this.http.delete<MantenimientoInterface>( this.baseUrl + `/mantenimientos?id=${idMantenimiento}`);
   }
 }

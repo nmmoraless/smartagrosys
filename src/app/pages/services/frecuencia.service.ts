@@ -17,7 +17,7 @@ export class FrecuenciaService {
     return this.http.get<FrecuenciaInterface[]>( this.baseUrl + `/frecuencias`);
   }
 
-  getFrecuencia(idFrecuencia: number): Observable<FrecuenciaInterface[]> {
+  getFrecuencia(idFrecuencia: string): Observable<FrecuenciaInterface[]> {
     return this.http.get<FrecuenciaInterface[]>( this.baseUrl + `/frecuencias?id=${idFrecuencia}`);
   }
 
@@ -29,7 +29,7 @@ export class FrecuenciaService {
     return this.http.put<FrecuenciaInterface>( this.baseUrl + `/frecuencias`, Frecuencia)
   }
 
-  borrarFrecuencia(idFrecuencia: number): Observable<FrecuenciaInterface> {
+  borrarFrecuencia(idFrecuencia: string): Observable<FrecuenciaInterface> {
     return this.http.delete<FrecuenciaInterface>( this.baseUrl + `/frecuencias?id=${idFrecuencia}`);
   }
 }

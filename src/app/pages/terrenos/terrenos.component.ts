@@ -42,11 +42,11 @@ export class TerrenosComponent implements OnInit {
 
   constructor( private fb: FormBuilder, private _terreno: TerrenoService, private _unidadesMedida: UnidadMedidaService, private _tiposTerreno: TipoTerrenoService,  private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) {
     this.terreno = {
-      id: 0,
+      id: '',
       Nombre: '',
-      IdTipoTerreno: 0,
+      IdTipoTerreno: '',
       Area: 0,
-      IdUnidadMedida: 0,
+      IdUnidadMedida: '',
       Altura: 0,
       Latitud: '',
       Longitud: '',
@@ -101,7 +101,7 @@ export class TerrenosComponent implements OnInit {
       this.formTerrenos.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
       return;
     } else {
-      if (this.terreno.id != 0) {
+      if (this.terreno.id != '0') {
         //Actualizar
         let id = this.terreno.id;
         this.terreno = this.terrenoActual;

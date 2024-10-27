@@ -17,7 +17,7 @@ export class PlagaService {
     return this.http.get<PlagaInterface[]>( this.baseUrl + `/plagas`);
   }
 
-  getPlaga(idPlaga: number): Observable<PlagaInterface[]> {
+  getPlaga(idPlaga: string): Observable<PlagaInterface[]> {
     return this.http.get<PlagaInterface[]>( this.baseUrl + `/plagas?id=${idPlaga}`);
   }
 
@@ -29,7 +29,7 @@ export class PlagaService {
     return this.http.put<PlagaInterface>( this.baseUrl + `/plagas`, Plaga)
   }
 
-  borrarPlaga(idPlaga: number): Observable<PlagaInterface> {
+  borrarPlaga(idPlaga: string): Observable<PlagaInterface> {
     return this.http.delete<PlagaInterface>( this.baseUrl + `/plagas?id=${idPlaga}`);
   }
 }

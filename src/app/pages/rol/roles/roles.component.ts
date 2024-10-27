@@ -23,11 +23,11 @@ export class RolesComponent {
     });
   }
 
-  public actualizarRol(id: number) {
+  public actualizarRol(id: string) {
     this.router.navigateByUrl('/rol/editar/' + id);
   }
 
-  public eliminarRol(id: number) {
+  public eliminarRol(id: string) {
     this._RolService.borrarRol(id).subscribe((rol) => {
       //Recarga de componente actual
       setTimeout(() => {

@@ -17,7 +17,7 @@ export class SemillaService {
     return this.http.get<SemillaInterface[]>( this.baseUrl + `/semillas`);
   }
 
-  getSemilla(idSemilla: number): Observable<SemillaInterface[]> {
+  getSemilla(idSemilla: string): Observable<SemillaInterface[]> {
     return this.http.get<SemillaInterface[]>( this.baseUrl + `/semillas?id=${idSemilla}`);
   }
 
@@ -29,7 +29,7 @@ export class SemillaService {
     return this.http.put<SemillaInterface>( this.baseUrl + `/semillas`, Semilla)
   }
 
-  borrarSemilla(idSemilla: number): Observable<SemillaInterface> {
+  borrarSemilla(idSemilla: string): Observable<SemillaInterface> {
     return this.http.delete<SemillaInterface>( this.baseUrl + `/semillas?id=${idSemilla}`);
   }
 }

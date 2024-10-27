@@ -17,7 +17,7 @@ export class RolService {
     return this.http.get<RolInterface[]>( this.baseUrl + `/roles`);
   }
 
-  getRol(idRol: number): Observable<RolInterface[]> {
+  getRol(idRol: string): Observable<RolInterface[]> {
     return this.http.get<RolInterface[]>( this.baseUrl + `/roles?id=${idRol}`);
   }
 
@@ -31,7 +31,7 @@ export class RolService {
   
   }
 
-  borrarRol(idRol: number): Observable<RolInterface> {
+  borrarRol(idRol: string): Observable<RolInterface> {
     return this.http.delete<RolInterface>( this.baseUrl + `/Roles/${idRol}`);
   }
 }

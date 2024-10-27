@@ -1,11 +1,11 @@
 export interface PlanificacionInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdPlanificacionCultivo: number;//Comentamos temporalmente
   Nombre: string;
   Descripcion: string;
   FechaInicio: Date;
   FechaFin: Date;
-  IdEtapa: number;
-  IdUsuario: number;
+  IdEtapa: string;
+  IdUsuario: string;
   FechaCreacion: Date;
 }

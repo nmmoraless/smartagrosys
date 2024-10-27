@@ -32,12 +32,12 @@ export class PlagaComponent {
 
   constructor( private fb: FormBuilder, private _plaga: PlagaService, private _frecuencia: FrecuenciaService, private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) {
     this.plaga = {
-      id: 0,
+      id: '',
       Nombre: '',
       Descripcion: '',
       Tratamiento: '',
       UrlImagen: '',
-      IdFrecuencia: 0,
+      IdFrecuencia: '',
       FechaCreacion: new Date()
     }
    }
@@ -83,7 +83,7 @@ export class PlagaComponent {
       this.formPlaga.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
       return;
     } else {
-      if (this.plaga.id != 0) {
+      if (this.plaga.id != '') {
         //Actualizar
         let id = this.plaga.id;
         this.plaga = this.plagaActual;

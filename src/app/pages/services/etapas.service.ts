@@ -17,7 +17,7 @@ export class EtapasService {
     return this.http.get<EtapaInterface[]>( this.baseUrl + `/etapas`);
   }
 
-  getEtapa(idEtapa: number): Observable<EtapaInterface[]> {
+  getEtapa(idEtapa: string): Observable<EtapaInterface[]> {
     return this.http.get<EtapaInterface[]>( this.baseUrl + `/etapas?id=${idEtapa}`);
   }
 
@@ -29,7 +29,7 @@ export class EtapasService {
     return this.http.put<EtapaInterface>( this.baseUrl + `/etapas`, etapa)
   }
 
-  borrarEtapa(idEtapa: number): Observable<EtapaInterface> {
+  borrarEtapa(idEtapa: string): Observable<EtapaInterface> {
     return this.http.delete<EtapaInterface>( this.baseUrl + `/etapas?id=${idEtapa}`);
   }
 }

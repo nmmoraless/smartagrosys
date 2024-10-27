@@ -21,11 +21,11 @@ export class EstadosComponent {
     })
   }
 
-  public actualizarEstados(id: number){ 
+  public actualizarEstados(id: string){ 
     this.router.navigateByUrl( '/estado/editar/' + id );
   }
 
-  public eliminarEstado(id: number){
+  public eliminarEstado(id: string){
     this._estadoService.borrarEstado(id).subscribe ( estado => {
       //Recarga de componente actual
     setTimeout(() => {      

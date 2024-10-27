@@ -1,12 +1,12 @@
 export interface CosechaInterface {
-  id: number; //id automático de json-server
+  id: string; //id automático de json-server
   //IdCosecha: number; //Comentamos temporalmente
   IdSiembra: string;
   FechaCosecha: Date;
   CantidadCosecha: number;
   CtdBuenEstado: number;
   CtdMalEstado: number;
-  IdUnidadMedida: number;
+  IdUnidadMedida: string;
   IdAlmacen: string;
   FechaCreacion: Date;
 }

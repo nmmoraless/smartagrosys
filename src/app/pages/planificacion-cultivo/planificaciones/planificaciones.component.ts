@@ -22,11 +22,11 @@ export class PlanificacionesComponent {
     
   }
 
-  public actualizarPlanificacion(id: number){
+  public actualizarPlanificacion(id: string){
     this.router.navigateByUrl( '/planificacion/editar/' + id );
   }
 
-  public eliminarPlanificacion(id: number){
+  public eliminarPlanificacion(id: string){
     this._planificacionService.borrarPlanificacion(id).subscribe ( planificacion => {
       //Recarga de componente actual
     setTimeout(() => {      
@@ -41,7 +41,7 @@ export class PlanificacionesComponent {
 
   }
 
-  public definirEtapa(id: number): string {debugger
+  public definirEtapa(id: string): string {debugger
     let etapa: string = '';
     switch (id.toString()) {
       case '1':

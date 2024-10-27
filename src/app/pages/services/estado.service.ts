@@ -18,7 +18,7 @@ export class EstadoService {
     return this.http.get<EstadoInterface[]>( this.baseUrl + `/estados`);
   }
 
-  getEstado(idEstado: number): Observable<EstadoInterface[]> {
+  getEstado(idEstado: string): Observable<EstadoInterface[]> {
     return this.http.get<EstadoInterface[]>( this.baseUrl + `/estados?id=${idEstado}`);
   }
 
@@ -30,7 +30,7 @@ export class EstadoService {
     return this.http.put<EstadoInterface>( this.baseUrl + `/estados?id=${estado.id}`, estado)
   }
 
-  borrarEstado(idEstado: number): Observable<EstadoInterface> {
+  borrarEstado(idEstado: string): Observable<EstadoInterface> {
     return this.http.delete<EstadoInterface>( this.baseUrl + `/estados/${idEstado}`);
   }
 }

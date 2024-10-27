@@ -21,11 +21,11 @@ export class FrecuenciasComponent {
     })
   }
 
-  public actualizarFrecuencia(id: number){ 
+  public actualizarFrecuencia(id: string){ 
     this.router.navigateByUrl( '/frecuencia/editar/' + id );
   }
 
-  public eliminarFrecuencia(id: number){
+  public eliminarFrecuencia(id: string){
     this._frecuenciaservice.borrarFrecuencia(id).subscribe ( frecuencia => {
       //Recarga de componente actual
     setTimeout(() => {      

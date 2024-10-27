@@ -34,11 +34,11 @@ export class TiposTerrenoComponent {
 
   }
 
-  public actualizarTipoTerreno(id: number){ 
+  public actualizarTipoTerreno(id: string){ 
     this.router.navigateByUrl( '/tipoterreno/editar/' + id );
   }
 
-  public eliminarTipoTerreno(id: number){
+  public eliminarTipoTerreno(id: string){
     this._tipoterrenoservice.borrarTipoTerreno(id).subscribe ( tiposterreno => {
       //Recarga de componente actual
     setTimeout(() => {      
