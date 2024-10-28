@@ -7,6 +7,8 @@ import { UnidadMedidaService } from '../../services/unidad-medida.service';
 import { forkJoin } from 'rxjs';
 import { UnidadMedidaInterface } from '../../interfaces/unidad-medida.interface';
 import { TerrenoInterface } from '../../interfaces/terreno.interface';
+import { PlanificacionInterface } from '../../interfaces/planificacion.interface';
+import { PlanificacionService } from '../../services/planificacion.service';
 
 @Component({
   selector: 'app-siembras',
@@ -14,24 +16,26 @@ import { TerrenoInterface } from '../../interfaces/terreno.interface';
   styleUrl: './siembras.component.css'
 })
 export class SiembrasComponent {
-
+  public listaPlanificaciones: PlanificacionInterface[] = [];
   public listaSiembraes: SiembraInterface[] = [];
   public unidadesMedida: UnidadMedidaInterface[] = [];
   public terrenos: TerrenoInterface[] = [];
 
-  constructor( private _siembraService: SiembraService, private _terrenoService: TerrenoService, private _unidadesMedida: UnidadMedidaService, private router: Router, private ngZone: NgZone) { }
+  constructor( private _siembraService: SiembraService, private _terrenoService: TerrenoService, private _planificacionService: PlanificacionService, private _unidadesMedida: UnidadMedidaService, private router: Router, private ngZone: NgZone) { }
 
   ngOnInit(): void {
 
     const unidadesMedida = this._unidadesMedida.getUnidadesMedidas();
     const terrenos = this._terrenoService.getTerrenos();
+    const planificaciones = this._planificacionService.getPlanificaciones();
     const siembras = this._siembraService.getSiembras();
-    forkJoin([unidadesMedida, terrenos, siembras]).subscribe(([unidadesMedida, terrenos, siembras]) => {
+    forkJoin([unidadesMedida, terrenos, planificaciones, siembras]).subscribe(([unidadesMedida, terrenos, planificaciones, siembras]) => {
       this.unidadesMedida = unidadesMedida;
       this.terrenos = terrenos;
-      this.listaSiembraes = siembras;        
+      this.listaPlanificaciones = planificaciones;
+      this.listaSiembraes = siembras;
     });
-    
+
   }
 
   public actualizarSiembra(id: string){
@@ -41,7 +45,7 @@ export class SiembrasComponent {
   public eliminarSiembra(id: string){
     this._siembraService.borrarSiembra(id).subscribe ( Siembra => {
       //Recarga de componente actual
-    setTimeout(() => {      
+    setTimeout(() => {
       this.ngZone.run(() => {
         const currentUrl = this.router.url;
         this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
@@ -61,6 +65,9 @@ export class SiembrasComponent {
     } else if (objeto == 'terrenos'){
       let auxTerreno = this.terrenos.filter(terreno => terreno.id = id);
       label = auxTerreno[0].Nombre;
+    } else if (objeto == 'planificaciones'){
+      let auxPlanificacion = this.listaPlanificaciones.filter(planificacion => planificacion.id = id);
+      label = auxPlanificacion[0].Nombre;
     }
     return label;
   }

@@ -52,6 +52,11 @@ export class MantenimientosComponent {
       this.listaPlanificaciones = planificaciones;
       this.listaMantenimientos = mantenimientos;
     });
+
+    const siembra = history.state.siembra;
+    if (siembra) {
+      // Aquí tienes el objeto
+    }
   }
 
   public actualizarMantenimiento(id: string){

@@ -66,7 +66,7 @@ export class SiembraComponent {
           this.listaUnidesMedida = unidadesMedida;
           this.listaSemillas = semillas;
           this.siembra = siembra[0];
-          
+
           this.formSiembra.reset(this.siembra);
         }
       });
@@ -79,7 +79,7 @@ export class SiembraComponent {
         this.listaPlanificaciones = planificacion;
         this.listaTerrenos = terrenos;
         this.listaUnidesMedida = unidadesMedida;
-        this.listaSemillas = semillas;         
+        this.listaSemillas = semillas;
       });
     }
     this.colorAlertas = this._validaciones.colorAlertas;
@@ -161,6 +161,11 @@ export class SiembraComponent {
     } else {
       return null;
     }
+  }
+
+  public crearMantenimiento(){
+    let siembra = {id: this.siembra.id}
+    this.router.navigate(['/mantenimiento/agregar'], { state: { siembra } });
   }
 
 }

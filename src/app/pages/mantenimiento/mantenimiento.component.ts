@@ -41,7 +41,7 @@ export class MantenimientoComponent {
 
   constructor( private fb: FormBuilder, private _mantenimiento: MantenimientoService, private _siembra: SiembraService, private _frecuencia: FrecuenciaService, private _fertilizante: FertilizanteService, private _plaga: PlagaService, private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {debugger
 
     if ( this.router.url.includes('editar')) {
       this.activedRoute.params.pipe(
@@ -63,7 +63,7 @@ export class MantenimientoComponent {
           this.listaFrecuencias = frecuencias;
           this.listaFertilizantes = fertilizantes;
           this.listaPlagas = plagas;
-          
+
           this.formMantenimiento.reset(this.mantenimiento);
         }
       });
@@ -76,11 +76,16 @@ export class MantenimientoComponent {
         this.listaSiembras = siembras;
         this.listaFrecuencias = frecuencias;
         this.listaFertilizantes = fertilizantes;
-        this.listaPlagas = plagas;        
+        this.listaPlagas = plagas;
       });
     }
     this.colorAlertas = this._validaciones.colorAlertas;
-    
+
+    const siembra = history.state.siembra;
+    if (siembra) {
+      this.mantenimiento.IdSiembra = siembra.id;
+    }
+
   }
 
   get mantenimientoActual(): MantenimientoInterface {

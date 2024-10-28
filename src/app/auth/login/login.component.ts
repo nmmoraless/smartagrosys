@@ -27,7 +27,7 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
-    
+
     this._usuario.getUsuarios().subscribe(usuarios => {
       this.listaUsarios = usuarios;
     });
@@ -93,9 +93,9 @@ export class LoginComponent {
         this.router.navigateByUrl( '/dashboard' );
       } else {
         this.loginExitoso = false;
-      }  
+      }
     }
 
   }
-  
+
 }
