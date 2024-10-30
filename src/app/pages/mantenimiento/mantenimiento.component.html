@@ -1,4 +1,4 @@
-<div class="workspace-background" [formGroup]="formMantenimiento">
+<div *ngIf="cargarFormulario" class="workspace-background" [formGroup]="formMantenimiento">
   <h2>{{esEdicion ? 'Editar ' : 'Nuevo '}}mantenimiento</h2>
   <div class="mb-3 row">
     <div class="col-md-6">
@@ -43,5 +43,5 @@
   </div>
 
   <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
-    <a [href]="'#/siembra/editar/' + mantenimiento.IdSiembra"><button type="button" class="btn btn-secondary">Regresar</button></a>
+  <a *ngIf="auxIdSiembra || esEdicion" [href]="'#/siembra/editar/' + auxIdSiembra"><button type="button" class="btn btn-secondary">Regresar</button></a>
 </div>

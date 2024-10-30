@@ -22,9 +22,12 @@ export class CosechaComponent {
   public almacenes: AlmacenInterface[] = [];
   public esEdicion: boolean = false;
   public colorAlertas: any = {};
+  public auxIdSiembra!: string;
+  public cargarFormulario: boolean = false;
 
   public formCosecha: FormGroup = this.fb.group({
     //id: [null, []],
+    IdSiembra: ['', [], []],
     FechaCosecha: ['', [ Validators.required], []],
     CantidadCosecha: ['', [ Validators.required ], []],
     CtdBuenEstado: ['', [ Validators.required ], []],
@@ -34,21 +37,14 @@ export class CosechaComponent {
     FechaCreacion: ['', [], []],
   });
 
-  constructor( private fb: FormBuilder, private _cosecha: CosechaService, private _unidadesMedida: UnidadMedidaService, private _almacen: AlmacenService,  private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) {
-    this.cosecha = {
-      id: '',
-      IdSiembra: '',
-      FechaCosecha: new Date(),
-      CantidadCosecha: 0,
-      CtdBuenEstado: 0,
-      CtdMalEstado: 0,
-      IdUnidadMedida: '',
-      IdAlmacen: '',
-      FechaCreacion: new Date()
-    }
-   }
+  constructor( private fb: FormBuilder, private _cosecha: CosechaService, private _unidadesMedida: UnidadMedidaService, private _almacen: AlmacenService,  private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) { }
 
   ngOnInit(): void {
+
+    const siembra = history.state.siembra;
+    if (siembra) {
+      this.auxIdSiembra = siembra.id;
+    }
 
     if ( this.router.url.includes('editar')) {
       this.activedRoute.params.pipe(
@@ -64,9 +60,10 @@ export class CosechaComponent {
         } else {
           this.esEdicion = true;
           this.cosecha = cosecha[0];
+          this.auxIdSiembra = this.cosecha.IdSiembra;
           this.unidadesMedida = unidadesMedida;
           this.almacenes = almacenes;
-          
+          this.cargarFormulario = true;
           this.formCosecha.reset(this.cosecha);
         }
       });
@@ -75,7 +72,8 @@ export class CosechaComponent {
       const almacenes = this._almacen.getAlmacenes();
       forkJoin([unidadesMedida, almacenes]).subscribe(([unidadesMedida, almacenes]) => {
         this.unidadesMedida = unidadesMedida;
-        this.almacenes = almacenes;        
+        this.almacenes = almacenes;   
+        this.cargarFormulario = true;     
       });
     }
     this.colorAlertas = this._validaciones.colorAlertas;
@@ -87,35 +85,34 @@ export class CosechaComponent {
     return cosecha;
   }
 
-  public guardar(): void {debugger
+  public guardar(): void {
 
     if( this.formCosecha.invalid ){
       this.formCosecha.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
       return;
     } else {
-      if (this.cosecha.id != '') {
+      if (this.cosecha) {
         //Actualizar
         let id = this.cosecha.id;
         this.cosecha = this.cosechaActual;
         this.cosecha.id = id;
         this._cosecha.actualizarCosecha( this.cosecha ).subscribe( (cosecha: CosechaInterface) => {
           if (cosecha) {
-            this.router.navigateByUrl( '/cosechas' );
+            this.router.navigateByUrl( '/siembra/editar/' + cosecha.IdSiembra );
           }
         })
       } else {
         //Crear
+        this.cosechaActual.IdSiembra = this.auxIdSiembra;
         this._cosecha.agregarCosecha( this.cosechaActual ).subscribe( (cosecha: CosechaInterface) => {
           if (cosecha) {
             this.cosecha = cosecha;
             this.formCosecha.reset(this.cosecha);
-            this.router.navigateByUrl( '/cosecha/editar/' + this.cosecha.id );
+            this.router.navigateByUrl( '/siembra/editar/' + cosecha.IdSiembra );
           }
         })
       }
     }
-
-
 
   }
 

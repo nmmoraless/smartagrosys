@@ -75,7 +75,7 @@ export class FertilizanteComponent {
     return fertilizante;
   }
 
-  public guardar(): void {debugger
+  public guardar(): void {
 
     if( this.formFertilizante.invalid ){
       this.formFertilizante.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta

@@ -28,10 +28,12 @@ export class MantenimientoComponent {
   public listaPlagas: PlagaInterface[] = [];
   public esEdicion: boolean = false;
   public colorAlertas: any = {};
+  public auxIdSiembra!: string;
+  public cargarFormulario: boolean = false;
 
   public formMantenimiento: FormGroup = this.fb.group({
     //id: [null, []],
-    //IdSiembra: ['', [ Validators.required]], //TODO Este componente se debe llamar en la siembra, para crear un mentenimiento
+    IdSiembra: ['', []],
     IdFrecuenciaRiego: ['', [ Validators.required], []],
     IdFertilizante: ['', [ Validators.required ], []],
     IdControlPlagas: ['', [ Validators.required ], []],
@@ -39,9 +41,15 @@ export class MantenimientoComponent {
     FechaCreacion: ['', [], []],
   });
 
-  constructor( private fb: FormBuilder, private _mantenimiento: MantenimientoService, private _siembra: SiembraService, private _frecuencia: FrecuenciaService, private _fertilizante: FertilizanteService, private _plaga: PlagaService, private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) { }
+  constructor( private fb: FormBuilder, private _mantenimiento: MantenimientoService, private _siembra: SiembraService, private _frecuencia: FrecuenciaService, private _fertilizante: FertilizanteService, private _plaga: PlagaService, private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) {
+   }
 
-  ngOnInit(): void {debugger
+  ngOnInit(): void {
+
+    const siembra = history.state.siembra;
+    if (siembra) {
+      this.auxIdSiembra = siembra.id;
+    }
 
     if ( this.router.url.includes('editar')) {
       this.activedRoute.params.pipe(
@@ -50,20 +58,21 @@ export class MantenimientoComponent {
           const frecuencias = this._frecuencia.getFrecuencias();
           const fertilizantes = this._fertilizante.getFertilizantes();
           const plagas = this._plaga.getPlagas();
-          const mantenimientos = this._mantenimiento.getMantenimientos();
-          return forkJoin([siembras, frecuencias, fertilizantes, plagas, mantenimientos]);
+          const mantenimiento = this._mantenimiento.getMantenimiento(id);
+          return forkJoin([siembras, frecuencias, fertilizantes, plagas, mantenimiento]);
         })
-      ).subscribe ( ( [siembras, frecuencias, fertilizantes, plagas, mantenimientos] ) => {
-        if (!mantenimientos) {
+      ).subscribe ( ( [siembras, frecuencias, fertilizantes, plagas, mantenimiento] ) => {
+        if (!mantenimiento) {
           this.router.navigateByUrl('/mantenimientos');
         } else {
           this.esEdicion = true;
-          this.mantenimiento = mantenimientos[0];
+          this.mantenimiento = mantenimiento[0];
+          this.auxIdSiembra = this.mantenimiento.IdSiembra;
           this.listaSiembras = siembras;
           this.listaFrecuencias = frecuencias;
           this.listaFertilizantes = fertilizantes;
           this.listaPlagas = plagas;
-
+          this.cargarFormulario = true;
           this.formMantenimiento.reset(this.mantenimiento);
         }
       });
@@ -77,14 +86,10 @@ export class MantenimientoComponent {
         this.listaFrecuencias = frecuencias;
         this.listaFertilizantes = fertilizantes;
         this.listaPlagas = plagas;
+        this.cargarFormulario = true;
       });
     }
     this.colorAlertas = this._validaciones.colorAlertas;
-
-    const siembra = history.state.siembra;
-    if (siembra) {
-      this.mantenimiento.IdSiembra = siembra.id;
-    }
 
   }
 
@@ -93,7 +98,7 @@ export class MantenimientoComponent {
     return mantenimiento;
   }
 
-  public guardar(): void {debugger
+  public guardar(): void {
 
     if( this.formMantenimiento.invalid ){
       this.formMantenimiento.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
@@ -106,22 +111,21 @@ export class MantenimientoComponent {
         this.mantenimiento.id = id;
         this._mantenimiento.actualizarMantenimiento( this.mantenimiento ).subscribe( (mantenimiento: MantenimientoInterface) => {
           if (mantenimiento) {
-            this.router.navigateByUrl( '/mantenimientos' );
+            this.router.navigateByUrl( '/siembra/editar/' + mantenimiento.IdSiembra );
           }
         })
       } else {
         //Crear
+        this.mantenimientoActual.IdSiembra = this.auxIdSiembra;
         this._mantenimiento.agregarMantenimiento( this.mantenimientoActual ).subscribe( (mantenimiento: MantenimientoInterface) => {
           if (mantenimiento) {
             this.mantenimiento = mantenimiento;
             this.formMantenimiento.reset(this.mantenimiento);
-            this.router.navigateByUrl( '/mantenimiento/editar/' + this.mantenimiento.id );
+            this.router.navigateByUrl( '/siembra/editar/' + this.mantenimiento.IdSiembra );
           }
         })
       }
     }
-
-
 
   }
 

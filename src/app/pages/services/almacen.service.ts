@@ -27,10 +27,10 @@ export class AlmacenService {
   }
 
   actualizarAlmacen( Almacen: AlmacenInterface ): Observable<AlmacenInterface> {
-    return this.http.put<AlmacenInterface>( this.baseUrl + `/almacenes`, Almacen)
+    return this.http.put<AlmacenInterface>( this.baseUrl + `/almacenes/${Almacen.id}`, Almacen)
   }
 
   borrarAlmacen(idAlmacen: string): Observable<AlmacenInterface> {
-    return this.http.delete<AlmacenInterface>( this.baseUrl + `/almacenes?id=${idAlmacen}`);
+    return this.http.delete<AlmacenInterface>( this.baseUrl + `/almacenes/${idAlmacen}`);
   }
 }

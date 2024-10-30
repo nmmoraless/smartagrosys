@@ -13,11 +13,11 @@
     <tr *ngFor="let etapa of listaEtapas; let i = index">
       <th scope="row">{{i+1}}</th>
       <td>{{etapa.Descripcion}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarEtapa(etapa.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarEtapa(etapa.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarEtapa(etapa.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarEtapa(etapa.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/etapa/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/etapa/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->
 

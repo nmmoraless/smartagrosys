@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, Input, NgZone } from '@angular/core';
 import { CosechaInterface } from '../../interfaces/cosecha.interface';
 import { CosechaService } from '../../services/cosecha.service';
 import { Router } from '@angular/router';
@@ -15,6 +15,8 @@ import { AlmacenService } from '../../services/almacen.service';
 })
 export class CosechasComponent {
 
+  @Input() idSiembra!: string;
+
   public listaCosechas: CosechaInterface[] = [];
   public listaAlmacenes: AlmacenInterface[] = [];
   public listaUnidadesMedida: UnidadMedidaInterface[] = [];
@@ -25,14 +27,13 @@ export class CosechasComponent {
 
     const unidadesMedida = this._unidadesMedida.getUnidadesMedidas();
     const almacenes = this._almacen.getAlmacenes();
-    forkJoin([unidadesMedida, almacenes]).subscribe(([unidadesMedida, almacenes]) => {
+    const cosechas =  this._cosechaservice.getCosechas();
+    forkJoin([unidadesMedida, almacenes, cosechas]).subscribe(([unidadesMedida, almacenes, cosechas]) => {
       this.listaUnidadesMedida = unidadesMedida;
       this.listaAlmacenes = almacenes;
+      this.listaCosechas = cosechas.filter(cosecha => cosecha.IdSiembra == this.idSiembra);
     });
 
-    this._cosechaservice.getCosechas().subscribe(cosechas => {
-      this.listaCosechas = cosechas;
-    })
   }
 
   public actualizarCosecha(id: string){
@@ -54,7 +55,7 @@ export class CosechasComponent {
 
   }
 
-  public definirLabel(id: number | string, objeto: string): string {debugger
+  public definirLabel(id: number | string, objeto: string): string {
     let label: string = '';
     if (objeto == 'almacen') {
       let auxAlmacen = this.listaAlmacenes.filter(almacen => almacen.id == id);

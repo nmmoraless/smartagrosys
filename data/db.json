@@ -143,18 +143,6 @@
       "IdUsuario": 1,
       "FechaCreacion": "2023-10-01",
       "id": "94dc"
-    },
-    {
-      "Nombre": "Mi terreno",
-      "IdTipoTerreno": "1",
-      "Area": 12,
-      "IdUnidadMedida": "2",
-      "Altura": 2800,
-      "Longitud": -72.87019815009579,
-      "Latitud": 7.11009119235844,
-      "IdUsuario": "",
-      "FechaCreacion": "",
-      "id": "9ed6"
     }
   ],
   "etapas": [
@@ -203,6 +191,30 @@
       "IdUsuario": null,
       "FechaCreacion": "2023-10-01",
       "id": "0b81"
+    },
+    {
+      "IdPlanificacionCultivo": "f78d",
+      "IdTerreno": "94dc",
+      "IdSemilla": "5b05",
+      "CantidadSemillaSiembra": 100,
+      "CantidadCosechaEstimada": 500,
+      "IdUnidadMedida": 1,
+      "FechaSiembra": "2024-01-01",
+      "IdUsuario": null,
+      "FechaCreacion": "2023-10-01",
+      "id": "0b82"
+    },
+    {
+      "id": "3207",
+      "IdPlanificacionCultivo": "f78d",
+      "IdTerreno": "9ed6",
+      "IdSemilla": "5b05",
+      "CantidadSemillaSiembra": 2000,
+      "CantidadCosechaEstimada": 555555,
+      "IdUnidadMedida": "3",
+      "FechaSiembra": "2024-10-29",
+      "IdUsuario": "",
+      "FechaCreacion": ""
     }
   ],
   "fertilizantes": [
@@ -246,7 +258,6 @@
   "mantenimientos": [
     {
       "IdFrecuenciaRiego": "5c6a",
-      "IdSiembra": "0b81",
       "IdFertilizante": "6fa6",
       "IdControlPlagas": "1719",
       "FechaMantenimiento": "2024-02-15",
@@ -255,11 +266,37 @@
     },
     {
       "id": "358d",
-      "IdSiembra": "0b81",
+      "IdSiembra": "0b82",
       "IdFrecuenciaRiego": "6fb9",
       "IdFertilizante": "6fa6",
       "IdControlPlagas": "1719",
       "FechaMantenimiento": "2024-10-15",
+      "FechaCreacion": ""
+    },
+    {
+      "id": "32ef",
+      "IdFrecuenciaRiego": "6fb9",
+      "IdFertilizante": "7d77",
+      "IdControlPlagas": "3ae6",
+      "FechaMantenimiento": "2024-10-28",
+      "FechaCreacion": "",
+      "IdSiembra": "0b82"
+    },
+    {
+      "IdFrecuenciaRiego": "6fb9",
+      "IdFertilizante": "6fa6",
+      "IdControlPlagas": "3ae6",
+      "FechaMantenimiento": "2024-10-22",
+      "FechaCreacion": "",
+      "id": "9a90"
+    },
+    {
+      "id": "e1b7",
+      "IdSiembra": "0b81",
+      "IdFrecuenciaRiego": "6fb9",
+      "IdFertilizante": "7d77",
+      "IdControlPlagas": "1719",
+      "FechaMantenimiento": "2024-10-22",
       "FechaCreacion": ""
     }
   ],
@@ -275,26 +312,26 @@
   ],
   "cosechas": [
     {
-      "id": "9c6b",
-      "IdSiembra": "0b81",
-      "FechaCosecha": "2024-06-30",
-      "CantidadCosecha": 300,
-      "CtdBuenEstado": 250,
-      "CtdMalEstado": 50,
+      "id": "c376",
+      "FechaCosecha": "2024-11-30",
+      "CantidadCosecha": 25000,
+      "CtdBuenEstado": 23500,
+      "CtdMalEstado": 1500,
       "IdUnidadMedida": "3",
       "IdAlmacen": "90ed",
-      "FechaCreacion": "2023-10-01"
+      "FechaCreacion": "",
+      "IdSiembra": "3207"
     },
     {
-      "id": "5f0f",
       "IdSiembra": "0b81",
-      "FechaCosecha": "2024-10-24",
-      "CantidadCosecha": 3434,
-      "CtdBuenEstado": 3430,
-      "CtdMalEstado": 4,
+      "FechaCosecha": "2024-10-29",
+      "CantidadCosecha": 95000,
+      "CtdBuenEstado": 94000,
+      "CtdMalEstado": 1000,
       "IdUnidadMedida": "3",
       "IdAlmacen": "90ed",
-      "FechaCreacion": ""
+      "FechaCreacion": "",
+      "id": "9e9a"
     }
   ]
 }

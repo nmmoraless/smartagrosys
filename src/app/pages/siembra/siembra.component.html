@@ -55,7 +55,7 @@
   <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
   <a class="me-2" href="#/siembras"><button type="button" class="btn btn-secondary">Regresar</button></a>
 
-  <div class="accordion mt-4" id="accordionExample">
+  <div *ngIf="esEdicion" class="accordion mt-4" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -66,7 +66,7 @@
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <app-mantenimientos></app-mantenimientos>
+          <app-mantenimientos [idSiembra]="siembra.id"></app-mantenimientos>
           <button type="button" class="btn btn-secondary me-2" (click)="crearMantenimiento()">Crear</button>
         </div>
       </div>
@@ -81,7 +81,8 @@
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-          <app-cosechas></app-cosechas>
+          <app-cosechas [idSiembra]="siembra.id"></app-cosechas>
+          <button type="button" class="btn btn-secondary me-2" (click)="crearCosecha()">Crear</button>
         </div>
       </div>
     </div>

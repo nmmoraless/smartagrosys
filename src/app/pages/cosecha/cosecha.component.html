@@ -1,4 +1,4 @@
-<div class="workspace-background" [formGroup]="formCosecha">
+<div *ngIf="cargarFormulario" class="workspace-background" [formGroup]="formCosecha">
     <h2>Nueva cosecha</h2>
     <div class="mb-3 row">
         <div class="col-md-6">
@@ -47,7 +47,7 @@
   
     <div class="mt-4">
       <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
-      <a href="#/cosechas"><button type="button" class="btn btn-secondary">Regresar</button></a>
+      <a *ngIf="auxIdSiembra || esEdicion" [href]="'#/siembra/editar/' + auxIdSiembra"><button type="button" class="btn btn-secondary">Regresar</button></a>
     </div>
   </div>
   

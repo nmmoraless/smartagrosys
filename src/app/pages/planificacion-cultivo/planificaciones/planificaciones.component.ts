@@ -41,7 +41,7 @@ export class PlanificacionesComponent {
 
   }
 
-  public definirEtapa(id: string): string {debugger
+  public definirEtapa(id: string): string {
     let etapa: string = '';
     switch (id.toString()) {
       case '1':

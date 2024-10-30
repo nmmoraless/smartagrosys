@@ -1,4 +1,4 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, Input, NgZone } from '@angular/core';
 import { FrecuenciaInterface } from '../../interfaces/frecuencia.interface';
 import { SiembraInterface } from '../../interfaces/siembra.interface';
 import { FertilizanteInterface } from '../../interfaces/fertilizante.interface';
@@ -22,6 +22,8 @@ import { PlanificacionService } from '../../services/planificacion.service';
   styleUrl: './mantenimientos.component.css'
 })
 export class MantenimientosComponent {
+
+  @Input() idSiembra!: string;
 
   public listaSiembras: SiembraInterface[] = [];
   public listaTerrenos: TerrenoInterface[] = [];
@@ -50,7 +52,7 @@ export class MantenimientosComponent {
       this.listaPlagas = plagas;
       this.listaTerrenos = terrenos;
       this.listaPlanificaciones = planificaciones;
-      this.listaMantenimientos = mantenimientos;
+      this.listaMantenimientos = mantenimientos.filter( mantenimiento => mantenimiento.IdSiembra == this.idSiembra);
     });
 
     const siembra = history.state.siembra;

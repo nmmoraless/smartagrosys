@@ -26,10 +26,10 @@ export class FrecuenciaService {
   }
 
   actualizarFrecuencia( Frecuencia: FrecuenciaInterface ): Observable<FrecuenciaInterface> {
-    return this.http.put<FrecuenciaInterface>( this.baseUrl + `/frecuencias`, Frecuencia)
+    return this.http.put<FrecuenciaInterface>( this.baseUrl + `/frecuencias/${Frecuencia.id}`, Frecuencia)
   }
 
   borrarFrecuencia(idFrecuencia: string): Observable<FrecuenciaInterface> {
-    return this.http.delete<FrecuenciaInterface>( this.baseUrl + `/frecuencias?id=${idFrecuencia}`);
+    return this.http.delete<FrecuenciaInterface>( this.baseUrl + `/frecuencias/${idFrecuencia}`);
   }
 }

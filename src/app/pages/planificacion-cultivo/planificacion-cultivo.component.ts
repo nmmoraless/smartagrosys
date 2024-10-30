@@ -62,7 +62,7 @@ export class PlanificacionCultivoComponent implements OnInit {
     return planificacion;
   }
 
-  public guardar(): void {debugger
+  public guardar(): void {
 
     if( this.formPlanificacion.invalid ){
       this.formPlanificacion.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
@@ -95,7 +95,7 @@ export class PlanificacionCultivoComponent implements OnInit {
   }
 
   //Evaluar si hay errores para mostrar alerta de validción
-  public campoInValido( campo: string ) : boolean {debugger
+  public campoInValido( campo: string ) : boolean {
     if( this.formPlanificacion.controls[campo].errors && this.formPlanificacion.controls[campo].touched){
       return true;
     } else {

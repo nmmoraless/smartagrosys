@@ -163,9 +163,14 @@ export class SiembraComponent {
     }
   }
 
-  public crearMantenimiento(){
+  public crearMantenimiento(){debugger
     let siembra = {id: this.siembra.id}
     this.router.navigate(['/mantenimiento/agregar'], { state: { siembra } });
+  }
+
+  public crearCosecha(){debugger
+    let siembra = {id: this.siembra.id}
+    this.router.navigate(['/cosecha/agregar'], { state: { siembra } });
   }
 
 }

@@ -27,7 +27,7 @@ export class EstadoService {
   }
 
   actualizarEstado( estado: EstadoInterface ): Observable<EstadoInterface> {
-    return this.http.put<EstadoInterface>( this.baseUrl + `/estados?id=${estado.id}`, estado)
+    return this.http.put<EstadoInterface>( this.baseUrl + `/estados/${estado.id}`, estado)
   }
 
   borrarEstado(idEstado: string): Observable<EstadoInterface> {

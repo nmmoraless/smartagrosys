@@ -26,10 +26,10 @@ export class EtapasService {
   }
 
   actualizarEtapa( etapa: EtapaInterface ): Observable<EtapaInterface> {
-    return this.http.put<EtapaInterface>( this.baseUrl + `/etapas`, etapa)
+    return this.http.put<EtapaInterface>( this.baseUrl + `/etapas/${etapa.id}`, etapa)
   }
 
   borrarEtapa(idEtapa: string): Observable<EtapaInterface> {
-    return this.http.delete<EtapaInterface>( this.baseUrl + `/etapas?id=${idEtapa}`);
+    return this.http.delete<EtapaInterface>( this.baseUrl + `/etapas/${idEtapa}`);
   }
 }

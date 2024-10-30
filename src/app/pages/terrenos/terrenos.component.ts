@@ -95,7 +95,7 @@ export class TerrenosComponent implements OnInit {
     return terreno;
   }
 
-  public guardar(): void {debugger
+  public guardar(): void {
 
     if( this.formTerrenos.invalid ){
       this.formTerrenos.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta

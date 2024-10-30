@@ -13,11 +13,11 @@
     <tr *ngFor="let estado of listaEstados; let i = index">
       <th scope="row">{{i+1}}</th>
       <td>{{estado.Descripcion}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarEstados(estado.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarEstado(estado.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarEstados(estado.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarEstado(estado.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/estado/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/estado/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->
 

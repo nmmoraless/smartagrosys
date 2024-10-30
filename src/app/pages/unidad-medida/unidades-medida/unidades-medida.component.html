@@ -15,10 +15,10 @@
       <th scope="row">{{i+1}}</th>
       <td>{{medida.Sigla}}</td>
       <td>{{medida.Descripcion}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarUnidadesMedida(medida.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarUnidadesMedida(medida.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarUnidadesMedida(medida.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarUnidadesMedida(medida.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/unidad-medida/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/unidad-medida/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->

@@ -21,11 +21,11 @@
       <td>{{semilla.RendimientoSemilla}}</td>
       <td>{{semilla.RendimientoCosecha}}</td>
       <td>{{definirLabel(semilla.IdUnidadMedida, 'unidadMedida')}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarSemilla(semilla.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarSemilla(semilla.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarSemilla(semilla.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarSemilla(semilla.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/semilla/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/semilla/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->
 

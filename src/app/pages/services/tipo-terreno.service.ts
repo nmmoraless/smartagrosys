@@ -26,11 +26,11 @@ export class TipoTerrenoService {
   }
 
   actualizarTipoTerreno( TipoTerreno: TipoTerrenoInterface ): Observable<TipoTerrenoInterface> {
-    return this.http.put<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno`, TipoTerreno)
+    return this.http.put<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno/${TipoTerreno.id}`, TipoTerreno)
   }
 
   borrarTipoTerreno(idTipoTerreno: string): Observable<TipoTerrenoInterface> {
-    return this.http.delete<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno?id=${idTipoTerreno}`);
+    return this.http.delete<TipoTerrenoInterface>( this.baseUrl + `/tiposTerreno/${idTipoTerreno}`);
   }
   
 }

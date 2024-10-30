@@ -21,11 +21,11 @@
       <td>{{almacen.Ubicacion}}</td>
       <td>{{almacen.Capacidad}}</td>
       <td>{{definirLabel(almacen.IdUnidadMedida, 'unidadMedida')}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarAlmacen(almacen.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarAlmacen(almacen.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarAlmacen(almacen.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarAlmacen(almacen.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/almacen/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/almacen/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->
 

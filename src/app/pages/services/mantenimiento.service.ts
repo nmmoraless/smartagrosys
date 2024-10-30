@@ -30,6 +30,6 @@ export class MantenimientoService {
   }
 
   borrarMantenimiento(idMantenimiento: string): Observable<MantenimientoInterface> {
-    return this.http.delete<MantenimientoInterface>( this.baseUrl + `/mantenimientos?id=${idMantenimiento}`);
+    return this.http.delete<MantenimientoInterface>( this.baseUrl + `/mantenimientos/${idMantenimiento}`);
   }
 }

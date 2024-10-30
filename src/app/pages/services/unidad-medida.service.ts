@@ -26,10 +26,10 @@ export class UnidadMedidaService {
   }
 
   actualizarUnidadesMedida( UnidadesMedida: UnidadMedidaInterface ): Observable<UnidadMedidaInterface> {
-    return this.http.put<UnidadMedidaInterface>( this.baseUrl + `/unidadesMedida`, UnidadesMedida)
+    return this.http.put<UnidadMedidaInterface>( this.baseUrl + `/unidadesMedida/${UnidadesMedida.id}`, UnidadesMedida)
   }
 
   borrarUnidadesMedida(idUnidadesMedida: string): Observable<UnidadMedidaInterface> {
-    return this.http.delete<UnidadMedidaInterface>( this.baseUrl + `/unidadesMedida?id=${idUnidadesMedida}`);
+    return this.http.delete<UnidadMedidaInterface>( this.baseUrl + `/unidadesMedida/${idUnidadesMedida}`);
   }
 }

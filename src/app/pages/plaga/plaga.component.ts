@@ -77,7 +77,7 @@ export class PlagaComponent {
     return plaga;
   }
 
-  public guardar(): void {debugger
+  public guardar(): void {
 
     if( this.formPlaga.invalid ){
       this.formPlaga.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta

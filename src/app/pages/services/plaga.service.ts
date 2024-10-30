@@ -26,10 +26,10 @@ export class PlagaService {
   }
 
   actualizarPlaga( Plaga: PlagaInterface ): Observable<PlagaInterface> {
-    return this.http.put<PlagaInterface>( this.baseUrl + `/plagas`, Plaga)
+    return this.http.put<PlagaInterface>( this.baseUrl + `/plagas/${Plaga.id}`, Plaga)
   }
 
   borrarPlaga(idPlaga: string): Observable<PlagaInterface> {
-    return this.http.delete<PlagaInterface>( this.baseUrl + `/plagas?id=${idPlaga}`);
+    return this.http.delete<PlagaInterface>( this.baseUrl + `/plagas/${idPlaga}`);
   }
 }

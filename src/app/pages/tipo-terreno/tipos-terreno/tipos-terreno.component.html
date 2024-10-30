@@ -17,11 +17,11 @@
       <td>{{tipoTerreno.Descripcion}}</td>
       <td>{{definirLabel(tipoTerreno.IdSemilla, 'semilla')}}</td>
       <td>{{definirLabel(tipoTerreno.IdFrecuenciaRiego, 'frecuencia')}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarTipoTerreno(tipoTerreno.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarTipoTerreno(tipoTerreno.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarTipoTerreno(tipoTerreno.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarTipoTerreno(tipoTerreno.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/tipo-terreno/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/tipo-terreno/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->
 

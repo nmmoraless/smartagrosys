@@ -27,7 +27,7 @@ export class UsuarioService {
   }
 
   actualizarUsuario( Usuario: UsuarioInterface ): Observable<UsuarioInterface> {
-    return this.http.put<UsuarioInterface>( this.baseUrl + `/usuarios?id=${Usuario.id}`, Usuario)
+    return this.http.put<UsuarioInterface>( this.baseUrl + `/usuarios/${Usuario.id}`, Usuario)
 
   }
 

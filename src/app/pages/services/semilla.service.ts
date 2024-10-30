@@ -26,10 +26,10 @@ export class SemillaService {
   }
 
   actualizarSemilla( Semilla: SemillaInterface ): Observable<SemillaInterface> {
-    return this.http.put<SemillaInterface>( this.baseUrl + `/semillas`, Semilla)
+    return this.http.put<SemillaInterface>( this.baseUrl + `/semillas/${Semilla.id}`, Semilla)
   }
 
   borrarSemilla(idSemilla: string): Observable<SemillaInterface> {
-    return this.http.delete<SemillaInterface>( this.baseUrl + `/semillas?id=${idSemilla}`);
+    return this.http.delete<SemillaInterface>( this.baseUrl + `/semillas/${idSemilla}`);
   }
 }

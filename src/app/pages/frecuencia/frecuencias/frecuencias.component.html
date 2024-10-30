@@ -13,11 +13,11 @@
     <tr *ngFor="let frecuencia of listaFrecuencias; let i = index">
       <th scope="row">{{i+1}}</th>
       <td>{{frecuencia.Descripcion}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarFrecuencia(frecuencia.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarFrecuencia(frecuencia.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarFrecuencia(frecuencia.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarFrecuencia(frecuencia.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/frecuencia/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/frecuencia/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->
 

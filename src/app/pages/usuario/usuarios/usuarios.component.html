@@ -23,10 +23,10 @@
       <td>{{usuario.Telefono}}</td>
       <td>{{usuario.Rol_IdRol}}</td>
       <td>{{usuario.Estado_IdEstado}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarUsuario(usuario.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarUsuario(usuario.id)"><i class="bi bi-trash-fill"></i></button></td>
+      <td><button class="btn btn-outline-primary" (click)="actualizarUsuario(usuario.id)" disabled><i class="bi bi-pencil-square"></i></button></td>
+      <td><button class="btn btn-outline-danger" (click)="eliminarUsuario(usuario.id)" disabled><i class="bi bi-trash-fill"></i></button></td>
     </tr>
   </tbody>
 </table>
 
-<a href="#/usuario/agregar"><button type="button" class="btn btn-success">Crear</button></a>
+<!-- <a href="#/usuario/agregar"><button type="button" class="btn btn-success">Crear</button></a> -->

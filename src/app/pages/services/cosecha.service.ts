@@ -21,15 +21,15 @@ export class CosechaService {
     return this.http.get<CosechaInterface[]>( this.baseUrl + `/cosechas?id=${idCosecha}`);
   }
 
-  agregarCosecha( Cosecha: CosechaInterface ): Observable<CosechaInterface> {
-    return this.http.post<CosechaInterface>( this.baseUrl + `/cosechas`, Cosecha)
+  agregarCosecha( cosecha: CosechaInterface ): Observable<CosechaInterface> {
+    return this.http.post<CosechaInterface>( this.baseUrl + `/cosechas`, cosecha)
   }
 
-  actualizarCosecha( Cosecha: CosechaInterface ): Observable<CosechaInterface> {
-    return this.http.put<CosechaInterface>( this.baseUrl + `/cosechas`, Cosecha)
+  actualizarCosecha( cosecha: CosechaInterface ): Observable<CosechaInterface> {
+    return this.http.put<CosechaInterface>( this.baseUrl + `/cosechas/${cosecha.id}`, cosecha)
   }
 
   borrarCosecha(idCosecha: string): Observable<CosechaInterface> {
-    return this.http.delete<CosechaInterface>( this.baseUrl + `/cosechas?id=${idCosecha}`);
+    return this.http.delete<CosechaInterface>( this.baseUrl + `/cosechas/${idCosecha}`);
   }
 }

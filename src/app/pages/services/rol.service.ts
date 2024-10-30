@@ -25,9 +25,8 @@ export class RolService {
     return this.http.post<RolInterface>( this.baseUrl + `/Roles`, Rol)
   }
 
-
   actualizarRol( Rol: RolInterface ): Observable<RolInterface> {
-    return this.http.put<RolInterface>( this.baseUrl + `/Roles?id=${Rol.id}`, Rol)
+    return this.http.put<RolInterface>( this.baseUrl + `/Roles/${Rol.id}`, Rol)
   
   }
 
