@@ -60,13 +60,13 @@ export class SiembrasComponent {
   public definirLabel(id: string, objeto: string): string {
     let label: string = '';
     if (objeto == 'unidadesMedida') {
-      let auxUnidadmedida = this.unidadesMedida.filter(medida => medida.id = id);
+      let auxUnidadmedida = this.unidadesMedida.filter(medida => medida.id == id);
       label = auxUnidadmedida[0].Sigla;
     } else if (objeto == 'terrenos'){
-      let auxTerreno = this.terrenos.filter(terreno => terreno.id = id);
+      let auxTerreno = this.terrenos.filter(terreno => terreno.id == id);
       label = auxTerreno[0].Nombre;
     } else if (objeto == 'planificaciones'){
-      let auxPlanificacion = this.listaPlanificaciones.filter(planificacion => planificacion.id = id);
+      let auxPlanificacion = this.listaPlanificaciones.filter(planificacion => planificacion.id == id);
       label = auxPlanificacion[0].Nombre;
     }
     return label;

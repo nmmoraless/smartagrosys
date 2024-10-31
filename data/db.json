@@ -61,27 +61,32 @@
   "unidadesMedida": [
     {
       "id": "1",
-      "IdUnidadMedida": 1,
       "Sigla": "Km",
       "Descripcion": "Kilometro",
       "FechaCreacion": "2023-01-01"
     },
     {
       "id": "2",
-      "Sigla": "ha",
+      "Sigla": "Ha",
       "Descripcion": "Hectárea",
       "FechaCreacion": "2023-01-01"
     },
     {
       "id": "3",
       "Sigla": "Kg",
-      "Descripcion": "Kilogrmo",
+      "Descripcion": "Kilogramo",
       "FechaCreacion": "2023-01-01"
     },
     {
       "id": "4",
       "Sigla": "Mts",
       "Descripcion": "Metros",
+      "FechaCreacion": "2023-01-01"
+    },
+    {
+      "id": "5",
+      "Sigla": "Tn",
+      "Descripcion": "Tonelada",
       "FechaCreacion": "2023-01-01"
     }
   ],
@@ -100,9 +105,27 @@
   "semillas": [
     {
       "id": "5b05",
-      "Descripcion": "Maíz",
-      "Especificaciones": "Rendimiento alto",
+      "Descripcion": "Maíz Amarillo Duro",
+      "Especificaciones": "Semilla de maíz amarillo, apta para sembrar en terrenos arcillosos y pedregosos. Susceptible a plagas como el gusano cogollero y la roya. Requiere tratamientos preventivos con insecticidas. El rendimiento de la semilla se refiere a la cantidad de producto obtenido por unidad sembrada, y el rendimiento de cosecha es la cantidad total de maíz esperado por hectárea.",
       "RendimientoSemilla": 1000,
+      "RendimientoCosecha": 6000,
+      "IdUnidadMedida": "3",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "5b06",
+      "Descripcion": "Maíz Blanco Híbrido",
+      "Especificaciones": "Semilla de maíz blanco, ideal para suelos secos. Es resistente a plagas como el barrenador del tallo. Se recomienda una fertilización con nitrógeno y potasio para maximizar el rendimiento. El rendimiento de la semilla indica el kg obtenido por unidad sembrada, y el rendimiento de cosecha es el total esperado por hectárea.",
+      "RendimientoSemilla": 1200,
+      "RendimientoCosecha": 7000,
+      "IdUnidadMedida": "3",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "5b07",
+      "Descripcion": "Maíz Dulce",
+      "Especificaciones": "Semilla de maíz dulce, óptima para suelos fértiles. Vulnerable a plagas como el pulgón y el gusano de la espiga. Requiere tratamientos regulares con insecticidas y una fertilización balanceada. Rendimiento semilla se refiere a kg por unidad sembrada, y rendimiento cosecha es el total estimado por hectárea.",
+      "RendimientoSemilla": 900,
       "RendimientoCosecha": 5000,
       "IdUnidadMedida": "3",
       "FechaCreacion": "2023-10-01"
@@ -114,6 +137,7 @@
       "IdSemilla": "5b05",
       "IdFrecuenciaRiego": "5c6a",
       "Descripcion": "Arcilloso",
+      "Especificaciones": "Altura: 800 a 1200 m. Semilla recomendada: Maíz Híbrido (ej. Maíz Híbrido de Grano Dulce). Fertilización: Aplicar fertilizantes ricos en fósforo y potasio, como el NPK 10-30-10. Tratamiento: Incorporar materia orgánica para mejorar la estructura del suelo y el drenaje.",
       "FechaCreacion": "2023-10-01"
     },
     {
@@ -121,6 +145,7 @@
       "IdSemilla": "5b05",
       "IdFrecuenciaRiego": "5c6a",
       "Descripcion": "Seco",
+      "Especificaciones": "Altura: 500 a 1000 m. Semilla recomendada: Maíz Tolerante a la Sequía (ej. DKB 390 o Maíz Amarillo Tolerante). Fertilización: Uso de fertilizantes balanceados, como el NPK 15-15-15. Tratamiento: Implementar técnicas de conservación de agua, como la siembra en surcos y mulching.",
       "FechaCreacion": "2023-10-01"
     },
     {
@@ -128,21 +153,22 @@
       "IdSemilla": "5b05",
       "IdFrecuenciaRiego": "5c6a",
       "Descripcion": "Pedregoso",
+      "Especificaciones": "Altura: 1000 a 1500 m. Semilla recomendada: Maíz Criollo (ej. Maíz de Alta Altitud). Fertilización: Utilizar abonos orgánicos y NPK 12-24-12 para favorecer el desarrollo. Tratamiento: Mejorar la retención de humedad con mulch y prácticas de labranza mínima.",
       "FechaCreacion": "2023-10-01"
     }
   ],
   "terrenos": [
     {
-      "Nombre": "Terreno 1",
-      "IdTipoTerreno": 2,
+      "id": "c860",
+      "Nombre": "Tequía",
+      "IdTipoTerreno": "1",
       "Area": 10,
-      "IdUnidadMedida": 2,
-      "Altura": 800,
-      "Longitud": -71.87770769230816,
-      "Latitud": 6.946875430788496,
-      "IdUsuario": 1,
-      "FechaCreacion": "2023-10-01",
-      "id": "94dc"
+      "IdUnidadMedida": "2",
+      "Altura": 2250,
+      "Longitud": -72.73476010532212,
+      "Latitud": 6.6751145970977666,
+      "IdUsuario": "",
+      "FechaCreacion": ""
     }
   ],
   "etapas": [
@@ -182,46 +208,22 @@
   "siembras": [
     {
       "IdPlanificacionCultivo": "f78d",
-      "IdTerreno": "94dc",
+      "IdTerreno": "c860",
       "IdSemilla": "5b05",
-      "CantidadSemillaSiembra": 100,
-      "CantidadCosechaEstimada": 500,
-      "IdUnidadMedida": 1,
-      "FechaSiembra": "2024-01-01",
-      "IdUsuario": null,
-      "FechaCreacion": "2023-10-01",
-      "id": "0b81"
-    },
-    {
-      "IdPlanificacionCultivo": "f78d",
-      "IdTerreno": "94dc",
-      "IdSemilla": "5b05",
-      "CantidadSemillaSiembra": 100,
-      "CantidadCosechaEstimada": 500,
-      "IdUnidadMedida": 1,
-      "FechaSiembra": "2024-01-01",
-      "IdUsuario": null,
-      "FechaCreacion": "2023-10-01",
-      "id": "0b82"
-    },
-    {
-      "id": "3207",
-      "IdPlanificacionCultivo": "f78d",
-      "IdTerreno": "9ed6",
-      "IdSemilla": "5b05",
-      "CantidadSemillaSiembra": 2000,
-      "CantidadCosechaEstimada": 555555,
+      "CantidadSemillaSiembra": 300,
+      "CantidadCosechaEstimada": 70000,
       "IdUnidadMedida": "3",
-      "FechaSiembra": "2024-10-29",
+      "FechaSiembra": "2024-11-01",
       "IdUsuario": "",
-      "FechaCreacion": ""
+      "FechaCreacion": "",
+      "id": "3697"
     }
   ],
   "fertilizantes": [
     {
-      "Nombre": "Fertilizante A",
-      "Descripcion": "Fertilizante para maíz.",
-      "ModoUso": "Aplicar cada 15 días.",
+      "Nombre": "Fertilizante 10-10-10",
+      "Descripcion": "Fertilizante equilibrado que aporta nitrógeno, fósforo y potasio, favoreciendo el crecimiento general del maíz y mejorando el rendimiento.",
+      "ModoUso": "Aplicar 1 a 2 veces durante la temporada de crecimiento, preferiblemente al inicio y durante el desarrollo del grano, usando 150-200 kg por hectárea.",
       "IdFrecuencia": "6fb9",
       "FechaCreacion": "2023-10-01",
       "id": "6fa6"
@@ -229,109 +231,106 @@
     {
       "id": "7d77",
       "Nombre": "Manzate",
-      "Descripcion": "El mejor fertilizante",
-      "ModoUso": "aplicar de 2 a 3 veces por semana",
+      "Descripcion": "Fertilizante que contiene manganeso, esencial para la fotosíntesis y la formación de clorofila, ayudando a prevenir deficiencias nutricionales.",
+      "ModoUso": "Aplicar de 2 a 3 veces durante la temporada, preferentemente cada 15 días en la fase vegetativa.",
       "IdFrecuencia": "6fb9",
-      "FechaCreacion": ""
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "8f12",
+      "Nombre": "Urea",
+      "Descripcion": "Fertilizante nitrogenado que favorece el crecimiento vegetativo y el desarrollo del maíz, incrementando la producción de biomasa.",
+      "ModoUso": "Aplicar 200-300 kg por hectárea al inicio de la siembra y nuevamente durante la fase de crecimiento, en forma de riego o aplicado al suelo.",
+      "IdFrecuencia": "6fb9",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "9g23",
+      "Nombre": "Superfosfato Triple",
+      "Descripcion": "Fertilizante rico en fósforo que promueve el desarrollo de raíces, la floración y el llenado de grano, mejorando el rendimiento final.",
+      "ModoUso": "Aplicar 100-150 kg por hectárea al momento de la siembra y en el desarrollo inicial de la planta.",
+      "IdFrecuencia": "6fb9",
+      "FechaCreacion": "2023-10-01"
+    },
+    {
+      "id": "10h34",
+      "Nombre": "Cloruro de Potasio",
+      "Descripcion": "Fertilizante que mejora la resistencia de las plantas a enfermedades y estrés hídrico, además de aumentar el rendimiento del grano.",
+      "ModoUso": "Aplicar 150-200 kg por hectárea durante la fase de formación del grano, preferiblemente en riego.",
+      "IdFrecuencia": "6fb9",
+      "FechaCreacion": "2023-10-01"
     }
   ],
   "plagas": [
     {
-      "id": "1719",
+      "Nombre": "Gusano Cogollero (Spodoptera frugiperda)",
+      "Descripcion": "Afecta los cogollos del maíz, causando daños significativos en el crecimiento. Las larvas pueden causar pérdidas en la producción.",
+      "Tratamiento": "Aplicar insecticidas como el Chlorpyrifos o el Lambda-cialotrina durante la etapa larval.",
+      "UrlImagen": "https://www.comagricen.com/src/blog/6461f9_Gusano%20Cogollero.jpg",
       "IdFrecuencia": "6fb9",
-      "Nombre": "Plaga A",
-      "Descripcion": "Descripción de la Plaga A.",
-      "Tratamiento": "Tratamiento recomendado.",
-      "UrlImagen": "https://cdn.pixabay.com/photo/2015/10/20/22/18/plague-998574_960_720.jpg",
-      "FechaCreacion": "2023-10-01"
+      "FechaCreacion": "2023-10-01",
+      "id": "1719"
     },
     {
-      "id": "3ae6",
-      "Nombre": "Roya",
-      "Descripcion": "Se come las plantas",
-      "Tratamiento": "Veneno",
-      "UrlImagen": "https://cdn.pixabay.com/photo/2014/04/14/18/41/daisy-324093_960_720.jpg",
+      "Nombre": "Roya (Puccinia sorghi)",
+      "Descripcion": "Fungosis que afecta las hojas del maíz, reduciendo la fotosíntesis y debilitando la planta.",
+      "Tratamiento": "Uso de fungicidas como el Azoxistrobina o el Propiconazol. Aplicar al inicio de la enfermedad.",
+      "UrlImagen": "https://www.aapresid.org.ar/webroot/img/noticias-portadas/5009/61ccc07a1771a.jpg",
       "IdFrecuencia": "6fb9",
-      "FechaCreacion": ""
+      "FechaCreacion": "",
+      "id": "3ae6"
+    },
+    {
+      "Nombre": "Barrenador del Tallo (Diatraea saccharalis)",
+      "Descripcion": "Introduce larvas en el tallo, debilitando la planta y provocando el marchitamiento. Afecta la producción.",
+      "Tratamiento": "Uso de insecticidas como el Carbofurano o el Methomyl. Implementar medidas de manejo integrado.",
+      "UrlImagen": "https://croplifela.org/images/ES/Plaga_del_Mes/Barrenador_Tallo/Barrenador_Tallo_2.png",
+      "IdFrecuencia": "6fb9",
+      "FechaCreacion": "2023-10-01",
+      "id": "4b88"
+    },
+    {
+      "Nombre": "Langosta (Schistocerca americana)",
+      "Descripcion": "Insecto migratorio que puede formar grandes grupos y causar devastación en cultivos de maíz. Se alimenta vorazmente de las hojas.",
+      "Tratamiento": "Uso de insecticidas como el Malatión o el Clorpirifos. Aplicar en fase de plaga y monitorear frecuentemente.",
+      "UrlImagen": "https://cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/JVKAMHXVDBBHDEX36RSPUDZ4MY.jpg",
+      "IdFrecuencia": "5c6a",
+      "FechaCreacion": "2023-10-01",
+      "id": "5d99"
     }
   ],
   "mantenimientos": [
     {
+      "id": "3f85",
+      "IdSiembra": "3697",
       "IdFrecuenciaRiego": "5c6a",
       "IdFertilizante": "6fa6",
       "IdControlPlagas": "1719",
-      "FechaMantenimiento": "2024-02-15",
-      "FechaCreacion": "2023-10-01",
-      "id": "7e2f"
-    },
-    {
-      "id": "358d",
-      "IdSiembra": "0b82",
-      "IdFrecuenciaRiego": "6fb9",
-      "IdFertilizante": "6fa6",
-      "IdControlPlagas": "1719",
-      "FechaMantenimiento": "2024-10-15",
+      "FechaMantenimiento": "2024-10-30",
       "FechaCreacion": ""
-    },
-    {
-      "id": "32ef",
-      "IdFrecuenciaRiego": "6fb9",
-      "IdFertilizante": "7d77",
-      "IdControlPlagas": "3ae6",
-      "FechaMantenimiento": "2024-10-28",
-      "FechaCreacion": "",
-      "IdSiembra": "0b82"
-    },
-    {
-      "IdFrecuenciaRiego": "6fb9",
-      "IdFertilizante": "6fa6",
-      "IdControlPlagas": "3ae6",
-      "FechaMantenimiento": "2024-10-22",
-      "FechaCreacion": "",
-      "id": "9a90"
-    },
-    {
-      "IdSiembra": "0b81",
-      "IdFrecuenciaRiego": "5c6a",
-      "IdFertilizante": "6fa6",
-      "IdControlPlagas": "3ae6",
-      "FechaMantenimiento": "2024-10-22",
-      "FechaCreacion": "",
-      "id": "e1b7"
     }
   ],
   "almacenes": [
     {
       "id": "90ed",
-      "Nombre": "Almacen 1",
-      "Ubicacion": "Ubicación A",
-      "Capacidad": 1000,
-      "IdUnidadMedida": 1,
+      "Nombre": "Almacen La Aurora",
+      "Ubicacion": "Finca la aurora, municipio de Málaga",
+      "Capacidad": 100,
+      "IdUnidadMedida": "5",
       "FechaCreacion": "2023-10-01"
     }
   ],
   "cosechas": [
     {
-      "id": "c376",
-      "FechaCosecha": "2024-11-30",
-      "CantidadCosecha": 25000,
-      "CtdBuenEstado": 23500,
-      "CtdMalEstado": 1500,
+      "id": "93d5",
+      "IdSiembra": "3697",
+      "FechaCosecha": "2024-10-30",
+      "CantidadCosecha": 65000,
+      "CtdBuenEstado": 61500,
+      "CtdMalEstado": 4500,
       "IdUnidadMedida": "3",
       "IdAlmacen": "90ed",
-      "FechaCreacion": "",
-      "IdSiembra": "3207"
-    },
-    {
-      "IdSiembra": "0b81",
-      "FechaCosecha": "2024-10-29",
-      "CantidadCosecha": 95000,
-      "CtdBuenEstado": 94000,
-      "CtdMalEstado": 1000,
-      "IdUnidadMedida": "3",
-      "IdAlmacen": "90ed",
-      "FechaCreacion": "",
-      "id": "9e9a"
+      "FechaCreacion": ""
     }
   ]
 }

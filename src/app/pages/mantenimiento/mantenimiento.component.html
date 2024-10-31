@@ -47,8 +47,8 @@
 </div>
 
 <br>
-<h3>Información control de plagas y fertilización</h3>
-<div class="accordion" id="accordionExample">
+<h3 *ngIf="esEdicion">Información control de plagas y fertilización</h3>
+<div class="accordion" id="accordionExample" *ngIf="esEdicion">
   <div class="accordion-item">
     <h3 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

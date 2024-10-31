@@ -105,7 +105,7 @@ export class DashboardComponent {
       totalMetrosAltura += terreno.Altura;
       let auxUnidadesMedida = this.listaUnidadesMedida.filter(medida => medida.id == terreno.IdUnidadMedida);
       switch (auxUnidadesMedida[0].Sigla.toLowerCase()) {
-        case 'kg':
+        case 'km':
           this.totalKm += terreno.Area;         
           break;
         case 'mts':
