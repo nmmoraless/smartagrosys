@@ -30,6 +30,8 @@ export class MantenimientoComponent {
   public colorAlertas: any = {};
   public auxIdSiembra!: string;
   public cargarFormulario: boolean = false;
+  public fertilizante: FertilizanteInterface[] = [];
+  public plaga: PlagaInterface[] = [];
 
   public formMantenimiento: FormGroup = this.fb.group({
     //id: [null, []],
@@ -71,7 +73,9 @@ export class MantenimientoComponent {
           this.listaSiembras = siembras;
           this.listaFrecuencias = frecuencias;
           this.listaFertilizantes = fertilizantes;
+          this.fertilizante = this.listaFertilizantes.filter(fertilizante => fertilizante.id == this.mantenimiento.IdFertilizante);
           this.listaPlagas = plagas;
+          this.plaga = this.listaPlagas.filter(plaga => plaga.id == this.mantenimiento.IdControlPlagas);
           this.cargarFormulario = true;
           this.formMantenimiento.reset(this.mantenimiento);
         }
@@ -168,6 +172,15 @@ export class MantenimientoComponent {
     } else {
       return null;
     }
+  }
+
+  public definirLabel(id: string, objeto: string): string {
+    let label: string = '';
+    if (objeto == 'frecuencias'){
+      let auxFrecuencia = this.listaFrecuencias.filter(frecuencia => frecuencia.id == id);
+      label = auxFrecuencia[0].Descripcion;
+    } 
+    return label;
   }
 
 }

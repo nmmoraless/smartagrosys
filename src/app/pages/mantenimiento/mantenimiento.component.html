@@ -45,3 +45,60 @@
   <button type="button" class="btn btn-success me-2" (click)="guardar()">Guardar</button>
   <a *ngIf="auxIdSiembra || esEdicion" [href]="'#/siembra/editar/' + auxIdSiembra"><button type="button" class="btn btn-secondary">Regresar</button></a>
 </div>
+
+<br>
+<h3>Información control de plagas y fertilización</h3>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h3 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Fertilizante
+      </button>
+    </h3>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Modo de uso</th>
+              <th scope="col">Frecuencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>{{fertilizante[0].Nombre}}</td>
+              <td>{{fertilizante[0].Descripcion}}</td>
+              <td>{{fertilizante[0].ModoUso}}</td>
+              <td>{{definirLabel(plaga[0].IdFrecuencia, 'frecuencias')}}</td>
+            </tr>
+          </tbody>
+        </table>        
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h3 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Plaga
+      </button>
+    </h3>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="card" style="width: 28rem;">
+          <img src="{{plaga[0].UrlImagen}}" class="card-img-top" alt="imagen_plaga">
+          <div class="card-body">
+            <p>
+              <strong>Descripción: </strong>{{plaga[0].Descripcion}} <br>
+              <strong>Tratamiento: </strong>{{plaga[0].Tratamiento}} <br>
+              <strong>Frecuencia: </strong>{{definirLabel(plaga[0].IdFrecuencia, 'frecuencias')}} <br>
+            </p>    
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>

@@ -291,13 +291,13 @@
       "id": "9a90"
     },
     {
-      "id": "e1b7",
       "IdSiembra": "0b81",
-      "IdFrecuenciaRiego": "6fb9",
-      "IdFertilizante": "7d77",
-      "IdControlPlagas": "1719",
+      "IdFrecuenciaRiego": "5c6a",
+      "IdFertilizante": "6fa6",
+      "IdControlPlagas": "3ae6",
       "FechaMantenimiento": "2024-10-22",
-      "FechaCreacion": ""
+      "FechaCreacion": "",
+      "id": "e1b7"
     }
   ],
   "almacenes": [
