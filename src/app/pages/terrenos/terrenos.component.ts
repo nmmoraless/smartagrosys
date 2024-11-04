@@ -101,7 +101,7 @@ export class TerrenosComponent implements OnInit {
       this.formTerrenos.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
       return;
     } else {
-      if (this.terreno.id != '0') {
+      if (this.terreno.id != '') {
         //Actualizar
         let id = this.terreno.id;
         this.terreno = this.terrenoActual;
