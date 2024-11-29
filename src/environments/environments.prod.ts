@@ -1,4 +1,4 @@
 
 export const environments = {
-    baseUrl: 'http://www.miapi.com/api'
+    baseUrl: 'https://apismartagro.onrender.com'
 }
