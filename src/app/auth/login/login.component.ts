@@ -12,9 +12,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent {
 
+  public cargarLogin: boolean = false;
   public listaUsarios: UsuarioInterface[] = [];
   public colorAlertas: any = {};
   public loginExitoso: boolean = true;
+  public usuario!: UsuarioInterface;
 
   public formUsuario: FormGroup = this.fb.group({
     //id: [null, []],
@@ -23,13 +25,13 @@ export class LoginComponent {
   });
 
   constructor( private fb: FormBuilder, private _usuario: UsuarioService, private _validaciones: ValidacionesService, private activedRoute: ActivatedRoute, private router: Router ) {
-
   }
 
   ngOnInit(): void {
 
     this._usuario.getUsuarios().subscribe(usuarios => {
       this.listaUsarios = usuarios;
+      this.cargarLogin = true;
     });
 
     this.colorAlertas = this._validaciones.colorAlertas;
@@ -87,8 +89,9 @@ export class LoginComponent {
       this.formUsuario.markAllAsTouched();//Si dan guardar o actualizar y hay campos que no cumplen con las validaciones marca todo para mostrar la alerta
       return;
     } else {
-      let auxUsuario = this.listaUsarios.filter(usuario => usuario.Email == this.usuarioActual.Email);
-      if (this.usuarioActual.Password == auxUsuario[0].Password) {
+      this.usuario = this.usuarioActual;
+      let auxUsuario: UsuarioInterface[] = this.listaUsarios.filter(usuario => usuario.Email == this.usuario.Email);
+      if (this.usuario.Password == auxUsuario[0].Password) {
         this.loginExitoso = true;
         this.router.navigateByUrl( '/dashboard' );
       } else {
