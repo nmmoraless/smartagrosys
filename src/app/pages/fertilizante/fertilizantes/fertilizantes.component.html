@@ -1,29 +1,31 @@
 <h2>Lista de fertilizantes</h2>
 
-<table class="table table-hover mt-4">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Modo uso</th>
-      <th scope="col">Frecuencia</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let fertilizante of listaFertilizantes; let i = index">
-      <th scope="row">{{i+1}}</th>
-      <td>{{fertilizante.Nombre}}</td>
-      <td>{{fertilizante.Descripcion}}</td>
-      <td>{{fertilizante.ModoUso}}</td>
-      <td>{{definirLabel(fertilizante.IdFrecuencia, 'frecuencias')}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarFrecuencia(fertilizante.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarFrecuencia(fertilizante.id)"><i class="bi bi-trash-fill"></i></button></td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-hover mt-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Modo uso</th>
+        <th scope="col">Frecuencia</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fertilizante of listaFertilizantes; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{fertilizante.Nombre}}</td>
+        <td>{{fertilizante.Descripcion}}</td>
+        <td>{{fertilizante.ModoUso}}</td>
+        <td>{{definirLabel(fertilizante.IdFrecuencia, 'frecuencias')}}</td>
+        <td><button class="btn btn-outline-primary" (click)="actualizarFrecuencia(fertilizante.id)"><i class="bi bi-pencil-square"></i></button></td>
+        <td><button class="btn btn-outline-danger" (click)="eliminarFrecuencia(fertilizante.id)"><i class="bi bi-trash-fill"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <a href="#/fertilizante/agregar"><button type="button" class="btn btn-success">Crear</button></a>
 

@@ -1,28 +1,30 @@
 <h2>Lista de plagas</h2>
 
-<table class="table table-hover mt-4">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Descripcion</th>
-      <th scope="col">Tratamiento</th>
-      <th scope="col">Frecuencia</th>
-      <th scope="col">Editar</th>
-      <th scope="col">Eliminar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let plaga of lsitaPlagas; let i = index">
-      <th scope="row">{{i+1}}</th>
-      <td>{{plaga.Nombre}}</td>
-      <td>{{plaga.Descripcion}}</td>
-      <td>{{plaga.Tratamiento}}</td>
-      <td>{{definirLabel(plaga.IdFrecuencia, 'frecuencias')}}</td>
-      <td><button class="btn btn-outline-primary" (click)="actualizarPlaga(plaga.id)"><i class="bi bi-pencil-square"></i></button></td>
-      <td><button class="btn btn-outline-danger" (click)="eliminarPlaga(plaga.id)"><i class="bi bi-trash-fill"></i></button></td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-hover mt-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Tratamiento</th>
+        <th scope="col">Frecuencia</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plaga of lsitaPlagas; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{plaga.Nombre}}</td>
+        <td>{{plaga.Descripcion}}</td>
+        <td>{{plaga.Tratamiento}}</td>
+        <td>{{definirLabel(plaga.IdFrecuencia, 'frecuencias')}}</td>
+        <td><button class="btn btn-outline-primary" (click)="actualizarPlaga(plaga.id)"><i class="bi bi-pencil-square"></i></button></td>
+        <td><button class="btn btn-outline-danger" (click)="eliminarPlaga(plaga.id)"><i class="bi bi-trash-fill"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <a href="#/plaga/agregar"><button type="button" class="btn btn-success">Crear</button></a>
